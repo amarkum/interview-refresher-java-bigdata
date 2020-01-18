@@ -17,7 +17,9 @@
 ```
 
 # Hive Interview Question
+```text
 1.) What is Static Partitioning and Dynamic Partitioning in HIVE? - Yodlee
+```
 
 # Java Interview Questions
 ```text

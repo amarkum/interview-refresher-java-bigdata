@@ -1,20 +1,23 @@
 # Big Data Interview Question
 ```text
- 1.) What is Combiner? 
- 2.) What is the difference between hadoop fs, hadoop dfs, hdfs dfs command?
- 3.) What is difference between put and copyFromLocal and get and copyToLocal?
- 4.) Difference between AVRO, ORC and Parquet file format.
- 5.) What is scheduler used, what is version of oozie?
- 6.) How ZooKeeper assign a follower, if leader goes down?
- 7.) How to create HIVE table on HBase?
- 8.) Will HIVE continue to execute query, if cluster is back?
- 9.) Write a program for Kafka Producer and Consumer.
- 10.) Hive Bucketing and Partitioning?
- 11.) When to use Bucketing and Partitioning?
- 12.) What are UDF in HIVE? 
- 13.) hdfs -getmerge command
- 14.) HBase Shell to retrieve data from Column Family.
+ 1.) What is Combiner? - Legato, Impetus
+ 2.) What is the difference between hadoop fs, hadoop dfs, hdfs dfs command? - Legato
+ 3.) What is difference between put and copyFromLocal and get and copyToLocal? - Legato
+ 4.) Difference between AVRO, ORC and Parquet file format. - Fidelity, Paypal
+ 5.) What is scheduler used, what is version of oozie? - ThoughtWorks
+ 6.) How ZooKeeper assign a follower, if leader goes down? - ThoughtWorks
+ 7.) How to create HIVE table on HBase?  - Deloitte
+ 8.) Will HIVE continue to execute query, if cluster is back? - Subex
+ 9.) Write a program for Kafka Producer and Consumer. - OpenText
+ 10.) Hive Bucketing and Partitioning? - Impetus
+ 11.) When to use Bucketing and Partitioning? - Impetus
+ 12.) What are UDF in HIVE? - Deloitte
+ 13.) hdfs -getmerge command - Sear Holding
+ 14.) HBase Shell to retrieve data from Column Family. - Sear Holding
 ```
+
+# Hive Interview Question
+1.) What is Static Partitioning and Dynamic Partitioning in HIVE? - Yodlee
 
 # Java Interview Questions
 ```text
@@ -37,9 +40,14 @@
 17.) Iterator and ListIterator - Sear Holdings
 18.) fibonacci series using recursion. - Subex
 19.) What is composition and Aggregation?  - Genpact
+20.) Traverse and print the data from middle to the last of the LinkedList - KPMG
+21.) Find the maximum and minimum value in a HashMap - KPMG
+22.) Reverse a String using recursion - KPMG
+23.) Difference between List, Set and HashMap - KPMG
 ```
 
 # SQL Interview Questions
 ```text
-1.) Find nth Salary from salary table
+1.) Find nth Salary from salary table - Impetus
+2.) Find the sum of spend by an ID - KPMG
 ```

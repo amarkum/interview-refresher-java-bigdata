@@ -246,6 +246,5 @@ public class CollectionDataStructure {
         while (treeSetIterator.hasNext()) {
             System.out.println(treeSetIterator.next());
         }
-
     }
 }

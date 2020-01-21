@@ -38,7 +38,6 @@ public class BinarySearchTree {
             root = new Node(value);
             return true;
         }
-
         //Starting from root
         Node currentNode = root;
 

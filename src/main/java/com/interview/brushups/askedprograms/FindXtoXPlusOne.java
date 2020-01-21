@@ -2,7 +2,11 @@ package com.interview.brushups.askedprograms;
 
 import java.util.Scanner;
 
-class Solution {
+/**
+ * Codility - given two integers A and B, returns the number of integers from the range [A..B]
+ */
+public class FindXtoXPlusOne {
+
         public static int solution(int A, int B) {
             int counter = 0;
             int value = 0;

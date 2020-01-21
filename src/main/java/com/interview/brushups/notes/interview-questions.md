@@ -19,6 +19,7 @@
 # Hive Interview Question
 ```text
 1.) What is Static Partitioning and Dynamic Partitioning in HIVE? - Yodlee
+2.) What are datatypes in Hive? - UST Global
 ```
 
 # Java Interview Questions

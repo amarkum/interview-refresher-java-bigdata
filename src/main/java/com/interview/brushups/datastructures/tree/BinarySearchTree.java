@@ -9,6 +9,14 @@ package com.interview.brushups.datastructures.tree;
  * Binary Tree - It can have at-most two children.
  * <p>
  * In Binary tree, at n level, we can have maximum pow(2,n) nodes.
+ *
+ *
+ * Commonly Asked Tree Question
+ * 1.) Find the height of a binary tree
+ * 2.) Find kth maximum value in a binary search tree
+ * 3.) Find nodes at "k" distance from the root
+ * 4.) Find ancestors of a given node in a binary tree
+ *
  */
 public class BinarySearchTree {
 

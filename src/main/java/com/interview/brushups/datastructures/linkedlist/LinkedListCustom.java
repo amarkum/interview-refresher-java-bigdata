@@ -1,5 +1,13 @@
 package com.interview.brushups.datastructures.linkedlist;
 
+/**
+ *
+ * Commonly asked LinkedList Interview Question
+ * 1. Reverse a linked list
+ * 2. Detect loop in a linked list
+ * 3. Return Nth node from the end in a linked list
+ * 4. Remove duplicates from a linked list
+ */
 public class LinkedListCustom<T> {
 
     public LinkedListCustom() {

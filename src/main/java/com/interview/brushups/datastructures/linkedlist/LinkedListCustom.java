@@ -250,4 +250,17 @@ public class LinkedListCustom<T> {
         return slow.data;
     }
 
+    /* Returns count of nodes in linked list */
+    public int lengthOfList(Node headNode)
+    {
+        // Base case
+        if (headNode == null) {
+            return 0;
+        }
+        // Recursive case
+        else {
+            return 1 + lengthOfList(headNode.nextNode);
+        }
+    }
+
 }

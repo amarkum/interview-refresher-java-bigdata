@@ -34,6 +34,7 @@ public class Caller {
         System.out.println("LinkedList has Loop : "+linkedListCustom.detectLoop());
         System.out.println("Mid element : "+ linkedListCustom.midElement());
         linkedListCustom.printAll();
+        System.out.println("Size of LinkedList using Recursion : "+linkedListCustom.lengthOfList(linkedListCustom.headNode));
 
     }
 }

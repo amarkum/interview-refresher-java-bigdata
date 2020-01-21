@@ -2,6 +2,7 @@ package com.interview.brushups.askedprograms;
 
 /**
  * Write a Program that returns number of Fragments of a List whose Sum Equals to 0
+ * Codility - given an array A consisting of N integers, returns the number of fragments of A
  */
 public class FindFragmentsEqualsZero {
 

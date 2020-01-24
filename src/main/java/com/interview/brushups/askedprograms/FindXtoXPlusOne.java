@@ -7,32 +7,32 @@ import java.util.Scanner;
  */
 public class FindXtoXPlusOne {
 
-        public static int solution(int A, int B) {
-            int counter = 0;
-            int value = 0;
-            int x = 1;
+    public static int solution(int A, int B) {
+        int counter = 0;
+        int value = 0;
+        int x = (int) Math.sqrt(A);
 
-            while(value < B){
-                value = x * (x+1); //3 , 6, 12, 15, 20, 30
-                x++;
+        while (value < B) {
+            value = x * (x + 1); //3 , 6, 12, 15, 20, 30
 
-                if(value >= A && value <= B){
-                    System.out.println(x+" * "+(x+1)+" = "+value);
-                    counter++;
-                }
+            if (value >= A && value <= B) {
+                System.out.println(x + " * " + (x + 1) + " = " + value);
+                counter++;
             }
-            return counter;
+            x++;
         }
-
-        public static void main(String[] args) {
-            Scanner scanner = new Scanner(System.in);
-            System.out.println("Enter Number 1");
-            int numberA = scanner.nextInt();
-            System.out.println("Enter Number 2");
-            int numberB = scanner.nextInt();
-           System.out.println("Total occurrence for X*(X+1) for range "+numberA+" & "+numberB+" is : "+solution(numberA,numberB));
-        }
+        return counter;
     }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter Number 1");
+        int numberA = scanner.nextInt();
+        System.out.println("Enter Number 2");
+        int numberB = scanner.nextInt();
+        System.out.println("Total occurrence for X*(X+1) for range " + numberA + " & " + numberB + " is : " + solution(numberA, numberB));
+    }
+}
 
 
 

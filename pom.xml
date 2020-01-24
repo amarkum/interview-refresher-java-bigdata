@@ -15,23 +15,54 @@
     <maven.compiler.target>1.7</maven.compiler.target>
   </properties>
   <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>4.11</version>
-      <scope>test</scope>
-    </dependency>
+
+      <dependency>
+          <groupId>com.atlassian.commonmark</groupId>
+          <artifactId>commonmark</artifactId>
+          <version>0.14.0</version>
+      </dependency>
+
+
     <dependency>
       <groupId>org.apache.crunch</groupId>
-      <artifactId>crunch-core</artifactId>
-      <version>0.14.0</version>
+        <artifactId>crunch-core</artifactId>
+        <version>0.14.0</version>
     </dependency>
-    <!-- https://mvnrepository.com/artifact/org.apache.hadoop/hadoop-client -->
-    <dependency>
-      <groupId>org.apache.hadoop</groupId>
-      <artifactId>hadoop-client</artifactId>
-      <version>2.10.0</version>
-    </dependency>
+
+      <!-- https://mvnrepository.com/artifact/org.apache.hadoop/hadoop-client -->
+      <dependency>
+          <groupId>org.apache.hadoop</groupId>
+          <artifactId>hadoop-client</artifactId>
+          <version>2.10.0</version>
+      </dependency>
+
+      <!-- core spark dependency -->
+
+      <dependency>
+          <groupId>org.apache.spark</groupId>
+          <artifactId>spark-core_2.11</artifactId>
+          <version>2.2.0</version>
+          <scope>compile</scope>
+      </dependency>
+
+      <!-- spark kafka streaming dependency -->
+
+      <dependency>
+          <groupId>org.apache.spark</groupId>
+          <artifactId>spark-streaming-kafka-0-10_2.11</artifactId>
+          <version>2.2.0</version>
+          <scope>compile</scope>
+      </dependency>
+
+      <!-- spark streaming dependency -->
+
+      <dependency>
+          <groupId>org.apache.spark</groupId>
+          <artifactId>spark-streaming_2.11</artifactId>
+          <version>2.2.0</version>
+          <scope>compile</scope>
+      </dependency>
+
   </dependencies>
   <packaging>jar</packaging>
   <build>
@@ -39,22 +70,58 @@
       <plugin>
         <artifactId>maven-assembly-plugin</artifactId>
         <configuration>
-          <archive>
-          </archive>
+            <archive>
+                <manifest>
+                    <mainClass>com.interview.brushups.UI</mainClass>
+                </manifest>
+            </archive>
           <descriptorRefs>
             <descriptorRef>jar-with-dependencies</descriptorRef>
           </descriptorRefs>
         </configuration>
-        <executions>
-          <execution>
-            <id>make-assembly</id> <!-- this is used for inheritance merges -->
-            <phase>package</phase> <!-- bind to the packaging phase -->
-            <goals>
-              <goal>single</goal>
-            </goals>
-          </execution>
-        </executions>
+          <executions>
+              <execution>
+                  <id>make-assembly</id> <!-- this is used for inheritance merges -->
+                  <phase>package</phase> <!-- bind to the packaging phase -->
+                  <goals>
+                      <goal>single</goal>
+                  </goals>
+              </execution>
+          </executions>
       </plugin>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <configuration>
+                <source>8</source>
+                <target>8</target>
+            </configuration>
+        </plugin>
+
+        <!-- really executable plugin -->
+        <plugin>
+            <groupId>org.skife.maven</groupId>
+            <artifactId>really-executable-jar-maven-plugin</artifactId>
+            <version>1.1.0</version>
+            <configuration>
+                <!-- value of flags will be interpolated into the java invocation -->
+                <!-- as "java $flags -jar ..." -->
+                <!--<flags></flags>-->
+
+                <!-- (optional) name for binary executable, if not set will just -->
+                <!-- make the regular jar artifact executable -->
+                <programFile>interview</programFile>
+            </configuration>
+            <executions>
+                <execution>
+                    <phase>package</phase>
+                    <goals>
+                        <goal>really-executable-jar</goal>
+                    </goals>
+                </execution>
+            </executions>
+        </plugin>
+
     </plugins>
   </build>
 </project>

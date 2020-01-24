@@ -16,26 +16,6 @@ import java.util.StringTokenizer;
 
 public class WordCountMapReduce {
 
-    public static class WordCountMapper extends Mapper<LongWritable, Text, Text, IntWritable> {
-        public void map(LongWritable offset, Text line, Context context) throws IOException, InterruptedException {
-            StringTokenizer iterator = new StringTokenizer(line.toString());
-            while (iterator.hasMoreTokens()) {
-                Text word = new Text(iterator.nextToken());
-                context.write(word, new IntWritable(1));
-            }
-        }
-    }
-
-    public static class WordCountReducer extends Reducer<Text, IntWritable, Text, IntWritable> {
-        public void reduce(Text key, Iterable<IntWritable> values, Context context) throws IOException, InterruptedException {
-            int sum = 0;
-            for (IntWritable value : values) {
-                sum = sum + value.get();
-            }
-            context.write(key, new IntWritable(sum));
-        }
-    }
-
     public static void main(String[] args) throws IOException, InterruptedException, ClassNotFoundException {
         /**
          * Create a new Configuration, add up whatever the values required in configuration.
@@ -62,5 +42,25 @@ public class WordCountMapReduce {
         FileOutputFormat.setOutputPath(job, new Path(args[1]));
 
         System.exit(job.waitForCompletion(true) ? 0 : 1);
+    }
+
+    public static class WordCountMapper extends Mapper<LongWritable, Text, Text, IntWritable> {
+        public void map(LongWritable offset, Text line, Context context) throws IOException, InterruptedException {
+            StringTokenizer iterator = new StringTokenizer(line.toString());
+            while (iterator.hasMoreTokens()) {
+                Text word = new Text(iterator.nextToken());
+                context.write(word, new IntWritable(1));
+            }
+        }
+    }
+
+    public static class WordCountReducer extends Reducer<Text, IntWritable, Text, IntWritable> {
+        public void reduce(Text key, Iterable<IntWritable> values, Context context) throws IOException, InterruptedException {
+            int sum = 0;
+            for (IntWritable value : values) {
+                sum = sum + value.get();
+            }
+            context.write(key, new IntWritable(sum));
+        }
     }
 }

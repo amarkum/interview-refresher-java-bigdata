@@ -130,6 +130,14 @@ set hive.compactor.worker.threads = 1;
 create table testTableNew(id int ,name string ) clustered by (id) into 2 buckets stored as orc TBLPROPERTIES('transactional'='true');
 ```
 
+
+### UDF in Hive
+There are 3 `UDF` in Hive
+
+
+1. Regular UDF <br/>
+2. User Defined Aggregate Function (UDAF) <br/>
+3. User Defined Tabular Function (UDTF) <br/>
 ## Functions in HIVE
 
 ```text

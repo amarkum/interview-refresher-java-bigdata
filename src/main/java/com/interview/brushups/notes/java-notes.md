@@ -63,50 +63,118 @@ E.g ```ListIterator listIterator = l.listIterator();```
 
 # Java 1.7
 
-## try-with-resource
+## 1. try-with-resources statement
 
-## with traditional try and catch
+Older way to close resources in finally
 ```java
-Scanner scanner = null;
+BufferedReader br = new BufferedReader(new FileReader(path));
 try {
-    scanner = new Scanner(new File("test.txt"));
-    while (scanner.hasNext()) {
-        System.out.println(scanner.nextLine());
-    }
-} catch (FileNotFoundException e) {
-    e.printStackTrace();
+   return br.readLine();
 } finally {
-    if (scanner != null) {
-        scanner.close();
-    }
+   br.close();
 }
 ```
-
-## with new try-with-resource
+Newer way to close resources using `try-with-resource`
 
 ```java
-try (Scanner scanner = new Scanner(new File("test.txt"))) {
-    while (scanner.hasNext()) {
-        System.out.println(scanner.nextLine());
-    }
-} catch (FileNotFoundException fnfe) {
-    fnfe.printStackTrace();
+try (BufferedReader br = new BufferedReader(new FileReader(path)) {
+   return br.readLine();
 }
 ```
-
-## with new try-with-resource Multiple resource
+You can declare more than one resource to close
 
 ```java
-try (Scanner scanner = new Scanner(new File("testRead.txt"));
-    PrintWriter writer = new PrintWriter(new File("testWrite.txt"))) {
-    while (scanner.hasNext()) {
-    writer.print(scanner.nextLine());
-    }
+try (
+   InputStream in = new FileInputStream(src);
+   OutputStream out = new FileOutputStream(dest))
+{
+ // code
 }
 ```
 
-The class must implement `AutoCloseable` interface, and override `close()` method.
+## 2. Underscores in numeric literals
 
+```java
+int one_million = 1_000_000;
+Strings in switch
+String s = ...
+switch(s) {
+ case "quux":
+    processQuux(s);
+    // fall-through
+
+  case "foo":
+  case "bar":
+    processFooOrBar(s);
+    break;
+
+  case "baz":
+     processBaz(s);
+    // fall-through
+
+  default:
+    processDefault(s);
+    break;
+}
+```
+
+## 3. Binary literals
+
+```java
+int binary = 0b1001_1001;
+```
+
+## 4. Improved Type Inference for Generic Instance Creation
+
+```java
+Map<String, List<String>> anagrams = new HashMap<String, List<String>>(); 
+
+Map<String, List<String>> anagrams = new HashMap<>(); //From Java 1.7
+```
+
+## 5. Multiple exception catching
+
+Before Java 1.7, we had to declare multiple exception as below.
+
+```java
+} catch (FirstException ex) {
+     logger.error(ex);
+     throw ex;
+} catch (SecondException ex) {
+     logger.error(ex);
+     throw ex;
+}
+```
+
+After 1.7 we can declare multiple exception as below
+
+```java
+} catch (FirstException | SecondException ex) {
+     logger.error(ex);
+    throw ex;
+}
+```
+
+## 6. SafeVarargs
+
+```java
+@SuppressWarnings({"unchecked", "varargs"})
+public static void printAll(List<String>... lists){
+    for(List<String> list : lists){
+        System.out.println(list);
+    }
+}
+```
+With Java 1.7 onwards
+
+```java
+@SafeVarargs
+public static void printAll(List<String>... lists){
+    for(List<String> list : lists){
+        System.out.println(list);
+    }
+}
+```
 
 # Java 1.8
 

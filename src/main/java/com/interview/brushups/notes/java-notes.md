@@ -61,6 +61,12 @@ The `ListIterator` can traverse the elements in a collection in both the `forwar
 E.g ```ListIterator listIterator = l.listIterator();```
 <br/>
 
+## Difference between Iterator and forEach()
+
+In `forEach()` loop, we can’t modify collection, it will throw a `ConcurrentModificationException` on the other hand with `iterator` we can modify collection. <br/>
+Modifying a collection simply means removing an element or changing content of an item stored in the collection. <br/>
+This occurs because for-each loop implicitly creates an iterator but it is not exposed to the user thus we can’t modify the items in the collections.
+
 # Java 1.7
 
 ## 1. try-with-resources statement

@@ -141,7 +141,7 @@ There are 3 `UDF` in Hive
 
 How to add a Custom User Defined function in  Hive
 
-```sql
+```text
 > hive
 hive> ADD JAR /path/to/interview-brushups-1.0-SNAPSHOT-jar-with-dependencies.jar;
 hive> CREATE TEMPORARY FUNCTION HELLO AS 'com.interview.brushups.hive.HelloUDF';

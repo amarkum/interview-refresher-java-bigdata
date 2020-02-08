@@ -15,6 +15,13 @@
 ## Show All the Git Configuration
 `git config --list --show-origin`
 
+
+## The local config file is in the project directory: 
+`.git/config`
+
+## The global config file in in your home directory: 
+`~/.gitconfig`
+
 ## Change User Name
 `git config --global user.name "Amar Kumar"`
 

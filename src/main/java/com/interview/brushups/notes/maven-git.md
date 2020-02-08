@@ -12,6 +12,18 @@
 
 # Git Commands
 
+## Show All the Git Configuration
+`git config --list --show-origin`
+
+## Change User Name
+`git config --global user.name "Amar Kumar"`
+
+## Change User Email
+`git config --global user.email amar@gmail.com`
+
+## Change the Editor
+`git config --global core.editor atom`
+
 
 # UNIX Commands
 Too lookup space in particular directory by size

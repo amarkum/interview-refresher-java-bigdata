@@ -14,11 +14,15 @@
  12.) What are UDF in HIVE? - Deloitte
  13.) hdfs -getmerge command - Sear Holding
  14.) HBase Shell to retrieve data from Column Family. - Sear Holding
-15.) Offsets in Kafka.
-16.) ISR - In Sync Replicas
-17.) Commands to list topics, delete topic, Producer and consumer.
-18.) Consumer and Consumer group.
-
+ ```
+ 
+ # Kafka Interview Question
+ 
+ ```text
+ 1.) Offsets in Kafka. - Sianr Mas Group
+ 2.) ISR - In Sync Replicas - Sianr Mas Group
+ 3.) Commands to list topics, delete topic, Producer and consumer. - Sianr Mas Group
+ 4.) Consumer and Consumer group. - Sianr Mas Group
 ```
 
 # Hive Interview Question
@@ -52,13 +56,13 @@
 21.) Find the maximum and minimum value in a HashMap - KPMG
 22.) Reverse a String using recursion - KPMG
 23.) Difference between List, Set and HashMap - KPMG
-24.) Does integer allow a null value?
-25.) performance comparison of interface and abstract class
-26.) Diamond principle and SOLID
-27.) String pool
-28.) Block synchronization. difference between block level synchronizationa nd method synchronization.
-29.) Difference between ArrayList and LinkedList
-30.) Comparable and Comparator
+24.) Does integer allow a null value? - Sianr Mas Group
+25.) Performance comparison of Interface and abstract class - Sianr Mas Group
+26.) Diamond Principle and SOLID principle - Sianr Mas Group
+27.) String pool in Java - Sianr Mas Group
+28.) Block synchronization, difference between block level synchronizationa and method synchronization. - Sianr Mas Group
+29.) Difference between ArrayList and LinkedList - Sianr Mas Group
+30.) Comparable and Comparator - Sianr Mas Group
 
 ```
 

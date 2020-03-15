@@ -25,10 +25,10 @@ If the firewall is enabled on your system, make sure to open the SSH port:
 I. Download Install `.bin` from https://archive.cloudera.com/cm[X]
     `wget https://archive.cloudera.com/cm6/6.3.1/cloudera-manager-installer.bin`
 
-II. Change `cloudera-manager-installer.bin` to have execute permissions:
+II. Change `cloudera-manager-installer.bin` to have execute permissions <br/>
     `sudo chmod u+x cloudera-manager-installer.bin`
     
-III. Run the Installer
+III. Run the Installer <br/>
      `sudo ./cloudera-manager-installer.bin`    
 
 ## Red Hat, Fedora and CentOS

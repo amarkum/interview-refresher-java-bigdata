@@ -63,7 +63,10 @@
 28.) Block synchronization, difference between block level synchronizationa and method synchronization. - Sianr Mas Group
 29.) Difference between ArrayList and LinkedList - Sianr Mas Group
 30.) Comparable and Comparator - Sianr Mas Group
-
+31.) What is Runnable and Callable - Syncheron
+32.) What are Executor Services - Syncheron
+33.) What are the Ways to Implement a Thread - Syncheron
+34.) What is TreeMap used for? - Syncheron
 ```
 
 # SQL Interview Questions

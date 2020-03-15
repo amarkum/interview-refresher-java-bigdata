@@ -15,6 +15,9 @@ What is Linux - It is an operating system which runs on major computers and othe
 ### 1. Install SSH
 `sudo apt install openssh-server`
 
+Verify if `SSH` service is running <br/>
+`sudo systemctl status ssh`
+
 Ubuntu comes with a firewall configuration tool called UFW. <br/>
 If the firewall is enabled on your system, make sure to open the SSH port:
 
@@ -40,6 +43,15 @@ III. Run the Installer <br/>
 ### 5. Install GKSU
 You should use gksudo to launch graphical like gedit. To install it, simply type this command in terminal <br/>
 `sudo apt-get install gksu`
+
+### 6. SSH to root - Permission Denied
+By default, the SSH server denies password-based login for root. 
+
+`sudo gedit /etc/ssh/sshd_config` <br/>
+set `PermitRootLogin yes`
+
+Restart SSH Service
+`sudo service ssh restart`
 
 
 ## Red Hat, Fedora and CentOS

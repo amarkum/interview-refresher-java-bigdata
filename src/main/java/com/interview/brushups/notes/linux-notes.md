@@ -25,7 +25,7 @@ If the firewall is enabled on your system, make sure to open the SSH port:
 
 ### 2. Install Cloudera Manager
 
-I. Download Install `.bin` from https://archive.cloudera.com/cm[X]
+I. Download Install `.bin` from https://archive.cloudera.com/cm[X] <br/>
     `wget https://archive.cloudera.com/cm6/6.3.1/cloudera-manager-installer.bin`
 
 II. Change `cloudera-manager-installer.bin` to have execute permissions <br/>
@@ -33,9 +33,16 @@ II. Change `cloudera-manager-installer.bin` to have execute permissions <br/>
     
 III. Run the Installer <br/>
      `sudo ./cloudera-manager-installer.bin`  
+     
+OR Download Cloudera VM <br/>
+https://downloads.cloudera.com/demo_vm/virtualbox/cloudera-quickstart-vm-5.4.2-0-virtualbox.zip </br>
+
+OR use a Docker <br/>
+I. `docker pull cloudera/quickstart:latest` <br/>
+II. `docker run --hostname=quickstart.cloudera --privileged=true -t -i -p 8888:8888 -p 80:80 cloudera/quickstart /usr/bin/docker-quickstart`     
 
 ### 3. Uninstall Cloudera Manager
-`sudo sh /opt/cloudera/installer/uninstall-cloudera-manager.sh`       
+`sudo sh /opt/cloudera/installer/uninstall-cloudera-manager.sh`   
      
 ### 4. Install canberra-gtk-module
 `sudo apt install libcanberra-gtk-module libcanberra-gtk3-module`   
@@ -48,16 +55,32 @@ You should use gksudo to launch graphical like gedit. To install it, simply type
 By default, the SSH server denies password-based login for root. 
 
 `sudo gedit /etc/ssh/sshd_config` <br/>
-set `PermitRootLogin yes`
+
+```text
+PermitRootLogin yes
+#DenyUsers root
+AllowUsers root OtherUser
+```
 
 Restart SSH Service
 `sudo service ssh restart`
 
+### 7. Failed to detect root privileges - Cloudera
+`/etc/sudoers`
+
+```text
+cloudera ALL =(ALL) NOPASSWD: ALL
+```
 
 ## Red Hat, Fedora and CentOS
 
 
-
 ## Common Commands
+
+### 1. Set `root` password
+`sudo passwd root`
+
+### 2. Disable `root` account
+`sudo passwd -dl root`
 
 

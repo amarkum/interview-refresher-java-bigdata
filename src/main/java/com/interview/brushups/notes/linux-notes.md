@@ -3,7 +3,7 @@
 
 What is Linux - It is an operating system which runs on major computers and other device today.
 
-## Distributions
+## Distributions ~
 1. Debian, Ubuntu and Mint Distribution<br/>
  Supports `apt` for package installer
 
@@ -29,7 +29,18 @@ II. Change `cloudera-manager-installer.bin` to have execute permissions <br/>
     `sudo chmod u+x cloudera-manager-installer.bin`
     
 III. Run the Installer <br/>
-     `sudo ./cloudera-manager-installer.bin`    
+     `sudo ./cloudera-manager-installer.bin`  
+
+### 3. Uninstall Cloudera Manager
+`sudo sh /opt/cloudera/installer/uninstall-cloudera-manager.sh`       
+     
+### 4. Install canberra-gtk-module
+`sudo apt install libcanberra-gtk-module libcanberra-gtk3-module`   
+
+### 5. Install GKSU
+You should use gksudo to launch graphical like gedit. To install it, simply type this command in terminal <br/>
+`sudo apt-get install gksu`
+
 
 ## Red Hat, Fedora and CentOS
 

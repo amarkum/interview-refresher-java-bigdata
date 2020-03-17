@@ -28,6 +28,7 @@ public class WordCountMapReduce {
         job.setMapperClass(WordCountMapper.class);
         job.setCombinerClass(WordCountReducer.class);
         job.setReducerClass(WordCountReducer.class);
+        job.setJarByClass(WordCountMapReduce.class);
 
         /**
          * Set the output key and value class

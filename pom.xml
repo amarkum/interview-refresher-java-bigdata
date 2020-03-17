@@ -77,7 +77,7 @@
         <configuration>
             <archive>
                 <manifest>
-                    <mainClass>com.interview.brushups.UI</mainClass>
+<!--                    <mainClass>com.interview.brushups.UI</mainClass>-->
                 </manifest>
             </archive>
           <descriptorRefs>

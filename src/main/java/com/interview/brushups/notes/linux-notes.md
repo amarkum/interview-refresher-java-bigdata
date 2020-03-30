@@ -72,8 +72,10 @@ Restart SSH Service
 cloudera ALL =(ALL) NOPASSWD: ALL
 ```
 
-## Red Hat, Fedora and CentOS
+### 8. Too lookup space in particular directory by size
+`sudo du -hs /tmp /home /home/amarkum/* | sort -rh | head -10`
 
+## Red Hat, Fedora and CentOS
 
 ## Common Commands
 

@@ -1,7 +1,6 @@
 # React JS Notes
 
-
-## what is node?
+## What is node?
 It is an extension of JavaScript, and can be run on a machine.
 
 ## What is NPM?

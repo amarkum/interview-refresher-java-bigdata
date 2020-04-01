@@ -30,8 +30,3 @@
 
 ## Change the Editor
 `git config --global core.editor atom`
-
-
-# UNIX Commands
-Too lookup space in particular directory by size
-`sudo du -hs /tmp /home /home/amarkum/* | sort -rh | head -10`

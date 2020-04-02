@@ -21,7 +21,6 @@ CACHE TABLE fireCalls
 UNCACHE TABLE fireCalls
 ```
 
-
 ### Use of `CACHE LAZY` 
 
 ```sql
@@ -29,5 +28,4 @@ CACHE LAZY TABLE fireCalls
 ```
 
 ## Set the Number of Shuffle Partition
-
 ```SET spark.sql.shuffle.partition=8```

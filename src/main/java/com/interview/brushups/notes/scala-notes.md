@@ -6,11 +6,11 @@ SBT can manage dependency same as maven does.
 It also creates a build, runs the test and creates a JAR
 
 ## To generate a JAR
-sbt package
+`sbt package`
 
 ## To create a Fat or Uber JAR
-Install the `assembly plugin`
-Inside `/project/plugins.sbt` add
+Add the `assembly plugin` code
+Inside `/project/` folder as `/project/plugins.sbt` 
 
 ```scala
 resolvers += Resolver.url("bintray-sbt-plugins", url("http://dl.bintray.com/sbt/sbt-plugin-releases"))(Resolver.ivyStylePatterns)

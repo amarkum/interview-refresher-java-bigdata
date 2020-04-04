@@ -192,19 +192,18 @@ public static void printAll(List<String>... lists){
 4. Extension methods, now you can have static and default method into your interface <br/>
 5. Repeated annotation, allows you apply the same annotation multiple times on a type <br/>
 
-#### JAVA_HOME
-If JAVA_HOME is defined in our environment, then the above command will print it out.
+## JAVA_HOME
+If JAVA_HOME is defined in our environment, then the above command will print it out. <br/>
 `echo $JAVA_HOME`
 
 In MacOS
 `which java`
 Which probably just shows us `/usr/bin/java`.
 
-But, really this isn't very helpful since it's a symbolic link. 
-To unravel this, we'll use dirname and readlink;
+But, really this isn't very helpful since it's a symbolic link.<br/>
+To unravel this, we'll use dirname and readlink<br/>
 
 Linux:
-`dirname $(dirname $(readlink -f $(which javac)))`
-
+`dirname $(dirname $(readlink -f $(which javac)))`<br/>
 MacOS
 `$(dirname $(readlink $(which javac)))/java_home`

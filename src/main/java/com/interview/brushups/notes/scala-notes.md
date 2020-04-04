@@ -33,22 +33,22 @@ Look for the related Scala & SBT Version and the SBT assembly plugin version.
 ```
 
 ## SBT Commands
-`sbt`
+1. `sbt`<br/>
 Opens up SBT shell, where we can pass various parameters, e.g assembly, package etc. <br/>
 
-`sbt help`
+2. `sbt help`<br/>
 Presents us with a list of options<br/>
 
-`sbt package`
+3. `sbt package`<br/>
 Creates a JAR file containing the files in 
 `src/main/scala`, `src/main/java`, and resources in `src/main/resources`.
 
-`sbt run`
+4. `sbt run`<br/>
 Compiles your code, and runs the main class from your project.<br/>
 
-`sbt compile`
+5. `sbt compile`<br/>
 Compiles source code files that are in src/main/scala, src/main/java, and the root directory of the project.<br/>
 
-`sbt consoleQuick`
+6. `sbt consoleQuick`<br/>
 Starts the Scala interpreter (REPL) with the project dependencies on the classpath.<br/>
 

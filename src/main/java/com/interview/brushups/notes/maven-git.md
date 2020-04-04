@@ -39,4 +39,39 @@ git commit -m "first commit"
 git remote add origin https://github.com/amarkum/repss.git
 git push -u origin master
 ```
-                
+
+## SBT `.gitignore`
+```text
+# sbt
+# (may want to keep parts of 'project')
+bin/
+project/
+target/
+build/
+
+# eclipse
+build
+.classpath
+.project
+.settings
+.worksheet
+
+# intellij idea
+*.log
+*.iml
+*.ipr
+*.iws
+.idea
+
+# mac
+.DS_Store
+
+# other?
+.history
+.scala_dependencies
+.cache
+.cache-main
+
+#general
+*.class
+```

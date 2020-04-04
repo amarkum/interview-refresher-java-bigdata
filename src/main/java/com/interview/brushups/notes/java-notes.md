@@ -191,3 +191,20 @@ public static void printAll(List<String>... lists){
 3. Date and Time API, finally you have a solid and easy to use date and time library right into JDK <br/>
 4. Extension methods, now you can have static and default method into your interface <br/>
 5. Repeated annotation, allows you apply the same annotation multiple times on a type <br/>
+
+#### JAVA_HOME
+If JAVA_HOME is defined in our environment, then the above command will print it out.
+`echo $JAVA_HOME`
+
+In MacOS
+`which java`
+Which probably just shows us `/usr/bin/java`.
+
+But, really this isn't very helpful since it's a symbolic link. 
+To unravel this, we'll use dirname and readlink;
+
+Linux:
+`dirname $(dirname $(readlink -f $(which javac)))`
+
+MacOS
+`$(dirname $(readlink $(which javac)))/java_home`

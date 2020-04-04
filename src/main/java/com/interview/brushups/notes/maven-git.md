@@ -30,3 +30,13 @@
 
 ## Change the Editor
 `git config --global core.editor atom`
+
+## Remote Connection
+```text
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin https://github.com/amarkum/repss.git
+git push -u origin master
+```
+                

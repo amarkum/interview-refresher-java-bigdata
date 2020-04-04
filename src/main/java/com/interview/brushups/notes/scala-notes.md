@@ -31,3 +31,24 @@ Look for the related Scala & SBT Version and the SBT assembly plugin version.
 // set the scope to provided which is not required in Far JAR. %% takes mentioned Scala Version
  libraryDependencies += "org.apache.spark" %% "spark-sql" % "2.4.5" % "provided"
 ```
+
+## SBT Commands
+`sbt`
+Opens up SBT shell, where we can pass various parameters, e.g assembly, package etc. <br/>
+
+`sbt help`
+Presents us with a list of options<br/>
+
+`sbt package`
+Creates a JAR file containing the files in 
+`src/main/scala`, `src/main/java`, and resources in `src/main/resources`.
+
+`sbt run`
+Compiles your code, and runs the main class from your project.<br/>
+
+`sbt compile`
+Compiles source code files that are in src/main/scala, src/main/java, and the root directory of the project.<br/>
+
+`sbt consoleQuick`
+Starts the Scala interpreter (REPL) with the project dependencies on the classpath.<br/>
+

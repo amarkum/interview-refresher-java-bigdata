@@ -1,12 +1,9 @@
 # Scala Notes
 
-#### What is SBT?
+## What is SBT?
 SBT is the build tool for scala project, as we have Maven in Java Project.
 SBT can manage dependency same as maven does. 
 It also creates a build, runs the test and creates a JAR
-
-## To generate a JAR
-`sbt package`
 
 ## To create a Fat or Uber JAR
 Add the `assembly plugin` code

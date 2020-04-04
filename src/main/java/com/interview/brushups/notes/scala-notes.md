@@ -22,3 +22,12 @@ Hence, Go to : http://dl.bintray.com/sbt/sbt-plugin-releases/com.eed3si9n/sbt-as
 
 Look for the related Scala & SBT Version and the SBT assembly plugin version. 
 
+
+## Dependencies Resolve
+```scala
+// set the scope to compile to add up the dependency to Fat JAR
+ libraryDependencies += "org.apache.poi" % "poi" % "4.1.0" % "compile"
+
+// set the scope to provided which is not required in Far JAR. %% takes mentioned Scala Version
+ libraryDependencies += "org.apache.spark" %% "spark-sql" % "2.4.5" % "provided"
+```

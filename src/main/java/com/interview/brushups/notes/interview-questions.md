@@ -67,10 +67,23 @@
 32.) What are Executor Services - Syncheron
 33.) What are the Ways to Implement a Thread - Syncheron
 34.) What is TreeMap used for? - Syncheron
+35.) What is the difference between Abstract class and Interface - GlobalLogic
+36.) How can we implement Immutable class - GlobalLogic
+37.) What is Concurrent HashMap - Virtusa
+38.) What is the difference between HashSet and TreeSet - Virtusa
+39.) Why do we use lambda expression in Java? - Virtusa
+40.) Why do we use Stream API? - Virtusa
+41.) What will happen if we make 'public static void main()' as private? - Virtusa
+42.) What are Executor Services in Java, how do we Initialize them? - Virtusa
+43.) How to create a Singleton class in java for multi-threading environment? - Virtusa
+44.) What is try-with-resource - Virtusa
 ```
 
 # SQL Interview Questions
 ```text
 1.) Find nth Salary from salary table - Impetus
 2.) Find the sum of spend by an ID - KPMG
+3.) what is PRIMARY Key and UNIQUE key - Virtusa
+4.) Can PRIMARY key have a NULL value - Virtusa
+5.) Difference between INNER JOIN and OUTER JOIN - Virtusa
 ```

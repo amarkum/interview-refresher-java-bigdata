@@ -1,64 +1,53 @@
 package com.interview.brushups.kafka;
 
 import org.apache.kafka.clients.producer.KafkaProducer;
+import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.clients.producer.ProducerRecord;
+import org.apache.kafka.common.serialization.StringSerializer;
 
 import java.util.Properties;
 import java.util.Scanner;
 
 public class ProducerClient {
 
-    public static void main(String args[]) throws Exception{
-
-        int count=0;
-
-        //Assign topicName to string variable
-        String topicName = "hello-topic";
+    public static void main(String args[]) throws Exception {
 
         // create instance for properties to access producer configs
         Properties props = new Properties();
 
         //Assign localhost id
-        props.put("bootstrap.servers", "localhost:9092");
+        props.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092");
 
         //Set acknowledgements for producer requests.
-        props.put("acks", "all");
+        props.put(ProducerConfig.ACKS_CONFIG, "all");
 
         //If the request fails, the producer can automatically retry,
-        props.put("retries", 10000000);
+        props.put(ProducerConfig.RETRIES_CONFIG, 10000000);
 
         //Specify buffer size in config
-        //props.put("batch.size", 163084);
-        props.put("linger.ms", 1000);
-
-        //Reduce the no of requests less than 0
-        props.put("linger.ms", 1);
-
-        props.put("enable.idempotence", true);
+        props.put(ProducerConfig.LINGER_MS_CONFIG, 1000);
 
         //The buffer.memory controls the total amount of memory available to the producer for buffering.
-        props.put("buffer.memory", 33554432);
+        props.put(ProducerConfig.BUFFER_MEMORY_CONFIG, 33554432);
+        props.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
+        props.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
 
-        props.put("key.serializer", "org.apache.kafka.common.serialization.StringSerializer");
+        // Create a Kafka Producer, put in the configuration properties.
+        KafkaProducer < String, String > producer = new KafkaProducer < String, String > (props);
 
-        props.put("value.serializer", "org.apache.kafka.common.serialization.StringSerializer");
+        //Assign topicName to string variable
+        String topicName = "hello-topic";
 
-        org.apache.kafka.clients.producer.Producer<String, String> producer = new KafkaProducer<String, String>(props);
+        Scanner scanner = new Scanner(System.in); // Create a Scanner object
+        System.out.println("Enter # of msg to produce");
+        Integer number = scanner.nextInt(); // Read user input
 
-        boolean valid = true;
-
-        while(valid) {
-            Scanner myObj = new Scanner(System.in);  // Create a Scanner object
-            System.out.println("Enter # of msg to produce");
-            String number = myObj.nextLine();  // Read user input
-            int num = Integer.valueOf(number);
-            for(int i = 1; i <= num; i++) {
-                count++;
-                System.out.println("Key : "+count + " | Value : "+"Message "+Integer.toString(count));
-                producer.send(new ProducerRecord<String, String>(topicName, Integer.toString(count), "Message "+Integer.toString(count)));
-                producer.close();
-            }
+        int count = 0;
+        for (int i = 1; i <= number; i++) {
+            count++;
+            ProducerRecord < String, String > record = new ProducerRecord(topicName, Integer.toString(count), "Hello " + count);
+            producer.send(record);
         }
-
+        producer.close();
     }
 }

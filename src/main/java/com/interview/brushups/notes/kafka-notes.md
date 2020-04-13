@@ -90,3 +90,52 @@ Example<br/>
  - ZooKeeper operates with an odd number of server (3,5,7)
  - ZooKeeper has a leader(handle writes), the rest of the servers are follower(handle reads)
  - ZooKeeper does not store consumer offset from > 0.10
+ 
+ 
+ ## How to install and run Kafka?
+ Apache Kafka also uses zookeeper server for synchronisation service.\
+ So we must be sure we have already installed and running zookeeper service before. \
+ If you have started the `confluent` Kafka will already be running and using the `zookeeper` which confluent starts.
+ Hence, we may want to skip this step as well.
+ 
+ #### Download and Extract
+ Download the latest binary distribution of [kafka](https://www.apache.org/dyn/closer.cgi?path=/kafka/)
+ 
+ e.g.[kafka_2.11-2.2.0.tg](http://mirrors.estointernet.in/apache/kafka/2.2.0/kafka_2.11-2.2.0.tgz)
+ 
+ 1) Unzip it to your home folder e.g. `/Users/ak054561/` through MacOS default extract utility or you may use relevant command line tools to extract.
+ 2) Rename the folder to `kafka` from `kafka.XX.XX.XX`
+ 3) Edit already existing file in `kafka/conf/` folder `server.properties` and make sure below is existing in properties file. (If already existing, ignore.)
+ ```
+ zookeeper.connect=localhost:2181
+ ```
+ 4) Edit `zookeeper.properties` file in `kafka/conf/` directory and set 
+ ```
+ dataDir=/Users/ak054561/data/zookeeper
+ ```
+ 
+ ## Test Kafka Installation
+ 1) Open up a new terminal, navigate to kafka folder with
+ ```
+ $ cd ~
+ $ cd kafka
+ $ bin/kafka-server-start.sh -daemon config/server.properties
+ ```
+ 
+ 2) Open up a new terminal, navigate to kafka folder and create a `topic`
+ ```
+ bin/kafka-topics.sh --create --zookeeper localhost:2181 --topic test-topic --partitions 2 --replication-factor 1
+ ```
+ 3) Produce a message. \
+     Open up a new terminal, navigate to kafka folder and produce a message on topic
+ ```
+ bin/kafka-console-producer.sh --broker-list localhost:9092 --topic test-topic
+ ```
+ 4) Consume a message. \
+     Open up a new terminal, navigate to kafka folder and consume a message on topic from beginning
+ 
+ ```
+ bin/kafka-console-consumer.sh --zookeeper localhost:2181 --topic test-topic --from-beginning
+ ```
+ \
+ <image src="https://i.ibb.co/VDNCqgD/04-kafka-images.png" width="640" height="340">

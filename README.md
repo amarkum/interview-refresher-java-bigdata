@@ -17,9 +17,12 @@ This repository has code snippets and notes related to preparation for Interview
 12. MapReduce	 - Few Simple programs of MapReduce
 13. Marker Interface - Code Snippet of Marker Interface in Java 
 14. Multithreading - Snippet of Multithreading
-15. Notes - Contains an overall notes of Java, Big Data, Hive, Interview Questions etc.	
-16. Recursion - Few Programs related to recursion
-17. Spark - Spark Program - e.g WordCount Problem
-18. Strings Concept - Concept related to Strings
+15. Recursion - Few Programs related to recursion
+16. Spark - Spark Program - e.g WordCount Problem
+17. Strings Concept - Concept related to Strings
 
-Please feel free to send a Pull Request to the repository.
+## Resources
+1. Images - Contains Images for various usage - for Image in for README.md, etc. 
+2. Notes - Contains an overall notes of Java, Big Data, Hive, Interview Questions etc.	
+
+#### Please feel free to send a Pull Request to the repository.

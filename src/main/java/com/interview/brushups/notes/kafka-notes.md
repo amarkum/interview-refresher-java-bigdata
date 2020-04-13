@@ -98,6 +98,20 @@ Example<br/>
  If you have started the `confluent` Kafka will already be running and using the `zookeeper` which confluent starts.
  Hence, we may want to skip this step as well.
  
+ ## Kafka Config
+ 
+ ### Idempotence
+`enable.idempotence=true` && `min.insync.replicase=2`
+- Implies `acks=all`, `retries=MAX_INT`, `max.in.flight.requests.per.connection=5`<br/>
+This make sure consumer does not commit the message twice, and maintains key level ordering.
+
+### linger.ms & batch.size
+-  by default, kafka tries to send record as soon as possible.
+    - it will have upto 5 requests in flight, meaning upto 5 messages individually sent at the same time
+    - after this, if more message has to be sent, kafka starts batching these message.
+- batching allow throughput and maintains low latency.
+    
+ 
  #### Download and Extract
  Download the latest binary distribution of [kafka](https://www.apache.org/dyn/closer.cgi?path=/kafka/)
  

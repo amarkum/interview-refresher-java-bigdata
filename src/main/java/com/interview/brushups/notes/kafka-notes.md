@@ -62,3 +62,31 @@ Example<br/>
 - If we have 2 consumer, 1 can read from 1 partition, and 1 can read from 2.
 - If we have 3 consumer, each can read from exclusive partition.
 - If we have 4 consumer, 3 can read from exclusive partition, and 1 can be idle.
+
+## Offsets
+- `__consumer_offset` is the topic to store committed offset in the newer kafka version
+- when a consumer in a group has processed the data, received from kafka, it should be commits the offset.
+
+### Delivery Semantics
+1. At most once<br>
+ - Offsets are committed as soon as the message is received<br/>
+ - If the processing goes wrong, message will be lost
+ 
+ 2. At least once<br/>
+ - offsets are committed after the message is processed.
+ - If the processing goes wrong, the message will be read again.
+ - This can lead to duplicate processing of the message, stream processor must be able to handle it.
+ 
+ ## Kafka Broker Discovery
+ - Every kafka broker is also called as "bootstrap server"
+ - If you connect to one broker, you will be connected to entire cluster
+ - Each broker knows about all brokers, topics and partitions
+ 
+ ## ZooKeeper
+ - ZooKeeper manages brokers
+ - ZooKeeper helps in leader election for partition
+ - ZooKeeper sends notification to Kafka in case of changes<br/>
+ (new topic, broker dies, broker is back, topic deleted etc.)
+ - ZooKeeper operates with an odd number of server (3,5,7)
+ - ZooKeeper has a leader(handle writes), the rest of the servers are follower(handle reads)
+ - ZooKeeper does not store consumer offset from > 0.10

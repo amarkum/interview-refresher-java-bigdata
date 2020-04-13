@@ -110,6 +110,9 @@ This make sure consumer does not commit the message twice, and maintains key lev
     - it will have upto 5 requests in flight, meaning upto 5 messages individually sent at the same time
     - after this, if more message has to be sent, kafka starts batching these message.
 - batching allow throughput and maintains low latency.
+
+### Hashing formula
+By default key is hashed based on "murmur2" algorithm
     
  
  #### Download and Extract

@@ -1,4 +1,4 @@
-# Java & Big Data Brushup
+# Java,SQL,DS & Big Data Brushup
 This repository has code snippets and notes related to preparation for Interview in Java & Big Data.
 
 ## Content

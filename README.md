@@ -23,6 +23,6 @@ This repository has code snippets and notes related to preparation for Interview
 
 ## Resources
 1. Images - Contains Images for various usage - for Image in for README.md, etc. 
-2. Notes - Contains an overall notes of Java, Big Data, Hive, Interview Questions etc.	
+2. Notes - Contains an overall notes of Java, Big Data, SQL, Interview Questions etc.	
 
 #### Please feel free to send a Pull Request to the repository.

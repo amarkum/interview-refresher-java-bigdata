@@ -7,6 +7,8 @@ It is an extension of JavaScript, and can be run on a machine.
 NPM is a package manager for Node JS
 It can download different modules from existing library.
 
+Run `npm install -g npm` to update!   
+
 ## How to download Modules?
 While installing module, we must pas `--save` argument, so that it gets dependency is added to `package.json` <br/>
 So, when we run an `npm run build`, the dependency required gets installed.

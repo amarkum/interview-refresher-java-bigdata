@@ -1,5 +1,5 @@
 # Java, SQL, Data Structure & Algorithm & Big Data Brushup
-This repository has code snippets and notes related to preparation for Interview in Java & Big Data.
+one-stop repo to lookup for code snippets of core java concepts, sql, data structures as well as big data. It also consists of informative notes on multi-tech stack 
 
 ## Content
 

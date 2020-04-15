@@ -3,6 +3,21 @@ package com.interview.brushups.datastructures.linkedlist;
 public class Caller {
 
     public static void main(String[] args) {
+
+        LList<String> lList = new LList<>();
+        lList.addAtEnd("2");
+        lList.addAtEnd("4");
+        lList.addAtEnd("6");
+        lList.addAtEnd("7");
+        lList.addAtEnd("9");
+        lList.addAtEnd("16");
+        lList.addAtEnd("56");
+        lList.addAtEnd("21");
+        lList.addAtEnd("23");
+        lList.printAll();
+        lList.midToLast();
+
+
         LinkedList<String> linkedList = new LinkedList<>();
         linkedList.addAtHead("2");
         linkedList.addAtHead("4");

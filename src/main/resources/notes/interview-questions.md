@@ -1,4 +1,6 @@
 # Big Data Interview Question
+
+## Hadoop
 ```text
  1.) What is Combiner? - Legato, Impetus
  2.) What is the difference between hadoop fs, hadoop dfs, hdfs dfs command? - Legato
@@ -16,7 +18,7 @@
  14.) HBase Shell to retrieve data from Column Family. - Sear Holding
  ```
  
- # Kafka Interview Question
+ ## Kafka 
  
  ```text
  1.) Offsets in Kafka. - Sianr Mas Group
@@ -25,7 +27,7 @@
  4.) Consumer and Consumer group. - Sianr Mas Group
 ```
 
-# Hive Interview Question
+## Hive 
 ```text
 1.) What is Static Partitioning and Dynamic Partitioning in HIVE? - Yodlee
 2.) What are datatypes in Hive? - UST Global

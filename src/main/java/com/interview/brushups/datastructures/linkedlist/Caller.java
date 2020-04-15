@@ -15,8 +15,6 @@ public class Caller {
         lList.addAtEnd("21");
         lList.addAtEnd("23");
         lList.printAll();
-        lList.midToLast();
-
 
         LinkedList<String> linkedList = new LinkedList<>();
         linkedList.addAtHead("2");
@@ -34,7 +32,7 @@ public class Caller {
         System.out.println(linkedList.detectLoop());
 
 
-        LinkedListCustom<String> linkedListCustom = new LinkedListCustom<>();
+        LinkedList<String> linkedListCustom = new LinkedList<>();
         linkedListCustom.addAtEnd("2");
         linkedListCustom.addAtEnd("4");
         linkedListCustom.addAtEnd("6");

@@ -4,50 +4,35 @@ public class Caller {
 
     public static void main(String[] args) {
 
-        LList<String> lList = new LList<>();
-        lList.addAtEnd("2");
-        lList.addAtEnd("4");
-        lList.addAtEnd("6");
-        lList.addAtEnd("7");
-        lList.addAtEnd("9");
-        lList.addAtEnd("16");
-        lList.addAtEnd("56");
-        lList.addAtEnd("21");
-        lList.addAtEnd("23");
-        lList.printAll();
-
         LinkedList<String> linkedList = new LinkedList<>();
         linkedList.addAtHead("2");
         linkedList.addAtHead("4");
         linkedList.addAtHead("6");
         linkedList.addAtHead("7");
+
+        //delete by value from linkedlist
+        linkedList.deleteByValue("4");
+
+        //print from middle to last
+        linkedList.midToLast();
+
+        //reverse the linkedlist
         linkedList.reverse();
+
+        //prints the size of the linkedlist
         System.out.println(linkedList.size());
+
+        //print all elements of the linkedlist
         linkedList.printAll();
+
+        //insert at end of the linkedlist
         linkedList.addAtEnd("15");
         linkedList.addAtEnd("9");
         linkedList.addAtEnd("23");
         linkedList.addAtEnd("2");
+
+        //create and detect a loop in the linkedlist
         linkedList.createLoop();
         System.out.println(linkedList.detectLoop());
-
-
-        LinkedList<String> linkedListCustom = new LinkedList<>();
-        linkedListCustom.addAtEnd("2");
-        linkedListCustom.addAtEnd("4");
-        linkedListCustom.addAtEnd("6");
-        linkedListCustom.addAtEnd("7");
-        linkedListCustom.addAtEnd("17");
-        linkedListCustom.addAtEnd("109");
-        linkedListCustom.addAtEnd("121");
-        linkedListCustom.insertAfter("45","2");
-        linkedListCustom.deleteByValue("4");
-        System.out.println("Size of List : "+linkedListCustom.size());
-        //linkedListCustom.createLoop();
-        System.out.println("LinkedList has Loop : "+linkedListCustom.detectLoop());
-        System.out.println("Mid element : "+ linkedListCustom.midElement());
-        linkedListCustom.printAll();
-        System.out.println("Size of LinkedList using Recursion : "+linkedListCustom.lengthOfList(linkedListCustom.headNode));
-
     }
 }

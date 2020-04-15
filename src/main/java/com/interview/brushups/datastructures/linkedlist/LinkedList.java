@@ -1,7 +1,6 @@
 package com.interview.brushups.datastructures.linkedlist;
 
 /**
- *
  * Commonly asked LinkedList Interview Question
  * 1. Reverse a linked list
  * 2. Detect loop in a linked list
@@ -10,22 +9,13 @@ package com.interview.brushups.datastructures.linkedlist;
  */
 public class LinkedList<T> {
 
-    public LinkedList() {
-        size = 0;
-        headNode = null;
-    }
-
     // size should be public, as it needs to accessed easily
     public int size;
     // headNode is the node which points to all other node
     Node headNode;
-
-    /**
-     * @param <T> All the class and attribute should be public.
-     */
-    public class Node<T> {
-        public T data;
-        public Node nextNode;
+    public LinkedList() {
+        size = 0;
+        headNode = null;
     }
 
     /**
@@ -190,7 +180,7 @@ public class LinkedList<T> {
     /**
      * This will reverse the LinkedList
      */
-    public void reverseList() {
+    public void reverse() {
 
         //previous node, to keep track of the previous node, to set the pointer to previous node
         Node previous = null;
@@ -244,10 +234,11 @@ public class LinkedList<T> {
 
     /**
      * Method which can find the middle of the element.
+     *
      * @param <T>
      * @return
      */
-    public <T>Object midElement() {
+    public <T> Object midElement() {
         Node slow = headNode;
         Node fast = headNode;
 
@@ -259,8 +250,7 @@ public class LinkedList<T> {
     }
 
     /* Returns count of nodes in linked list */
-    public int lengthOfList(Node headNode)
-    {
+    public int lengthOfList(Node headNode) {
         // Base case
         if (headNode == null) {
             return 0;
@@ -273,24 +263,23 @@ public class LinkedList<T> {
 
     /**
      * Method which prints data from middle to  last.
+     *
      * @param <T>
      * @return
      */
     public void midToLast() {
 
-     Node lastNode = headNode;
-     Node midNode = headNode;
+        Node lastNode = headNode;
+        Node midNode = headNode;
 
-        if (headNode != null)
-        {
-            while ( lastNode != null && lastNode.nextNode != null )
-            {
+        if (headNode != null) {
+            while (lastNode != null && lastNode.nextNode != null) {
                 lastNode = lastNode.nextNode.nextNode;
                 midNode = midNode.nextNode;
             }
         }
 
-        while ( midNode.nextNode != null) {
+        while (midNode.nextNode != null) {
             System.out.print(midNode.data);
             midNode = midNode.nextNode;
         }
@@ -298,22 +287,10 @@ public class LinkedList<T> {
     }
 
     /**
-     * reverses a LinkedList
+     * @param <T> All the class and attribute should be public.
      */
-    public void reverse(){
-        Node previous = null; //To keep track of the previous element, will be used in swapping links
-        Node current = headNode; //firstElement
-        Node next = null;
-
-        //While Traversing the list, swap links
-        while (current != null) {
-            next = current.nextNode; //stash the next element of the node
-            current.nextNode = previous; //current node's nextNode points to Previous node
-            previous = current; //previous reference takes current reference
-            current = next; // make next node as current
-        }
-        //Linking Head Node with the new First Element
-        headNode = previous;
+    public class Node<T> {
+        public T data;
+        public Node nextNode;
     }
-
 }

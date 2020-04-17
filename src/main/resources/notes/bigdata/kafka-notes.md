@@ -92,6 +92,19 @@ Example<br/>
  - ZooKeeper does not store consumer offset from > 0.10
  
  
+ ## Kafka CLI Commands
+ 1. Create a Topic<br/>
+ `kafka-topics.sh --create --topic test-topic --partitions 2 --replication-factor 1 --zookeeper localhost:2181`
+ 
+ 2. List all Topics
+ `kakfa-topics.sh --list --zookeeper localhost:2181`
+ 
+ 3. Describe a Topic
+ `kakfa-topics.sh  --describe --topic test-topic --zookeeper localhost:2181`
+ 
+ 4. Delete a Topic
+ `kakfa-topics.sh --delete --topic test-topic --zookeeper localhost:2181`
+ 
  ## How to install and run Kafka?
  Apache Kafka also uses zookeeper server for synchronisation service.\
  So we must be sure we have already installed and running zookeeper service before. \

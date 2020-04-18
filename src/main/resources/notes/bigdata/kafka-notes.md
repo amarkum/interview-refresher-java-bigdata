@@ -93,10 +93,10 @@ Example<br/>
  
  
  ## Kafka CLI Commands
- 1. Create a Topic<br/>
+#### 1. Create a Topic<br/>
  `kafka-topics.sh --create --topic test-topic --partitions 2 --replication-factor 1 --zookeeper localhost:2181`
  
- 2. List all Topics
+#### 2. List all Topics
  
  DEPRECATED<br/>
  `./kafka-topics --list --zookeeper localhost:2181`<br/>
@@ -104,7 +104,7 @@ Example<br/>
  NEW<br/>
  `./kafka-topics --list --bootstrap-server localhost:9092`<br/>
  
- 3. Describe a Topic
+#### 3. Describe a Topic
  
   DEPRECATED<br/>
  `./kafka-topics --describe --topic test-topic --zookeeper localhost:2181`<br/>
@@ -112,7 +112,7 @@ Example<br/>
   NEW<br/>
  `./kafka-topics.sh  --describe --topic test-topic --bootstrap-server localhost:2181`
  
- 4. Delete a Topic
+#### 4. Delete a Topic
  
   DEPRECATED<br/>
  `./kafka-topics --delete --topic test-topic --zookeeper localhost:2181`<br/>
@@ -120,15 +120,15 @@ Example<br/>
   NEW<br/>
  `./kafka-topics --delete --topic test-topic --bootstrap-server localhost:2181`<br/>
  
- 5. Produce to a Topic
+#### 5. Produce to a Topic
  
   DEPRECATED<br/>
-  `./kafka-console-producer --broker-list localhost:9092 --topic test-topic`<br/>
+  `./kafka-console-producer  --topic test-topic --broker-list localhost:9092`<br/>
    
   NEW<br/>
-  `./kafka-console-producer --bootstrap-server localhost:9092 --topic test-topic`<br/>
+  `./kafka-console-producer --topic test-topic --bootstrap-server localhost:9092 `<br/>
 
-6. Consume from a Topic
+#### 6. Consume from a Topic
    `./kafka-console-consumer --topic test-topic --bootstrap-server localhost:9092`
  
  ## How to install and run Kafka?

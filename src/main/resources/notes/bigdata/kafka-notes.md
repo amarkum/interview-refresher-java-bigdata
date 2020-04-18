@@ -159,7 +159,7 @@ It also tells us, which consumer are at which IP.<br/>
 While, it's inactive, it displays the lag and the offset of the partition.
 
 #### 3. Consumer Group - Reset Offset<br/>
-`./kafka-consumer-groups --group cg1 --bootstrap-server localhost:9092 --reset-offsets --to-earliest --topic test-topic`
+`./kafka-consumer-groups --group cg1 --bootstrap-server localhost:9092 --reset-offsets --to-earliest --topic test-topic --execute`
 
 Note : We can use `--reset-offsets` flag to reset offset with several options available.<br/>
 We can reset offsets of a specific topic in consumer group by `--topic test-topic` OR `--all-topics` for all Topics

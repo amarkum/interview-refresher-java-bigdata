@@ -72,17 +72,17 @@ Example<br/>
  - Offsets are committed as soon as the message is received<br/>
  - If the processing goes wrong, message will be lost
  
- 2. At least once<br/>
+2. At least once<br/>
  - offsets are committed after the message is processed.
  - If the processing goes wrong, the message will be read again.
  - This can lead to duplicate processing of the message, stream processor must be able to handle it.
  
- ## Kafka Broker Discovery
+## Kafka Broker Discovery
  - Every kafka broker is also called as "bootstrap server"
  - If you connect to one broker, you will be connected to entire cluster
  - Each broker knows about all brokers, topics and partitions
  
- ## ZooKeeper
+## ZooKeeper
  - ZooKeeper manages brokers
  - ZooKeeper helps in leader election for partition
  - ZooKeeper sends notification to Kafka in case of changes<br/>
@@ -92,70 +92,86 @@ Example<br/>
  - ZooKeeper does not store consumer offset from > 0.10
  
  
- ## Kafka CLI Commands
+## Kafka CLI Commands
 #### 1. Create a Topic<br/>
- DEPRECATED<br/>
- `./kafka-topics --create --topic test-topic --partitions 3 --replication-factor 1 --zookeeper localhost:2181`<br/>
+DEPRECATED<br/>
+`./kafka-topics --create --topic test-topic --partitions 3 --replication-factor 1 --zookeeper localhost:2181`<br/>
  
  NEW<br/>
- `./kafka-topics --create --topic test-topic --partitions 3 --replication-factor 1 --bootstrap-server localhost:9092`
+`./kafka-topics --create --topic test-topic --partitions 3 --replication-factor 1 --bootstrap-server localhost:9092`
  
 #### 2. List all Topics
  
- DEPRECATED<br/>
- `./kafka-topics --list --zookeeper localhost:2181`<br/>
+DEPRECATED<br/>
+`./kafka-topics --list --zookeeper localhost:2181`<br/>
  
- NEW<br/>
- `./kafka-topics --list --bootstrap-server localhost:9092`<br/>
+NEW<br/>
+`./kafka-topics --list --bootstrap-server localhost:9092`<br/>
  
 #### 3. Describe a Topic
  
-  DEPRECATED<br/>
- `./kafka-topics --describe --topic test-topic --zookeeper localhost:2181`<br/>
+DEPRECATED<br/>
+`./kafka-topics --describe --topic test-topic --zookeeper localhost:2181`<br/>
  
-  NEW<br/>
- `./kafka-topics.sh  --describe --topic test-topic --bootstrap-server localhost:2181`
+NEW<br/>
+`./kafka-topics.sh  --describe --topic test-topic --bootstrap-server localhost:2181`
  
 #### 4. Delete a Topic
  
-  DEPRECATED<br/>
- `./kafka-topics --delete --topic test-topic --zookeeper localhost:2181`<br/>
+DEPRECATED<br/>
+`./kafka-topics --delete --topic test-topic --zookeeper localhost:2181`<br/>
  
-  NEW<br/>
- `./kafka-topics --delete --topic test-topic --bootstrap-server localhost:2181`<br/>
+NEW<br/>
+`./kafka-topics --delete --topic test-topic --bootstrap-server localhost:2181`<br/>
  
 #### 5. Produce to a Topic
  
- `./kafka-console-producer  --topic test-topic2 --broker-list localhost:9092`<br/>
+`./kafka-console-producer  --topic test-topic2 --broker-list localhost:9092`<br/>
    
 #### 6. Consume from a Topic
-  `./kafka-console-consumer --topic test-topic --bootstrap-server localhost:9092`
+`./kafka-console-consumer --topic test-topic --bootstrap-server localhost:9092`
    
 ### 6. Consume from a Consumer Group from Topic   
  
- `./kafka-console-consumer --topic test-topic --bootstrap-server localhost:9092 --group cg1`
+`./kafka-console-consumer --topic test-topic --bootstrap-server localhost:9092 --group cg1`
  
 ### 7. Consume from a Consumer Group from Beginning
 `./kafka-console-consumer --topic test-topic --bootstrap-server localhost:9092 --group cg2 --from-beginning`<br/>
- 
-If we start reading to new consumer group, we should read from the very beginning, and kafka commits the offset.
+
+If we start reading to new consumer group, we should read from the very beginning, and kafka commits the offset.<br/>
 When it has finished reading from beginning. Now if are consumer(s) goes down, and kafka still produces some message<br/>
-It will clear off the backlog message by reading it, and read the ew upcoming messages.
+It will clear off the backlog message by reading it, and read the ew upcoming messages.<br/>
+
+## Kafka Consumer Group CLI Commands
  
+#### 1. List all the Consumer Groups<br/>
+`./kakfa-consumer-groups --list --bootstrap-server localhost:9092`
+
+Note : When we read a message from a topic, it's always read as a part of consumer group. <br/>
+We may not enter a consumer group while reading a topic, but consumer group is always created. <br/>
+When we list all consumer group using the CLI command, we can see some unknown consumer group created by kafka.<br/>
+
+#### 2. Describe a Specific Consumer Group<br/>
+`./kafka-consumer-groups --describe --group cg1 --bootstrap-server localhost:9092`
+ 
+Note : While consumer(s) are actively consuming messages, we can see which consumer are consuming which partition.<br/>
+It also tells us, which consumer are at which IP.<br/>
+While, it's inactive, it displays the lag and the offset of the partition.
+
 ## Can 1 Consumer Group subscribe to 2 different Topics?
 Yes, this can possibly exists.
 But the message will be again split into the consumer who has subscribed to a specific partition
 There is no interference.
 
- ## How to install and run Kafka?
- Apache Kafka also uses zookeeper server for synchronisation service.\
- So we must be sure we have already installed and running zookeeper service before. \
- If you have started the `confluent` Kafka will already be running and using the `zookeeper` which confluent starts.
- Hence, we may want to skip this step as well.
+## How to install and run Kafka?
+Apache Kafka also uses zookeeper server for synchronisation service.\
+So we must be sure we have already installed and running zookeeper service before. \
+If you have started the `confluent` Kafka will already be running and using the `zookeeper` which confluent starts.
+Hence, we may want to skip this step as well.
  
- ## Kafka Config
+## Kafka Config
  
- ### Idempotence
+### Idempotence
 `enable.idempotence=true` && `min.insync.replicase=2`
 - Implies `acks=all`, `retries=MAX_INT`, `max.in.flight.requests.per.connection=5`<br/>
 This make sure consumer does not commit the message twice, and maintains key level ordering.
@@ -169,9 +185,8 @@ This make sure consumer does not commit the message twice, and maintains key lev
 ### Hashing formula
 By default key is hashed based on "murmur2" algorithm
     
- 
- #### Download and Extract
- Download the latest binary distribution of [kafka](https://www.apache.org/dyn/closer.cgi?path=/kafka/)
+#### Download and Extract
+Download the latest binary distribution of [kafka](https://www.apache.org/dyn/closer.cgi?path=/kafka/)
  
  e.g.[kafka_2.11-2.2.0.tg](http://mirrors.estointernet.in/apache/kafka/2.2.0/kafka_2.11-2.2.0.tgz)
  
@@ -186,7 +201,7 @@ By default key is hashed based on "murmur2" algorithm
  dataDir=/Users/ak054561/data/zookeeper
  ```
  
- ## Test Kafka Installation
+## Test Kafka Installation
  1) Open up a new terminal, navigate to kafka folder with
  ```
  $ cd ~

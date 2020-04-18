@@ -195,6 +195,15 @@ By default key is hashed based on "murmur2" algorithm
 
 ### 1. Producer API
 ```java
+// create instance for properties to access producer configs
+Properties props = new Properties();
+
+//Map BOOTSTRAP_SERVERS_CONFIG from ProducerConfig to properties
+props.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092");
+
+// Define a Topic Name
+String topicName = "hello-topic";
+
 // Create a Kafka Producer, put in the configuration properties.
 KafkaProducer<String, String> producer = new KafkaProducer<String, String>(props);
    
@@ -206,8 +215,16 @@ producer.send(record, new Callback()
 ```   
 
 ### 2. Consumer API
+```java
+// create instance for properties to access producer configs
+Properties props = new Properties();
 
-#### Install & Run Kafka
+//Map BOOTSTRAP_SERVERS_CONFIG from ProducerConfig to properties
+props.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092");
+
+```
+
+## Install & Run Kafka
 Download the latest binary distribution of [kafka](https://www.apache.org/dyn/closer.cgi?path=/kafka/)
  
  e.g.[kafka_2.11-2.2.0.tg](http://mirrors.estointernet.in/apache/kafka/2.2.0/kafka_2.11-2.2.0.tgz)

@@ -158,6 +158,12 @@ Note : While consumer(s) are actively consuming messages, we can see which consu
 It also tells us, which consumer are at which IP.<br/>
 While, it's inactive, it displays the lag and the offset of the partition.
 
+#### 3. Consumer Group - Reset Offset<br/>
+`./kafka-consumer-groups --group cg1 --bootstrap-server localhost:9092 --reset-offsets --to-earliest --topic test-topic`
+
+Note : We can use `--reset-offsets` flag to reset offset with several options available.<br/>
+We can reset offsets of a specific topic in consumer group by `--topic test-topic` OR `--all-topics` for all Topics
+
 ## Can 1 Consumer Group subscribe to 2 different Topics?
 Yes, this can possibly exists.
 But the message will be again split into the consumer who has subscribed to a specific partition

@@ -1,5 +1,6 @@
 package com.interview.brushups.kafkaspark;
 
+import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.apache.kafka.common.serialization.StringDeserializer;
 import org.apache.spark.SparkConf;
@@ -19,11 +20,15 @@ public class KafkaSparkStream {
 
     public static void main(String[] args) throws InterruptedException {
         Map<String, Object> kafkaParams = new HashMap<>();
-        kafkaParams.put("bootstrap.servers", "localhost:9092");
-        kafkaParams.put("key.deserializer", StringDeserializer.class);
-        kafkaParams.put("value.deserializer", StringDeserializer.class);
-        kafkaParams.put("group.id", "consumer-group");
-        kafkaParams.put("enable.auto.commit", true);
+        kafkaParams.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092");
+        kafkaParams.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);
+        kafkaParams.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);
+        kafkaParams.put(ConsumerConfig.GROUP_ID_CONFIG, "consumer-group");
+        kafkaParams.put(ConsumerConfig.ENABLE_AUTO_COMMIT_CONFIG, true);
+
+        kafkaParams.put(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, "latest");
+        kafkaParams.put(ConsumerConfig.AUTO_COMMIT_INTERVAL_MS_CONFIG, "1000");
+        kafkaParams.put(ConsumerConfig.SESSION_TIMEOUT_MS_CONFIG, "300000");
 
         Collection<String> topics = Arrays.asList("test-topic");
 
@@ -35,7 +40,12 @@ public class KafkaSparkStream {
         JavaInputDStream<ConsumerRecord<String, String>> inputDStream = KafkaUtils.createDirectStream(streamingContext, LocationStrategies.PreferConsistent(), ConsumerStrategies.<String, String>Subscribe(topics, kafkaParams));
 
         inputDStream.foreachRDD(rdd -> {
-            rdd.foreach(record -> System.out.println(record.value()));
+            rdd.foreach(record ->
+                    System.out.printf("partition = %d, offset = %d, key = %s, value = %s\n",
+                            record.partition(),
+                            record.offset(),
+                            record.key(),
+                            record.value()));
         }
         );
 

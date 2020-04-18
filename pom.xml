@@ -52,7 +52,7 @@
         <dependency> <!-- Spark core dependency -->
             <groupId>org.apache.spark</groupId>
             <artifactId>spark-core_2.11</artifactId>
-            <version>2.3.1</version>
+            <version>[2.3.3,)</version>
             <scope>compile</scope>
         </dependency>
 
@@ -61,7 +61,7 @@
             <groupId>org.apache.spark</groupId>
             <artifactId>spark-streaming_2.11</artifactId>
             <!-- Keep the same Spark version as before -->
-            <version>2.3.1</version>
+            <version>[2.3.3,)</version>
         </dependency>
 
         <!-- kafka spark dependency for kafka 0.10 -->
@@ -69,14 +69,14 @@
             <groupId>org.apache.spark</groupId>
             <artifactId>spark-streaming-kafka-0-10_2.11</artifactId>
             <!-- Keep the same Spark version as before -->
-            <version>2.3.1</version>
+            <version>[2.3.3,)</version>
         </dependency>
 
         <!-- kafka dependency -->
         <dependency>
             <groupId>org.apache.kafka</groupId>
             <artifactId>kafka-clients</artifactId>
-            <version>0.10.1.1</version>
+            <version>0.10.2.1</version>
         </dependency>
 
         <!-- other dependency -->
@@ -89,7 +89,7 @@
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
-            <version>2.6.5</version>
+            <version>2.6.7.3</version>
         </dependency>
 
     </dependencies>

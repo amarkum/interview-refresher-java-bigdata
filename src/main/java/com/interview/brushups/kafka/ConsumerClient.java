@@ -41,7 +41,7 @@ public class ConsumerClient {
             ConsumerRecords<String, String> records = consumer.poll(100);
             for (ConsumerRecord<String, String> record : records)
                 // print the offset,key and value for the consumer records.
-                System.out.printf("offset = %d, key = %s, value = %s\n", record.offset(), record.key(), record.value());
+                System.out.printf("partition = %d, offset = %d, key = %s, value = %s\n",record.partition(), record.offset(), record.key(), record.value());
         }
     }
 }

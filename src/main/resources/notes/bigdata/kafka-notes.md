@@ -94,7 +94,11 @@ Example<br/>
  
  ## Kafka CLI Commands
 #### 1. Create a Topic<br/>
- `kafka-topics.sh --create --topic test-topic --partitions 2 --replication-factor 1 --zookeeper localhost:2181`
+ DEPRECATED<br/>
+ `./kafka-topics --create --topic test-topic --partitions 3 --replication-factor 1 --zookeeper localhost:2181`<br/>
+ 
+ NEW<br/>
+ `./kafka-topics --create --topic test-topic --partitions 3 --replication-factor 1 --bootstrap-server localhost:9092`
  
 #### 2. List all Topics
  
@@ -122,15 +126,27 @@ Example<br/>
  
 #### 5. Produce to a Topic
  
-  DEPRECATED<br/>
-  `./kafka-console-producer  --topic test-topic --broker-list localhost:9092`<br/>
+ `./kafka-console-producer  --topic test-topic2 --broker-list localhost:9092`<br/>
    
-  NEW<br/>
-  `./kafka-console-producer --topic test-topic --bootstrap-server localhost:9092 `<br/>
-
 #### 6. Consume from a Topic
-   `./kafka-console-consumer --topic test-topic --bootstrap-server localhost:9092`
+  `./kafka-console-consumer --topic test-topic --bootstrap-server localhost:9092`
+   
+### 6. Consume from a Consumer Group from Topic   
  
+ `./kafka-console-consumer --topic test-topic --bootstrap-server localhost:9092 --group cg1`
+ 
+### 7. Consume from a Consumer Group from Beginning
+`./kafka-console-consumer --topic test-topic --bootstrap-server localhost:9092 --group cg2 --from-beginning`<br/>
+ 
+If we start reading to new consumer group, we should read from the very beginning, and kafka commits the offset.
+When it has finished reading from beginning. Now if are consumer(s) goes down, and kafka still produces some message<br/>
+It will clear off the backlog message by reading it, and read the ew upcoming messages.
+ 
+## Can 1 Consumer Group subscribe to 2 different Topics?
+Yes, this can possibly exists.
+But the message will be again split into the consumer who has subscribed to a specific partition
+There is no interference.
+
  ## How to install and run Kafka?
  Apache Kafka also uses zookeeper server for synchronisation service.\
  So we must be sure we have already installed and running zookeeper service before. \
@@ -180,7 +196,7 @@ By default key is hashed based on "murmur2" algorithm
  
  2) Open up a new terminal, navigate to kafka folder and create a `topic`
  ```
- bin/kafka-topics.sh --create --zookeeper localhost:2181 --topic test-topic --partitions 2 --replication-factor 1
+ bin/kafka-topics.sh --create  --bootstrap-server localhost:9092 --topic test-topic --partitions 2 --replication-factor 1
  ```
  3) Produce a message. \
      Open up a new terminal, navigate to kafka folder and produce a message on topic

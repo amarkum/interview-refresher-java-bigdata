@@ -195,50 +195,51 @@ By default key is hashed based on "murmur2" algorithm
 
 ### 1. Producer API
 ```java
-// create instance for properties to access producer configs
+// Create instance for properties to access producer configs
 Properties props = new Properties();
 
-//Map BOOTSTRAP_SERVERS_CONFIG from ProducerConfig to properties
+// Map BOOTSTRAP_SERVERS_CONFIG from ProducerConfig to properties
 props.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092");
 
 // Define a Topic Name
-String topicName = "hello-topic";
+String topicName = "test-topic";
 
 // Create a Kafka Producer, put in the configuration properties.
 KafkaProducer<String, String> producer = new KafkaProducer<String, String>(props);
    
-//Create a new Producer Record | (topicName, Value) OR (topicName, Key, Value)
+// Create a new Producer Record | (topicName, Value) OR (topicName, Key, Value)
 ProducerRecord<String, String> record = new ProducerRecord(topicName, "Key", "Value");
 
-// send the ProducerRecord to KafkaProducer using send() method
+// Send the ProducerRecord to KafkaProducer using send() method
 producer.send(record, new Callback()
 ```   
 
 ### 2. Consumer API
 ```java
-// create instance for properties to access producer configs
+// Create instance for properties to access producer configs
 Properties props = new Properties();
 
-//Map BOOTSTRAP_SERVERS_CONFIG from ConsumerConfig to properties
+// Map BOOTSTRAP_SERVERS_CONFIG from ConsumerConfig to properties
 props.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092");
 
 // Name the consumer group to using ConsumerConfig in Properties
 props.put(ConsumerConfig.GROUP_ID_CONFIG, "consumer-group-one");
 
 // Declare Topics to Subscribe
-String topicName = "hello-topic";
+String topicName = "test-topic";
 
 // Create a Kafka Consumer
 KafkaConsumer<String, String> consumer = new KafkaConsumer<String, String>(props);
 
-//Kafka Consumer subscribes list of topics here.
+// Kafka Consumer subscribes list of topics here.
 consumer.subscribe(Arrays.asList(topicName));
 
 // Get ConsumerRecords by using poll() method from KafkaConsumer
 ConsumerRecords<String, String> records = consumer.poll(100);
 
-//Iterate ConsumerRecords and get the key,value & offset information
-record.offset(), record.key(), record.value()
+// Iterate ConsumerRecords and get the key,value & offset information
+for (ConsumerRecord<String, String> record : records)
+    record.offset(), record.key(), record.value()
 ```
 
 ## Install & Run Kafka

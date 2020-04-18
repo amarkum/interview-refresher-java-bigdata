@@ -2,137 +2,154 @@
 
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>com.interview.brushups</groupId>
-  <artifactId>interview-brushups</artifactId>
-  <version>1.0-SNAPSHOT</version>
-  <name>interview-brushups</name>
-  <!-- FIXME change it to the project's website -->
-  <url>http://www.example.com</url>
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.source>1.7</maven.compiler.source>
-    <maven.compiler.target>1.7</maven.compiler.target>
-  </properties>
-  <dependencies>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.interview.brushups</groupId>
+    <artifactId>interview-brushups</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <name>interview-brushups</name>
+    <!-- FIXME change it to the project's website -->
+    <url>http://www.example.com</url>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.7</maven.compiler.source>
+        <maven.compiler.target>1.7</maven.compiler.target>
+    </properties>
+    <dependencies>
 
-      <dependency>
-          <groupId>com.atlassian.commonmark</groupId>
-          <artifactId>commonmark</artifactId>
-          <version>0.14.0</version>
-      </dependency>
+        <dependency>
+            <groupId>com.atlassian.commonmark</groupId>
+            <artifactId>commonmark</artifactId>
+            <version>0.14.0</version>
+        </dependency>
 
-    <dependency>
-      <groupId>org.apache.crunch</groupId>
-        <artifactId>crunch-core</artifactId>
-        <version>0.14.0</version>
-    </dependency>
+        <dependency>
+            <groupId>org.apache.crunch</groupId>
+            <artifactId>crunch-core</artifactId>
+            <version>0.14.0</version>
+        </dependency>
 
-      <!-- https://mvnrepository.com/artifact/org.apache.hive/hive-exec -->
-      <dependency>
-          <groupId>org.apache.hive</groupId>
-          <artifactId>hive-exec</artifactId>
-          <version>3.1.2</version>
-      </dependency>
+        <!-- https://mvnrepository.com/artifact/org.apache.hive/hive-exec -->
+        <dependency>
+            <groupId>org.apache.hive</groupId>
+            <artifactId>hive-exec</artifactId>
+            <version>3.1.2</version>
+        </dependency>
 
-      <!-- https://mvnrepository.com/artifact/org.apache.hadoop/hadoop-client -->
-      <dependency>
-          <groupId>org.apache.hadoop</groupId>
-          <artifactId>hadoop-client</artifactId>
-          <version>2.10.0</version>
-      </dependency>
+        <!-- https://mvnrepository.com/artifact/org.apache.hadoop/hadoop-client -->
+        <dependency>
+            <groupId>org.apache.hadoop</groupId>
+            <artifactId>hadoop-client</artifactId>
+            <version>2.10.0</version>
+        </dependency>
 
-      <!-- core spark dependency -->
-      <!-- https://mvnrepository.com/artifact/org.apache.spark/spark-core -->
-      <dependency>
-          <groupId>org.apache.spark</groupId>
-          <artifactId>spark-core_2.11</artifactId>
-          <version>2.4.3</version>
-      </dependency>
+        <dependency> <!-- Spark dependency -->
+            <groupId>org.apache.spark</groupId>
+            <artifactId>spark-sql_2.11</artifactId>
+            <version>2.3.1</version>
+            <scope>provided</scope>
+        </dependency>
 
-      <!-- spark kafka streaming dependency -->
+        <dependency> <!-- Spark core dependency -->
+            <groupId>org.apache.spark</groupId>
+            <artifactId>spark-core_2.11</artifactId>
+            <version>2.3.1</version>
+            <scope>compile</scope>
+        </dependency>
 
-      <dependency>
-          <groupId>org.apache.spark</groupId>
-          <artifactId>spark-streaming-kafka-0-10_2.11</artifactId>
-          <version>2.2.0</version>
-          <scope>compile</scope>
-      </dependency>
+        <!-- spark streaming dependency-->
+        <dependency>
+            <groupId>org.apache.spark</groupId>
+            <artifactId>spark-streaming_2.11</artifactId>
+            <!-- Keep the same Spark version as before -->
+            <version>2.3.1</version>
+        </dependency>
 
-      <!-- spark streaming dependency -->
+        <!-- kafka spark dependency for kafka 0.10 -->
+        <dependency>
+            <groupId>org.apache.spark</groupId>
+            <artifactId>spark-streaming-kafka-0-10_2.11</artifactId>
+            <!-- Keep the same Spark version as before -->
+            <version>2.3.1</version>
+        </dependency>
 
-      <dependency>
-          <groupId>org.apache.spark</groupId>
-          <artifactId>spark-streaming_2.11</artifactId>
-          <version>2.2.0</version>
-          <scope>compile</scope>
-      </dependency>
+        <!-- kafka dependency -->
+        <dependency>
+            <groupId>org.apache.kafka</groupId>
+            <artifactId>kafka-clients</artifactId>
+            <version>0.10.1.1</version>
+        </dependency>
 
-      <dependency>
-          <groupId>com.fasterxml.jackson.core</groupId>
-          <artifactId>jackson-databind</artifactId>
-          <version>2.6.5</version>
-      </dependency>
+        <!-- other dependency -->
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.5</version>
+        </dependency>
 
-  </dependencies>
-  <packaging>jar</packaging>
-  <build>
-    <plugins>
-      <plugin>
-        <artifactId>maven-assembly-plugin</artifactId>
-        <configuration>
-            <archive>
-                <manifest>
-<!--                    <mainClass></mainClass>-->
-                </manifest>
-            </archive>
-          <descriptorRefs>
-            <descriptorRef>jar-with-dependencies</descriptorRef>
-          </descriptorRefs>
-        </configuration>
-          <executions>
-              <execution>
-                  <id>make-assembly</id> <!-- this is used for inheritance merges -->
-                  <phase>package</phase> <!-- bind to the packaging phase -->
-                  <goals>
-                      <goal>single</goal>
-                  </goals>
-              </execution>
-          </executions>
-      </plugin>
-        <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-compiler-plugin</artifactId>
-            <configuration>
-                <source>8</source>
-                <target>8</target>
-            </configuration>
-        </plugin>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.6.5</version>
+        </dependency>
 
-        <!-- really executable plugin -->
-        <plugin>
-            <groupId>org.skife.maven</groupId>
-            <artifactId>really-executable-jar-maven-plugin</artifactId>
-            <version>1.1.0</version>
-            <configuration>
-                <!-- value of flags will be interpolated into the java invocation -->
-                <!-- as "java $flags -jar ..." -->
-                <!--<flags></flags>-->
+    </dependencies>
+    <packaging>jar</packaging>
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <!-- <mainClass></mainClass> -->
+                        </manifest>
+                    </archive>
+                    <descriptorRefs>
+                        <descriptorRef>jar-with-dependencies</descriptorRef>
+                    </descriptorRefs>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>make-assembly</id> <!-- this is used for inheritance merges -->
+                        <phase>package</phase> <!-- bind to the packaging phase -->
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>8</source>
+                    <target>8</target>
+                </configuration>
+            </plugin>
 
-                <!-- (optional) name for binary executable, if not set will just -->
-                <!-- make the regular jar artifact executable -->
-                <programFile>interview</programFile>
-            </configuration>
-            <executions>
-                <execution>
-                    <phase>package</phase>
-                    <goals>
-                        <goal>really-executable-jar</goal>
-                    </goals>
-                </execution>
-            </executions>
-        </plugin>
+            <!-- really executable plugin -->
+            <plugin>
+                <groupId>org.skife.maven</groupId>
+                <artifactId>really-executable-jar-maven-plugin</artifactId>
+                <version>1.1.0</version>
+                <configuration>
+                    <!-- value of flags will be interpolated into the java invocation -->
+                    <!-- as "java $flags -jar ..." -->
+                    <!--<flags></flags>-->
 
-    </plugins>
-  </build>
+                    <!-- (optional) name for binary executable, if not set will just -->
+                    <!-- make the regular jar artifact executable -->
+                    <programFile>interview</programFile>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>really-executable-jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 </project>

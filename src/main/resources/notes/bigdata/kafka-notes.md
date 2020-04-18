@@ -190,8 +190,24 @@ This make sure consumer does not commit the message twice, and maintains key lev
 
 ### Hashing formula
 By default key is hashed based on "murmur2" algorithm
-    
-#### Download and Extract
+
+## Produce & Consume Record - Programmatically
+
+### 1. Producer API
+```java
+// Create a Kafka Producer, put in the configuration properties.
+KafkaProducer<String, String> producer = new KafkaProducer<String, String>(props);
+   
+//Create a new Producer Record | (topicName, Value) OR (topicName, Key, Value)
+ProducerRecord<String, String> record = new ProducerRecord(topicName, "Key", "Value");
+
+// send the ProducerRecord to KafkaProducer using send() method
+producer.send(record, new Callback()
+```   
+
+### 2. Consumer API
+
+#### Install & Run Kafka
 Download the latest binary distribution of [kafka](https://www.apache.org/dyn/closer.cgi?path=/kafka/)
  
  e.g.[kafka_2.11-2.2.0.tg](http://mirrors.estointernet.in/apache/kafka/2.2.0/kafka_2.11-2.2.0.tgz)

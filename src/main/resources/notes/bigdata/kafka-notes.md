@@ -219,9 +219,26 @@ producer.send(record, new Callback()
 // create instance for properties to access producer configs
 Properties props = new Properties();
 
-//Map BOOTSTRAP_SERVERS_CONFIG from ProducerConfig to properties
+//Map BOOTSTRAP_SERVERS_CONFIG from ConsumerConfig to properties
 props.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092");
 
+// Name the consumer group to using ConsumerConfig in Properties
+props.put(ConsumerConfig.GROUP_ID_CONFIG, "consumer-group-one");
+
+// Declare Topics to Subscribe
+String topicName = "hello-topic";
+
+// Create a Kafka Consumer
+KafkaConsumer<String, String> consumer = new KafkaConsumer<String, String>(props);
+
+//Kafka Consumer subscribes list of topics here.
+consumer.subscribe(Arrays.asList(topicName));
+
+// Get ConsumerRecords by using poll() method from KafkaConsumer
+ConsumerRecords<String, String> records = consumer.poll(100);
+
+//Iterate ConsumerRecords and get the key,value & offset information
+record.offset(), record.key(), record.value()
 ```
 
 ## Install & Run Kafka

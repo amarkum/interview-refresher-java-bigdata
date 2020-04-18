@@ -115,7 +115,7 @@ DEPRECATED<br/>
 `./kafka-topics --describe --topic test-topic --zookeeper localhost:2181`<br/>
  
 NEW<br/>
-`./kafka-topics.sh  --describe --topic test-topic --bootstrap-server localhost:2181`
+`./kafka-topics  --describe --topic test-topic --bootstrap-server localhost:9092`
  
 #### 4. Delete a Topic
  
@@ -123,17 +123,15 @@ DEPRECATED<br/>
 `./kafka-topics --delete --topic test-topic --zookeeper localhost:2181`<br/>
  
 NEW<br/>
-`./kafka-topics --delete --topic test-topic --bootstrap-server localhost:2181`<br/>
+`./kafka-topics --delete --topic test-topic --bootstrap-server localhost:9092`<br/>
  
 #### 5. Produce to a Topic
- 
 `./kafka-console-producer  --topic test-topic --broker-list localhost:9092`<br/>
    
 #### 6. Consume from a Topic
 `./kafka-console-consumer --topic test-topic --bootstrap-server localhost:9092`
    
 #### 7. Consume from a Consumer Group from Topic   
- 
 `./kafka-console-consumer --topic test-topic --bootstrap-server localhost:9092 --group cg1`
  
 #### 8. Consume from a Consumer Group from Beginning

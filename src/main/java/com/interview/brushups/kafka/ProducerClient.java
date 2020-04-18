@@ -38,7 +38,7 @@ public class ProducerClient {
         KafkaProducer<String, String> producer = new KafkaProducer<String, String>(props);
 
         //Assign topicName to string variable
-        String topicName = "hello-topic";
+        String topicName = "test-topic";
 
         Scanner scanner = new Scanner(System.in); // Create a Scanner object
         System.out.println("Enter # of msg to produce");

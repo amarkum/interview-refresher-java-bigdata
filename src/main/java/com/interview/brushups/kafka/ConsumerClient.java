@@ -29,7 +29,7 @@ public class ConsumerClient {
 
         KafkaConsumer<String, String> consumer = new KafkaConsumer<String, String>(props);
 
-        String topicName = "hello-topic";
+        String topicName = "test-topic";
 
         //Kafka Consumer subscribes list of topics here.
         consumer.subscribe(Arrays.asList(topicName));

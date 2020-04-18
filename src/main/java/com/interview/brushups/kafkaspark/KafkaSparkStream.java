@@ -25,7 +25,7 @@ public class KafkaSparkStream {
         kafkaParams.put("group.id", "consumer-group");
         kafkaParams.put("enable.auto.commit", true);
 
-        Collection<String> topics = Arrays.asList("simple-topic");
+        Collection<String> topics = Arrays.asList("test-topic");
 
         SparkConf sparkConf = new SparkConf();
         sparkConf.setMaster("local[*]");

@@ -97,13 +97,39 @@ Example<br/>
  `kafka-topics.sh --create --topic test-topic --partitions 2 --replication-factor 1 --zookeeper localhost:2181`
  
  2. List all Topics
- `kakfa-topics.sh --list --zookeeper localhost:2181`
+ 
+ DEPRECATED<br/>
+ `./kafka-topics --list --zookeeper localhost:2181`<br/>
+ 
+ NEW<br/>
+ `./kafka-topics --list --bootstrap-server localhost:9092`<br/>
  
  3. Describe a Topic
- `kakfa-topics.sh  --describe --topic test-topic --zookeeper localhost:2181`
+ 
+  DEPRECATED<br/>
+ `./kafka-topics --describe --topic test-topic --zookeeper localhost:2181`<br/>
+ 
+  NEW<br/>
+ `./kafka-topics.sh  --describe --topic test-topic --bootstrap-server localhost:2181`
  
  4. Delete a Topic
- `kakfa-topics.sh --delete --topic test-topic --zookeeper localhost:2181`
+ 
+  DEPRECATED<br/>
+ `./kafka-topics --delete --topic test-topic --zookeeper localhost:2181`<br/>
+ 
+  NEW<br/>
+ `./kafka-topics --delete --topic test-topic --bootstrap-server localhost:2181`<br/>
+ 
+ 5. Produce to a Topic
+ 
+  DEPRECATED<br/>
+  `./kafka-console-producer --broker-list localhost:9092 --topic test-topic`<br/>
+   
+  NEW<br/>
+  `./kafka-console-producer --bootstrap-server localhost:9092 --topic test-topic`<br/>
+
+6. Consume from a Topic
+   `./kafka-console-consumer --topic test-topic --bootstrap-server localhost:9092`
  
  ## How to install and run Kafka?
  Apache Kafka also uses zookeeper server for synchronisation service.\
@@ -165,7 +191,7 @@ By default key is hashed based on "murmur2" algorithm
      Open up a new terminal, navigate to kafka folder and consume a message on topic from beginning
  
  ```
- bin/kafka-console-consumer.sh --zookeeper localhost:2181 --topic test-topic --from-beginning
+ bin/kafka-console-consumer.sh  --bootstrap-server localhost:9092 --topic test-topic --from-beginning
  ```
  \
  <image src="https://i.ibb.co/VDNCqgD/04-kafka-images.png" width="640" height="340">

@@ -131,11 +131,11 @@ NEW<br/>
 #### 6. Consume from a Topic
 `./kafka-console-consumer --topic test-topic --bootstrap-server localhost:9092`
    
-### 6. Consume from a Consumer Group from Topic   
+#### 7. Consume from a Consumer Group from Topic   
  
 `./kafka-console-consumer --topic test-topic --bootstrap-server localhost:9092 --group cg1`
  
-### 7. Consume from a Consumer Group from Beginning
+#### 8. Consume from a Consumer Group from Beginning
 `./kafka-console-consumer --topic test-topic --bootstrap-server localhost:9092 --group cg2 --from-beginning`<br/>
 
 If we start reading to new consumer group, we should read from the very beginning, and kafka commits the offset.<br/>

@@ -14,7 +14,7 @@ public class SparkRDDWordCount {
         SparkConf conf =new SparkConf().setMaster("local").setAppName("SparkRDDWordCount");
         JavaSparkContext javaSparkContext = new JavaSparkContext(conf);
 
-        JavaRDD<String> inputData = javaSparkContext.textFile("word-count.txt");
+        JavaRDD<String> inputData = javaSparkContext.textFile(System.getProperty("user.dir")+"/src/main/resources/notes/bigdata/hadoop.md");
         JavaRDD<String> words = inputData.flatMap(line -> Arrays.asList(line.split(" ")).iterator());
         JavaPairRDD<String,Integer> wordMapTo1 = words.mapToPair(word -> new Tuple2<String,Integer>(word,1));
 
@@ -26,6 +26,6 @@ public class SparkRDDWordCount {
         */
 
         JavaPairRDD<String, Integer> wordCountRDD = wordMapTo1.reduceByKey((v1,v2) -> v1 + v2);
-        wordCountRDD.saveAsTextFile("spark-output");
+        wordCountRDD.saveAsTextFile(System.getProperty("user.dir")+"/src/main/resources/output/spark/wordcount");
     }
 }

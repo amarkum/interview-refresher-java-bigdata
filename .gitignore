@@ -1,4 +1,5 @@
 .idea/*
 target/
 *.txt
-spark-output/
+
+src/main/resources/output/*

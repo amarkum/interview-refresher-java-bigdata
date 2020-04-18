@@ -168,12 +168,6 @@ We can reset offsets of a specific topic in consumer group by `--topic test-topi
 Yes, this can possibly exists.
 But the message will be again split into the consumer who has subscribed to a specific partition
 There is no interference.
-
-## How to install and run Kafka?
-Apache Kafka also uses zookeeper server for synchronisation service.\
-So we must be sure we have already installed and running zookeeper service before. \
-If you have started the `confluent` Kafka will already be running and using the `zookeeper` which confluent starts.
-Hence, we may want to skip this step as well.
  
 ## Kafka Config
  
@@ -242,7 +236,13 @@ for (ConsumerRecord<String, String> record : records)
     record.offset(), record.key(), record.value()
 ```
 
-## Install & Run Kafka
+
+## How to install and run Kafka?
+Apache Kafka also uses zookeeper server for synchronisation service.\
+So we must be sure we have already installed and running zookeeper service before. \
+If you have started the `confluent`, Kafka will already be running and using the `zookeeper` which confluent starts.
+
+### Download and Extract
 Download the latest binary distribution of [kafka](https://www.apache.org/dyn/closer.cgi?path=/kafka/)
  
  e.g.[kafka_2.11-2.2.0.tg](http://mirrors.estointernet.in/apache/kafka/2.2.0/kafka_2.11-2.2.0.tgz)
@@ -258,7 +258,7 @@ Download the latest binary distribution of [kafka](https://www.apache.org/dyn/cl
  dataDir=/Users/ak054561/data/zookeeper
  ```
  
-## Test Kafka Installation
+### Test Kafka Installation
  1) Open up a new terminal, navigate to kafka folder with
  ```
  $ cd ~

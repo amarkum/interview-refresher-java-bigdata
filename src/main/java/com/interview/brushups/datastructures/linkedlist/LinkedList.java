@@ -93,8 +93,12 @@ public class LinkedList<T> {
         }
     }
 
-    public int lengthOfList() {
-
+    /**
+     * Returns the size of the LinkedList using recursive approach.
+     *
+     * @return size of the linkedlist
+     */
+    public int recursiveSize() {
         int counter =0;
         if (headNode == null) {
             return 0;

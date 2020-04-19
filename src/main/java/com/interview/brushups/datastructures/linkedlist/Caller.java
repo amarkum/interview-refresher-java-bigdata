@@ -29,7 +29,7 @@ public class Caller {
         System.out.println("Size of the List : "+linkedList.size());
 
         //prints the size of the linkedlist using recursion
-        System.out.println("Size of the List using Recursion : "+linkedList.lengthOfList());
+        System.out.println("Size of the List using Recursion : "+linkedList.recursiveSize());
 
         //insert at end of the linkedlist
         linkedList.addAtEnd("15");

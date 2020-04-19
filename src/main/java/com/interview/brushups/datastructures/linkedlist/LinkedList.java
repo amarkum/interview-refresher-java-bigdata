@@ -13,6 +13,7 @@ public class LinkedList<T> {
     public int size;
     // headNode is the node which points to all other node
     Node headNode;
+
     public LinkedList() {
         size = 0;
         headNode = null;
@@ -89,6 +90,17 @@ public class LinkedList<T> {
         while (tempNode != null) { // tempNode becomes null, will not enter in the loop.
             System.out.println(tempNode.data);
             tempNode = tempNode.nextNode;
+        }
+    }
+
+    public int lengthOfList() {
+
+        int counter =0;
+        if (headNode == null) {
+            return 0;
+        } else {
+            counter = 1 + lengthOfList(headNode.nextNode);
+            return counter;
         }
     }
 
@@ -268,7 +280,6 @@ public class LinkedList<T> {
      * @return
      */
     public void midToLast() {
-
         Node lastNode = headNode;
         Node midNode = headNode;
 
@@ -280,10 +291,10 @@ public class LinkedList<T> {
         }
 
         while (midNode.nextNode != null) {
-            System.out.print(midNode.data);
+            System.out.println(midNode.data);
             midNode = midNode.nextNode;
         }
-        System.out.print(midNode.data);
+        System.out.println(midNode.data);
     }
 
     /**

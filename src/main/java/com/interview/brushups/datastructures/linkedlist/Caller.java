@@ -5,25 +5,31 @@ public class Caller {
     public static void main(String[] args) {
 
         LinkedList<String> linkedList = new LinkedList<>();
-        linkedList.addAtHead("2");
-        linkedList.addAtHead("4");
-        linkedList.addAtHead("6");
-        linkedList.addAtHead("7");
+        linkedList.addAtEnd("2");
+        linkedList.addAtEnd("4");
+        linkedList.addAtEnd("6");
+        linkedList.addAtEnd("7");
 
         //delete by value from linkedlist
         linkedList.deleteByValue("4");
 
+        //print all elements of the linkedlist
+        System.out.println("All Elements of LinkedList");
+        linkedList.printAll();
+
         //print from middle to last
+        System.out.println("Middle to Last of LinkedList");
         linkedList.midToLast();
 
         //reverse the linkedlist
         linkedList.reverse();
+        System.out.println("LinkedList Reversed");
 
         //prints the size of the linkedlist
-        System.out.println(linkedList.size());
+        System.out.println("Size of the List : "+linkedList.size());
 
-        //print all elements of the linkedlist
-        linkedList.printAll();
+        //prints the size of the linkedlist using recursion
+        System.out.println("Size of the List using Recursion : "+linkedList.lengthOfList());
 
         //insert at end of the linkedlist
         linkedList.addAtEnd("15");
@@ -33,6 +39,6 @@ public class Caller {
 
         //create and detect a loop in the linkedlist
         linkedList.createLoop();
-        System.out.println(linkedList.detectLoop());
+        System.out.println("Does LinkedList has Loop : "+linkedList.detectLoop());
     }
 }

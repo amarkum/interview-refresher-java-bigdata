@@ -1,5 +1,6 @@
 .idea/*
 target/
 *.txt
+*.iml
 
 src/main/resources/output/*

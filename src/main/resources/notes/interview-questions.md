@@ -26,14 +26,14 @@
  4.) Consumer and Consumer group. - Sianr Mas Group
 ```
 
-# SQL Interview Questions
+# Spark Interview Questions
 ```text
-1. Cache and Persist
-2. Levels of Cache
-3. Sliding Window
-4. Submit SparK Job
-5. Joining an RDD
-6. Broadcast Variables &  Accumulators
+1. Cache and Persist - Virtusa
+2. Levels of Cache - Virtusa
+3. Sliding Window - Virtusa
+4. Submit SparK Job - Virtusa
+5. Joining an RDD - Virtusa
+6. Broadcast Variables &  Accumulators - Virtusa
 ```
 
 ## Hive 

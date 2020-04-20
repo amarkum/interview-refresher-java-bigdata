@@ -14,7 +14,7 @@ The string buffer is synchronized which is thread-safe.
 Performance is slower than the String Builder.
 
 ## StringBuilder
-It is same as String Buffer except for the String Builder which is not threaded safety that is not synchronized. So obviously performance is fast.
+It is same as String Buffer except for the String Builder which is not threaded safe - that is not synchronized. So obviously performance is fast.
 
 # Serialization
 

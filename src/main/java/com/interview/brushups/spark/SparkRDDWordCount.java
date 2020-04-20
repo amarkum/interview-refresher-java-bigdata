@@ -11,10 +11,18 @@ import java.util.Arrays;
 public class SparkRDDWordCount {
     public static void main(String[] args) {
 
+        /**
+         * It allows your Spark Application to access Spark Cluster with the help of Resource Manager (YARN/Mesos).
+         * To create SparkContext, first SparkConf should be made.
+         *
+         *  The SparkConf has a configuration parameter that our Spark driver application will pass to SparkContext.
+         */
         SparkConf conf =new SparkConf().setMaster("local").setAppName("SparkRDDWordCount");
+
         JavaSparkContext javaSparkContext = new JavaSparkContext(conf);
 
         JavaRDD<String> inputData = javaSparkContext.textFile(System.getProperty("user.dir")+"/src/main/resources/notes/bigdata/hadoop.md");
+
         JavaRDD<String> words = inputData.flatMap(line -> Arrays.asList(line.split(" ")).iterator());
         JavaPairRDD<String,Integer> wordMapTo1 = words.mapToPair(word -> new Tuple2<String,Integer>(word,1));
 

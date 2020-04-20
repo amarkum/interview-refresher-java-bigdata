@@ -10,13 +10,12 @@ Spark provides an interface for programming entire clusters with implicit data p
   Basically, it uses Hadoop for storage purpose only.
 
 ## Spark is a one-stop solution for
-- Apache Hadoop / MapReduce - To perform batch processing, we were using .
+- Apache Hadoop / MapReduce - To perform batch processing.
 - Apache Storm -  Stream processing
-- Apache Impala / Apache Tez - for interactive processing, we were using 
-- Neo4j / Apache Giraph  - for perform graph processing, we were using 
+- Apache Impala / Apache Tez - for interactive processing.
+- Neo4j / Apache Giraph  - to perform graph processing.
 
 ## Components of Spark
-
 - Spark SQL
 - Spark Streaming
 - Spark MLib

@@ -34,8 +34,8 @@ It is a distributed collection of elements across cluster nodes.
      3. RDD Transformation
 
 #### What are different operation that RDD Supports?
-     1. Transformation - It results into a new RDD.
-     2. Action - Action is the endpoint for the transformation where the final result is returned to driver program.
+1. Transformation - It results into a new RDD.<br/>
+2. Action - Action is the endpoint for the transformation where the final result is returned to driver program.
      
 # Spark SQL
 

@@ -34,8 +34,8 @@ It is a distributed collection of elements across cluster nodes.
 3. RDD Transformation
 
 #### What are different operation that RDD Supports?
-1. Transformation - It results into a new RDD.<br/>
-2. Action - Action is the endpoint for the transformation where the final result is returned to driver program.
+1. `Transformation` - It results into a new RDD.<br/>
+2. `Action` - Action is the endpoint for the transformation where the final result is returned to driver program.
 
 ## Spark Stages
 A stage is nothing but a step in a physical execution plan. It is a physical unit of the execution plan.<br/>
@@ -43,10 +43,9 @@ It is a set of parallel tasks i.e. one task per partition
 
 There are two types of stages<br/>
 
-1. ShuffleMapStage in Spark - (similar as Map in MapReduce )
-    It can only work on the partitions of a single RDD<br/>
-    
-2. ResultStage in Spark - (similar as Reduce in MapReduce)
+1. `ShuffleMapStage` in Spark - (similar as Map in MapReduce )
+    It can only work on the partitions of a single RDD<br/>  
+2. `ResultStage` in Spark - (similar as Reduce in MapReduce)
     ResultStage implies as a final stage in a job that applies a function on one or many partitions of the target RDD in Spark. 
 
 # Spark SQL

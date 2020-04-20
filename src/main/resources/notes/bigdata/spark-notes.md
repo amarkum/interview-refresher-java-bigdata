@@ -29,9 +29,9 @@ The abstraction of Spark is RDD. It is fundamental unit of spark which is immuta
 It is a distributed collection of elements across cluster nodes.
 
 #### What are different ways to Create an RDD?
-     1. Parallelizing a Collection
-     2. External Dataset 
-     3. RDD Transformation
+1. Parallelizing a Collection
+2. External Dataset 
+3. RDD Transformation
 
 #### What are different operation that RDD Supports?
 1. Transformation - It results into a new RDD.<br/>

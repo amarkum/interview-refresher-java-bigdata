@@ -19,12 +19,21 @@
  ```
  
  ## Kafka 
- 
  ```text
  1.) Offsets in Kafka. - Sianr Mas Group
  2.) ISR - In Sync Replicas - Sianr Mas Group
  3.) Commands to list topics, delete topic, Producer and consumer. - Sianr Mas Group
  4.) Consumer and Consumer group. - Sianr Mas Group
+```
+
+# SQL Interview Questions
+```text
+1. Cache and Persist
+2. Levels of Cache
+3. Sliding Window
+4. Submit SparK Job
+5. Joining an RDD
+6. Broadcast Variables &  Accumulators
 ```
 
 ## Hive 

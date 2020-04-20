@@ -1,7 +1,44 @@
 # Spark Notes
 
+# Spark - Introduction
+## What is Apache Spark?
+Apache Spark is an open-source distributed general-purpose cluster-computing framework.<br/>
+Spark provides an interface for programming entire clusters with implicit data parallelism and fault tolerance. 
 
-## Spark SQL
+- Spark can access any Hadoop data source, also can run on Hadoop clusters
+- Spark is independent of Hadoop since it has its own cluster management system.<br/>
+  Basically, it uses Hadoop for storage purpose only.
+
+## Spark is a one-stop solution for
+- Apache Hadoop / MapReduce - To perform batch processing, we were using .
+- Apache Storm -  Stream processing
+- Apache Impala / Apache Tez - for interactive processing, we were using 
+- Neo4j / Apache Giraph  - for perform graph processing, we were using 
+
+## Components of Spark
+
+- Spark SQL
+- Spark Streaming
+- Spark MLib
+- Spark GraphX
+- Spark R
+
+all of which are executed on top of `Spark Core`
+
+### Resilient Distributed Dataset – RDD
+The abstraction of Spark is RDD. It is fundamental unit of spark which is immutable in nature.<br/>
+It is a distributed collection of elements across cluster nodes.
+
+#### What are different ways to Create an RDD?
+     1. Parallelizing a Collection
+     2. External Dataset 
+     3. RDD Transformation
+
+#### What are different operation that RDD Supports?
+     1. Transformation - It results into a new RDD.
+     2. Action - Action is the endpoint for the transformation where the final result is returned to driver program.
+     
+# Spark SQL
 
 ### Without Cache
 

@@ -34,6 +34,7 @@
 4. Submit SparK Job - Virtusa
 5. Joining an RDD - Virtusa
 6. Broadcast Variables &  Accumulators - Virtusa
+7. repartition & vs coalesce - Virtusa
 ```
 
 ## Hive 

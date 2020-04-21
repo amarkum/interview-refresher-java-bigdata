@@ -1,4 +1,4 @@
-package com.interview.brushups.multithreading;
+package com.interview.brushups.multithreading.creation;
 
 public class HelloThread extends Thread {
 

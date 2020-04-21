@@ -1,4 +1,4 @@
-package com.interview.brushups.multithreading;
+package com.interview.brushups.multithreading.deadlock;
 
 public class DeadLock {
     public static void main(String[] args) {

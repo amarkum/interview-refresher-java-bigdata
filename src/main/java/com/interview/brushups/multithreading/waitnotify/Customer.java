@@ -1,4 +1,4 @@
-package com.interview.brushups.multithreading;
+package com.interview.brushups.multithreading.waitnotify;
 
 class Customer {
     int amount = 10000;
@@ -26,19 +26,3 @@ class Customer {
     }
 }
 
-class Test {
-    public static void main(String args[]) {
-        final Customer c = new Customer();
-        new Thread() {
-            public void run() {
-                c.withdraw(15000);
-            }
-        }.start();
-        new Thread() {
-            public void run() {
-                c.deposit(5000);
-            }
-        }.start();
-
-    }
-}

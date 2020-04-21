@@ -56,7 +56,11 @@ In thread pool, a group of fixed size threads are created.<br/>
 A thread from the thread pool is pulled out and assigned a job by the service provider. <br/>
 After completion of the job, thread is contained in the thread pool again
 
-We can create a Thread Pool, using Executor Services `ExecutorService executorService = Executors.newFixedThreadPool(5);`
+We can create a Thread Pool, using Executor Services
+```java 
+ExecutorService executorService = Executors.newFixedThreadPool(5);
+```
+
 Submit the thread to `executorService.execute(thread)` for execution.<br/>
 The execution of task will be done by 5 threads in the ThreadPool
 

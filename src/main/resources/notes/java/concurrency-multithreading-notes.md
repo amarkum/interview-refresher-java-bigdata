@@ -29,18 +29,17 @@ or more than one independent unit of the same program in overlapping time interv
 A parallel system is one which necessarily has the ability to execute multiple programs at the same time. 
 
 ## Scheduling and Thread Priorities
-- When we have a single CPU, all the threads have to share it.<br/>
- order of thread execution is scheduling.
+When we have a single CPU, all the threads have to share it,order of thread execution is scheduling.
  
- # Synchronized
+## `synchronized` - keyword
 Synchronized is used to restrict access to critical sections one thread at a time
 
-# Volatile
+## `volatile` - keyword
 If a variable is declared volatile then whenever a thread writes or reads to the volatile variable, <br/>
 the read and write always happen in the main memory. As a further guarantee, <br/>
 all the variables that are visible to the writing thread also get written-out to the main memory alongside the volatile variabl
 
-## Thread method
+## Thread methods
 `start()` - starts the execution of the thread.JVM calls the run() <br/>
 `join()` - complete the current thread execution until done, other thread waits for the thread to die<br/>
 `sleep()` - sleep is used to sleep a thread for the specified amount of time
@@ -63,7 +62,7 @@ The execution of task will be done by 5 threads in the ThreadPool
 
 Note: Staring a thread twice, will lead to `java.lang.IllegalThreadStateException`
 
- ## Daemon Thread
+## Daemon Thread
 - Thread by default is a non-daemon thread
 - Daemon thread don't stop the JVM from ending
 

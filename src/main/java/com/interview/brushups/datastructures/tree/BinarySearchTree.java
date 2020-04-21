@@ -41,7 +41,7 @@ public class BinarySearchTree {
         //Starting from root
         Node currentNode = root;
 
-        //Traversing the tree untill valid position to insert the value
+        //Traversing the tree until valid position to insert the value
         while (currentNode != null) {
 
             Node leftChild = currentNode.getLeftChild();

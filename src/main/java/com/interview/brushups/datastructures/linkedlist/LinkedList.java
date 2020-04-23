@@ -12,7 +12,7 @@ public class LinkedList<T> {
     // size should be public, as it needs to accessed easily
     public int size;
     // headNode is the node which points to all other node
-    Node headNode;
+    public Node headNode;
 
     public LinkedList() {
         size = 0;

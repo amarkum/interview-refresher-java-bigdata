@@ -1,4 +1,3 @@
-
 # Linux Command
 
 What is Linux - It is an operating system which runs on major computers and other device today.

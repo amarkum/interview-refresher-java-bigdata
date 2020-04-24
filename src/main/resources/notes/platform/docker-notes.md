@@ -3,7 +3,7 @@
 ## I. Build a Docker Image
 
 Latest Tag
-`docker run -d -p 5000:5000 flask_webservice:latest`
+`docker build -t flask_webservice:latest .`<br/>
 
 Custom Tag
 `docker build -f Dockerfile.prod -t react-app:prod .`<br/>
@@ -13,13 +13,17 @@ Custom Tag
 #### Re-tag docker image
 
 Latest Tag
-`docker tag flask_webservice amarxcode/flask_webservice`
+`docker tag flask_webservice amarxcode/flask_webservice`<br/>
 
 Custom Tag
 `docker tag sample:prod amarxcode/sample:prod`<br/>
 
 #### Push the Image to Docker Hub
-`docker push amarxcode/react-app:prod`
+Custom Tag
+`docker push amarxcode/react-app:prod`<br/>
+
+Latest Tag
+`docker push amarxcode/flask_webservice`
 
 #### Docker Common Commands 
 `docker image ls -a`

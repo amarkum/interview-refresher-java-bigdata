@@ -3,6 +3,8 @@ package com.interview.brushups.algorithm.sorting;
 /**
  * Quick Sort is the most effective in average case of Sorting Algorithm
  * Video Explanation : https://www.youtube.com/watch?v=PgBzjlCcFvc
+ * Approach - Divide and Conquer
+ * Time Complexity - Time complexity of Quick Sort for average case is nLogn and worst case  n^2
  */
 public class QuickSort {
 

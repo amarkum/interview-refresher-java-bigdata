@@ -14,8 +14,13 @@ public class BinarySearch {
         }
         int searchElement = 9;
 
-        System.out.println("\nElement " + searchElement + " found at position " +
-                (1 + binarySearch(array, 0, array.length - 1, searchElement)));
+        int index = binarySearch(array, 0, array.length - 1, searchElement);
+
+        if (index != -1) {
+            System.out.println("\nElement " + searchElement + " found at position: " + (index + 1));
+            return;
+        }
+        System.out.println("\nElement " + searchElement + "Not Found");
     }
 
     static int binarySearch(int arr[], int low, int high, int x) {

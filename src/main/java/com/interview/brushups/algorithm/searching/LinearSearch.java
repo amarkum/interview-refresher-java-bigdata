@@ -14,13 +14,18 @@ public class LinearSearch {
         }
         int searchElement = 89;
 
-        linearSearch(array, searchElement);
+        int index = linearSearch(array, searchElement);
+        if (index != -1) {
+            System.out.println("\nElement " + searchElement + " found at position: " + (index + 1));
+            return;
+        }
+        System.out.println("\nElement " + searchElement + "Not Found");
     }
 
     public static int linearSearch(int[] array, int value) {
         for (int i = 0; i < array.length; i++) {
             if (value == array[i]) {
-                System.out.println("\nElement " + value + " found at : " + (i + 1));
+                return i;
             }
         }
         return -1;

@@ -1,39 +1,40 @@
 package com.interview.brushups.algorithm.searching;
 
+/**
+ * Binary search works on the condition that array is sorted.
+ * Binary Search has reduce time complexity to O(Log n).
+ */
 public class BinarySearch {
 
     public static void main(String args[]) {
-        int[] array = {1,2,7,9,9,32,34,36,47,};
+        int[] array = {1, 2, 7, 5, 9, 32, 34, 36, 47};
 
         for (int number : array) {
             System.out.print(number + " ");
         }
-        int searchElement = 89;
+        int searchElement = 9;
 
-        binarySearch(array, 0, array.length-1 , searchElement);
+        System.out.println("\nElement " + searchElement + " found at position " +
+                (1 + binarySearch(array, 0, array.length - 1, searchElement)));
     }
 
-    static int binarySearch(int arr[], int l, int r, int x) {
-        if (r >= l) {
-            int mid = l + (r - l) / 2;
+    static int binarySearch(int arr[], int low, int high, int x) {
+        int mid = (low + high) / 2;
 
-            // If the element is present at the
-            // middle itself
-            if (arr[mid] == x)
+        // Only continue if there are more than two elements in the array
+        if (low < high) {
+
+            // If the searched element is exactly equal to mid, send the index
+            if (x == arr[mid])
                 return mid;
 
-            // If element is smaller than mid, then
-            // it can only be present in left sub-array
-            if (arr[mid] > x)
-                return binarySearch(arr, l, mid - 1, x);
+            // If the searched element is less than mid element, call binary search with, 0 to middle-1
+            if (x < arr[mid])
+                return binarySearch(arr, low, mid - 1, x);
 
-            // Else the element can only be present
-            // in right sub-array
-            return binarySearch(arr, mid + 1, r, x);
+            // Else search from middle+1 to last element
+            return binarySearch(arr, mid + 1, high, x);
         }
-
-        // We reach here when element is not present
-        // in array
         return -1;
     }
 }

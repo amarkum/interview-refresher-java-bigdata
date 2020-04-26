@@ -118,36 +118,42 @@ WHERE ROLL_NO BETWEEN 20 AND 30;
 
 ### Difference Between `DROP` and `TRUNCATE` and `DELETE`
 
-I. `DROP`<br/>
-The DROP command removes a table from the database. All the tables' rows, indexes and privileges will also be removed.<br/> 
+#### I. `DROP`<br/>
+```text
+The DROP command removes a table from the database.All the tables'rows, indexes and privileges will also be removed.
 No DML triggers will be fired. The operation cannot be rolled back.
+```
 
-II. `TRUNCATE`<br/>
+#### II. `TRUNCATE`<br/>
+```text
 TRUNCATE removes all rows from a table. 
 The operation cannot be rolled back and no triggers will be fired.<br/>
-As such, TRUNCATE is faster and doesn't use as much undo space as a DELETE. Table level lock will be added when Truncating.
+As such,TRUNCATE is faster and doesn't use as much undo space as a DELETE.Table level lock will be added when Truncating.
+```
 
-III. `DELETE` <br/>
+####III. `DELETE` <br/>
+```text
 The DELETE command is used to remove rows from a table. <br/>
 A WHERE clause can be used to only remove some rows. If no WHERE condition is specified, all rows will be removed.<br/>
-After performing a DELETE operation you need to COMMIT or ROLLBACK the transaction to make the change permanent or to undo it.<br/> 
+After DELETE operation you need to COMMIT or ROLLBACK the transaction to make changes permanent or to undo it.<br/> 
 Note that this operation will cause all DELETE triggers on the table to fire. Row level lock will be added when deleting.
+```
 
-NESTED QUERY
+### NESTED QUERY
 ```sql
 SELECT NAME, TOTAL FROM
 (SELECT NAME, SALARY * MONTHS AS TOTAL FROM EMPLOYEE WHERE SALARY > 2000 AND MONTHS<10 ORDER BY SALARY) 
 WHERE ROWNUM<=5;
 ```
 
-ROW LIMIT IN ORACLE - ROWNUM
+### ROW LIMIT IN ORACLE - `ROWNUM`
 ```sql
 SELECT ID, NAME,  FROM
 (SELECT NAME, SALARY FROM EMPLOYEE ORDER BY SALARY ASC)
 WHERE ROWNUM<=5;
 ```
 
-FETCH NEXT {N} ROWS ONLY //FROM Oracle 12c
+### `FETCH NEXT {N} ROWS` ONLY //FROM Oracle 12c
 ```sql
 SELECT * FROM EMPLOYEE FETCH NEXT 5 ROWS ONLY;
 ```

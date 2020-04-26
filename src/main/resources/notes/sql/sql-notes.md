@@ -102,19 +102,36 @@ SELECT MAX(POPULATION) - MIN(POPULATION) FROM CITY;
 SELECT * FROM Employees WHERE EmpName like 'A%' ;
 ```
 
-### Difference Between  `IN` and `BETWEEN`
+### Difference Between `IN` and `BETWEEN`
 
-IN
+I. `IN`
 ```sql
 SELECT * FROM Students
 WHERE ROLL_NO IN (20,21,23);
 ```
 
-BETWEEN
+II. `BETWEEN`
 ```sql
 SELECT * FROM Students
 WHERE ROLL_NO BETWEEN 20 AND 30;
 ```
+
+### Difference Between `DROP` and `TRUNCATE` and `DELETE`
+
+I. `DROP`<br/>
+The DROP command removes a table from the database. All the tables' rows, indexes and privileges will also be removed.<br/> 
+No DML triggers will be fired. The operation cannot be rolled back.
+
+II. `TRUNCATE`<br/>
+TRUNCATE removes all rows from a table. 
+The operation cannot be rolled back and no triggers will be fired.<br/>
+As such, TRUNCATE is faster and doesn't use as much undo space as a DELETE. Table level lock will be added when Truncating.
+
+III. `DELETE` <br/>
+The DELETE command is used to remove rows from a table. <br/>
+A WHERE clause can be used to only remove some rows. If no WHERE condition is specified, all rows will be removed.<br/>
+After performing a DELETE operation you need to COMMIT or ROLLBACK the transaction to make the change permanent or to undo it.<br/> 
+Note that this operation will cause all DELETE triggers on the table to fire. Row level lock will be added when deleting.
 
 NESTED QUERY
 ```sql

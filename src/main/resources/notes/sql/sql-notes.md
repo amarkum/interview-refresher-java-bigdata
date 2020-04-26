@@ -118,18 +118,16 @@ WHERE ROLL_NO BETWEEN 20 AND 30;
 
 ### Difference Between `DROP` , `TRUNCATE` and `DELETE`
 
-#### I. `DROP`<br/>
-
+#### I. `DROP` - Removes entire TABLE<br/>
 The DROP command removes a table from the database.All the tables'rows, indexes and privileges will also be removed.<br/>
 No DML triggers will be fired. The operation cannot be rolled back.
 
-
-#### II. `TRUNCATE`<br/>
+#### II. `TRUNCATE` - Removes ALL Rows<br/>
 TRUNCATE removes all rows from a table.<br/>
 The operation cannot be rolled back and no triggers will be fired.<br/>
 As such,TRUNCATE is faster and doesn't use as much undo space as a DELETE.Table level lock will be added when Truncating.
 
-#### III. `DELETE` <br/>
+#### III. `DELETE` - Removes Row with WHERE CLAUSE<br/>
 The DELETE command is used to remove rows from a table. <br/>
 A WHERE clause can be used to only remove some rows. If no WHERE condition is specified, all rows will be removed.<br/>
 After DELETE operation you need to COMMIT or ROLLBACK the transaction to make changes permanent or to undo it.<br/> 

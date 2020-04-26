@@ -39,9 +39,9 @@ public class Car implements Serializable {
     }
 
     /*
-     * While we deserialize, readResolve() method will be used to deserialize the object.
+     * When we deserialize, readResolve() method will be used to deserialize the object.
      * private Object readResolve()  {
-     *      return new Car(23,"Ferrai", "f3r@rI'");
+     *      return new Car(23,"Ferrari", "f3r@rI'");
      *  }
      */
 }

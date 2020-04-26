@@ -232,6 +232,11 @@ public class CollectionDataStructure {
          *  Like HashSet, TreeSet also contains unique elements.
          *  However, the access and retrieval time of TreeSet is quite fast.
          *  The elements in TreeSet stored in ascending order.
+         *
+         *  Sorting
+         *  When we don't provide a Comparator class it follows natural Ordering -
+         *  Which means the Class in the Generic should implement Comparable
+         *  If not, We must provide a Comparator instance when creating a new TreeSet instance
          */
         TreeSet<String> treeSet = new TreeSet<String>();
         treeSet.add("Ravi");

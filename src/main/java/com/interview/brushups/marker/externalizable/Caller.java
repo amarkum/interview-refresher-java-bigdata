@@ -9,7 +9,7 @@ public class Caller {
     public static void main(String[] args)
     {
         Car car = new Car(10, "Ferrari", 1995);
-        Car newcar = null;
+        Car newCar = null;
         final String filename = "externalized.txt";
 
         // Serialize the car
@@ -27,13 +27,13 @@ public class Caller {
         try {
             FileInputStream fi = new FileInputStream(filename);
             ObjectInputStream si = new ObjectInputStream(fi);
-            newcar = (Car)si.readObject();
+            newCar = (Car)si.readObject();
         }
         catch (Exception e) {
             System.out.println(e);
         }
 
         System.out.println("The original car is:\n" + car);
-        System.out.println("The new car is:\n" + newcar);
+        System.out.println("The new car is:\n" + newCar);
     }
 }

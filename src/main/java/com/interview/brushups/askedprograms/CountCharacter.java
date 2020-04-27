@@ -19,13 +19,11 @@ public class CountCharacter {
         Map < Character, Integer > map = new LinkedHashMap < > ();
         for (int i = 0; i < word.length(); i++) {
             char c = word.charAt(i);
-
-            if (map.containsKey(c)) {
-                int cnt = map.get(c);
-                map.put(c, ++cnt);
-            } else {
-                map.put(c, 1);
+            if(map.containsKey(c)){
+                int count = map.get(c);
+                map.put(c,++count);
             }
+            else map.put(c, 1);
         }
 
         for (Map.Entry entry: map.entrySet()) {

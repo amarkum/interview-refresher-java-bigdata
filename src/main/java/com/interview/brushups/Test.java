@@ -21,7 +21,7 @@ public class Test {
                 first = array[i];
             }
 
-            if (second < array[i] && first != array[i]) { // In between <first and greater than current a[i]
+            if (second < array[i] && first != array[i]) {
                 second = array[i];
             }
 

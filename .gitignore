@@ -2,5 +2,7 @@
 target/
 *.txt
 *.iml
+*.iml/
+interview-brushups.iml
 
 src/main/resources/output/*

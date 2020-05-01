@@ -5,7 +5,10 @@ Inheritance means one class can extend to another class. So that the codes can b
 Existing class is known as Super class whereas the derived class is known as a sub class.<br/>
 Inheritance is applicable for public and protected members only. Private members can’t be inherited.<br/>
 
-
+## Is Java Pass by Value or Pass by Reference
+For primitive data type, java sends the actual copy of the data in a method, and maintains two memory location<br/>
+If we change the value inside method, the actual value remains same. For primitive it's `pass by value`.<br/>
+For non-primitive(Object Type) - is `pass by reference` , If we allocate any value to the method, actual value changes.
 # Strings
 
 ## StringBuffer

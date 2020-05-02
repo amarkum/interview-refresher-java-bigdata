@@ -1,11 +1,9 @@
 package com.interview.brushups.datastructures.linkedlist;
 
 /**
- * Commonly asked LinkedList Interview Question
- * 1. Reverse a linked list
- * 2. Detect loop in a linked list
- * 3. Return Nth node from the end in a linked list
- * 4. Remove duplicates from a linked list
+ * A linked list is formed by nodes that are linked together like a chain.
+ * Each node holds data, along with a pointer to the next node in the list.
+ * The Singly Linked List is type of LL where each node has only one pointer that stores reference to the next value.
  */
 public class LinkedList<T> {
 

@@ -12,7 +12,7 @@ public class Stack<T> {
     int maxSize;
     T arr[];
 
-    Stack(int capacity) {
+    public Stack(int capacity) {
         maxSize = capacity;
         top = -1;
         arr = (T[]) new Object[maxSize];

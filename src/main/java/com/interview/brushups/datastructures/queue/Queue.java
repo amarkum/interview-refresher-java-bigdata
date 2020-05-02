@@ -26,6 +26,10 @@ public class Queue<T> {
         return currentSize == 0;
     }
 
+    public int getCurrentSize() {
+        return currentSize;
+    }
+
     public boolean isFull() {
         return currentSize == maxSize;
     }

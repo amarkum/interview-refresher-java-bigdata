@@ -12,7 +12,5 @@ public class Caller {
 
         System.out.println(stack.pop());
         System.out.println(stack.pop());
-
-        System.out.println(1%3);
     }
 }

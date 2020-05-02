@@ -26,8 +26,8 @@ public class Stack<T> {
         return top == -1;
     }
 
-    public boolean isFull(){
-        if(top == maxSize){
+    public boolean isFull() {
+        if (top == maxSize) {
             return true;
         }
         return false;
@@ -38,5 +38,23 @@ public class Stack<T> {
             return null;
         }
         return arr[top];
+    }
+
+    public void push(T value){
+       if(isFull()){
+          System.out.println("Stack is Full");
+          return;
+       }
+       // Increment the top index and assign the value.
+       arr[++top] = value;
+    }
+
+    public T pop(){
+        if(isEmpty()){
+            System.out.println("Stack is Empty");
+            return null;
+        }
+        // return value and index top, and decrement the top index after that
+        return arr[top--];
     }
 }

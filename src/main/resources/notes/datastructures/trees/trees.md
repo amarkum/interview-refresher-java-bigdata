@@ -40,5 +40,7 @@ The height of a tree is simply the height of its root node.
     - Every node has 0 or 2 children. No node can have 1 child.
 - Perfect Binary Tree
     - A Binary Tree is said to be Perfect if its Full and Complete
+- Binary Search Tree
+    - A Binary Search Tree -Ordered Binary Tree. is a variant of Binary Tree with a strict condition based on node value.
     
     

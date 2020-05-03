@@ -1,22 +1,9 @@
 package com.interview.brushups.datastructures.tree;
 
 /**
- * Depth of a node = No. of Edge(s) from root
- * Height of a node = No. of maximum edge from that node to the leaf node.
- * Height of the tree = Height of the Root node.
- * <p>
- * N ary Tree - A Node can have at most two children.
- * Binary Tree - It can have at-most two children.
- * <p>
- * In Binary tree, at n level, we can have maximum pow(2,n) nodes.
- *
- *
- * Commonly Asked Tree Question
- * 1.) Find the height of a binary tree
- * 2.) Find kth maximum value in a binary search tree
- * 3.) Find nodes at "k" distance from the root
- * 4.) Find ancestors of a given node in a binary tree
- *
+ * Binary Search Tree - (Ordered Binary Tree)
+ * BST - is a variant of Binary Tree with a strict condition based on node value.
+ * Left Child will always have lesser value than the node, while right has greater value.
  */
 public class BinarySearchTree {
 
@@ -30,7 +17,9 @@ public class BinarySearchTree {
         this.root = root;
     }
 
-    //Iterative Function to insert a value in BST
+    /**
+     *   Iterative Function to insert a value in BST
+     */
     public boolean add(int value) {
 
         //If Tree is empty then insert Root with the given value inside Tree

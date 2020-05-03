@@ -13,10 +13,6 @@ public class BinarySearchTree {
         return root;
     }
 
-    public void setRoot(Node root) {
-        this.root = root;
-    }
-
     /**
      *   Iterative Function to insert a value in BST
      */
@@ -53,22 +49,21 @@ public class BinarySearchTree {
                     return true;
                 }
                 currentNode = rightChild;
-            } //end of else
-        } //end of while
+            }
+        }
         return false;
     }
 
     //Function to check if Tree is empty or not
     public boolean isEmpty()
     {
-        return root == null; //if root is null then it means Tree is empty
+        return root == null;
     }
 
-    //Just for Testing purpose
+
     public void printTree(Node current)
     {
         if (current == null) return;
-
         System.out.println(current.getData());
         printTree(current.getLeftChild());
         printTree(current.getRightChild());

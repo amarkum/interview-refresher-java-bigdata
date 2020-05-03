@@ -198,7 +198,7 @@ public class LinkedList<T> {
 
         //previous node, to keep track of the previous node, to set the pointer to previous node
         Node previous = null;
-        //cuurentNode be the headNode
+        //currentNode be the headNode
         Node current = headNode;
         //to save the state of the next node, as we assign the value of current.nextNode to precious node.
         Node next = null;

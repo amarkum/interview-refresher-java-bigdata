@@ -15,6 +15,9 @@ public class Caller {
         binarySearchTree.add(10);
         binarySearchTree.add(14);
 
+        System.out.println(binarySearchTree.nodeSearch(108));
+        System.out.println(binarySearchTree.nodeSearch(12));
+
         binarySearchTree.printTree(binarySearchTree.getRoot());
     }
 

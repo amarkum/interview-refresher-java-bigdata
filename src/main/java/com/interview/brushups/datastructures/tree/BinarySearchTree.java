@@ -14,7 +14,7 @@ public class BinarySearchTree {
     }
 
     /**
-     *   Iterative Function to insert a value in BST
+     * Iterative Function to insert a value in BST
      */
     public boolean add(int value) {
 
@@ -55,19 +55,67 @@ public class BinarySearchTree {
     }
 
     //Function to check if Tree is empty or not
-    public boolean isEmpty()
-    {
+    public boolean isEmpty() {
         return root == null;
     }
 
-
-    public void printTree(Node current)
-    {
+    public void printTree(Node current) {
         if (current == null) return;
         System.out.println(current.getData());
         printTree(current.getLeftChild());
         printTree(current.getRightChild());
 
+    }
+
+    /**
+     * Searches a Node in the Tree, returns true if present or false if not present
+     * @param value
+     * @return
+     */
+    public boolean booleanSearch(int value) {
+
+        if (isEmpty()) {
+            return false;
+        }
+        Node current = root;
+
+        while (current != null) {
+
+            if (current.getData() == value) {
+                return true;
+            }
+            if (current.getData() > value) {
+                current = current.getLeftChild();
+            } else {
+                current = current.getRightChild();
+            }
+        }
+        return false;
+    }
+
+    /**
+     * Searches a value in the Tree
+     * @param value
+     * @return
+     */
+    public Node nodeSearch(int value) {
+
+        if (isEmpty()) return null; // if tree is empty simply return null
+
+        Node currentNode = this.root;
+
+        while (currentNode != null) {
+
+            if (currentNode.getData() == value) return currentNode; // compare data from current node
+
+            if (currentNode.getData() > value) //if data from current node is greater than value
+                currentNode = currentNode.getLeftChild(); // then move towards left subtree
+            else
+                currentNode = currentNode.getRightChild(); //else move towards right subtree
+        }
+
+        System.out.println(value + " Not found in the Tree!");
+        return null;
     }
 
 }

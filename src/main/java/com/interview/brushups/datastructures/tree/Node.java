@@ -3,8 +3,8 @@ package com.interview.brushups.datastructures.tree;
 public class Node {
     //Variables
     private int data;
-    Node leftChild;
-    Node rightChild;
+    private Node leftChild;
+    private Node rightChild;
 
     //Constructor
     Node(int value) {

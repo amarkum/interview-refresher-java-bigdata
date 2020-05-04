@@ -15,6 +15,15 @@ public class Caller {
         binarySearchTree.add(10);
         binarySearchTree.add(14);
 
+        // recursive
+        binarySearchTree.recursiveInsert(binarySearchTree.getRoot(),95);
+        binarySearchTree.recursiveInsert(binarySearchTree.getRoot(),47);
+        binarySearchTree.recursiveInsert(binarySearchTree.getRoot(),99);
+        binarySearchTree.recursiveInsert(binarySearchTree.getRoot(),35);
+        binarySearchTree.recursiveInsert(binarySearchTree.getRoot(),202);
+        binarySearchTree.recursiveInsert(binarySearchTree.getRoot(),132);
+
+
         System.out.println(binarySearchTree.nodeSearch(108));
         System.out.println(binarySearchTree.nodeSearch(12));
 

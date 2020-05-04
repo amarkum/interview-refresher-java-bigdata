@@ -13,6 +13,10 @@ public class BinarySearchTree {
         return root;
     }
 
+    public void setRoot(Node root) {
+        this.root = root;
+    }
+
     /**
      * Iterative Function to insert a value in BST
      */
@@ -118,4 +122,146 @@ public class BinarySearchTree {
         return null;
     }
 
+    public boolean insert(Node node, int value){
+
+        if(node == null){
+            node = new Node(value);
+        }
+
+        Node current = node;
+
+        if(current.getData()>value){
+            insert(current.getLeftChild(),value);
+        }
+        else {
+            insert(current.getRightChild(),value);
+        }
+        return false;
+    }
+
+    public Node recursiveInsert(Node node, int value){
+
+        if(node == null){
+            return new Node(value);
+        }
+
+        if(node.getData() > value){
+            node.setLeftChild(recursiveInsert(node.getLeftChild(), value));
+        }
+        else if(node.getData() < value){
+            node.setRightChild(recursiveInsert(node.getRightChild(), value));
+        }
+        else {
+            return node;
+        }
+
+        return node;
+    }
+
+   /**
+    * 3 conditions for delete
+    *  1. Node is Leaf Node.
+    *  2. Node has 1 Child.
+    *  3. Node has 2 Children.
+    **/
+    boolean delete(int value, Node currentNode) {
+
+        // If there are no elements in the tree, return false
+        if (root == null) {
+            return false;
+        }
+
+        // Create a Node Parent, which hold the Previous/Parent Node of Current
+        Node parent = null;
+
+        // Traverse until Tree fully traversed or We find the Correct Node
+        while(currentNode != null && (currentNode.getData() != value)) {
+            parent = currentNode;
+            if (currentNode.getData() > value)
+                currentNode = currentNode.getLeftChild();
+            else
+                currentNode = currentNode.getRightChild();
+        }
+
+        // If the traversal is complete, and there was no node with the value, return false.
+        if(currentNode == null) {
+            return false;
+        }
+
+        // Suppose, we got the matching data, and it appears to be a leaf node.
+        else if(currentNode.getLeftChild() == null && currentNode.getRightChild() == null) {
+            //1. Node is Leaf Node
+
+                //if that leaf node is the root (a tree with just root)
+                if(root.getData() == currentNode.getData()){
+                    setRoot(null);
+                    return true;
+                }
+                else if(currentNode.getData() < parent.getData()){
+                    parent.setLeftChild(null);
+                    return true;
+                }
+                else{
+                    parent.setRightChild(null);
+                    return true;
+            }
+        }
+
+        // 2. Node has 1 Child
+        else if(currentNode.getRightChild() == null) {
+
+                if(root.getData() == currentNode.getData()){
+                    setRoot(currentNode.getLeftChild());
+                    return true;
+                }
+                else if(currentNode.getData() < parent.getData()){
+                    parent.setLeftChild(currentNode.getLeftChild());
+                    return true;
+                }
+                else{
+                    parent.setRightChild(currentNode.getLeftChild());
+                    return true;
+                }
+        }
+
+        else if(currentNode.getLeftChild() == null) {
+
+                if(root.getData() == currentNode.getData()){
+                    setRoot(currentNode.getRightChild());
+                    return true;
+                }
+                else if(currentNode.getData() < parent.getData()){
+                    parent.setLeftChild(currentNode.getRightChild());
+                    return true;
+                }
+                else{
+                    parent.setRightChild(currentNode.getRightChild());
+                    return true;
+                }
+
+        }
+
+        // 3. Node has 2 Children.
+        else {
+                //Find Least Value Node in right-subtree of current Node
+                Node leastNode = findLeastNode(currentNode.getRightChild());
+                //Set CurrentNode's Data to the least value in its right-subtree
+                int temp = leastNode.getData();
+                delete(temp, root);
+                currentNode.setData(temp);
+                //Delete the leafNode which had the least value
+                return true;
+        }
+
+    }
+
+    //Helper function to find least value node in right-subtree of currentNode
+    private Node findLeastNode(Node currentNode) {
+        Node temp = currentNode;
+
+        while (temp.getLeftChild() != null) {
+            temp = temp.getLeftChild();
+        }
+        return temp;
+    }
 }

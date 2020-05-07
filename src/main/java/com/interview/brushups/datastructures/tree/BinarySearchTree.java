@@ -158,6 +158,23 @@ public class BinarySearchTree {
         return node;
     }
 
+    /**
+     *
+     * @param root
+     * @return
+     * Find Height of a Binary Search Tree
+     *
+     * Find Height of left subtree right subtree
+     * Return greater height value of left or right subtree (plus 1)
+     */
+    public int findHeight(Node root) {
+        //Base case, leaf nodes have 0 height
+        if (root == null) return -1;
+        else {
+            return 1 + Math.max(findHeight(root.getLeftChild()),findHeight(root.getRightChild()));
+        }
+    }
+
    /**
     * 3 conditions for delete
     *  1. Node is Leaf Node.

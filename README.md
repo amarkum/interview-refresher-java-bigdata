@@ -6,7 +6,7 @@ one-stop repo to lookup for code snippets of core java concepts, sql, data struc
 1. Algorithm - Searchin, Sorting etc.
 2. Asked Programs
 3. Apache Crunch - A Framework to execute MapReduce Jobs
-4. Data Structures - ArrayList, LinkedList, Tree 	
+4. Data Structures - ArrayList, LinkedList, Stack, Queue, Tree
 5. Design Patterns - Singleton, Factory, Builder Design Pattern code Snippets
 6. Exceptions	- Creation of Custom Exception
 7. Garbage Collection - Usage of Garbage Collection

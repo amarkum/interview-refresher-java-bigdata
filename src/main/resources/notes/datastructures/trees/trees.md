@@ -43,4 +43,19 @@ The height of a tree is simply the height of its root node.
 - Binary Search Tree
     - A Binary Search Tree -Ordered Binary Tree. is a variant of Binary Tree with a strict condition based on node value.
     
+## Tree Traversal
+1. Breadth First - Visit all the node at the same depth for visiting nodes at next level
+2. Depth First - Depth first starts with root node and explores as far as possible along each branch before backtracking.
+Depth first is generally solved using recursion.<br/>
+
+There are 3 popular depth-first strategies<br/>
+
+    I. Pre-Order
+    II. In-Order
+    III. Post-Order
+
     
+        
+
+
+

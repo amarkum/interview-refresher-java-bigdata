@@ -4,6 +4,8 @@ import java.util.LinkedList;
 
 public class LinkedListAsStack {
     public static void main(String[] args) {
+
+        // LinkedList Implements Queue, so it follow FIFO - First In First Out
         LinkedList<String> stack = new LinkedList<String>();
 
         // Add values to the LinkedList.

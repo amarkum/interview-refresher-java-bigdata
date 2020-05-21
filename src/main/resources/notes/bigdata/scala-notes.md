@@ -16,20 +16,29 @@ object Application {
 ### 2. Importing Classes.
 
 1. Importing things
-`import scala.collection.immutable.List`
+```scala 
+import scala.collection.immutable.List
+```
 
 2. Import all "sub packages"
-`import scala.collection.immutable._`
+```
+scala import scala.collection.immutable._
+```
 
 3. Rename an import using '=>'<br/>
-`import scala.collection.immutable.{List => ImmutableList}`
+```
+scala import scala.collection.immutable.{List => ImmutableList}
+```
 
 4. Import multiple classes in one statement<br/>
-`import scala.collection.immutable.{List, Map}`
+```
+scala import scala.collection.immutable.{List, Map}
+```
 
 5. Java Class can also be Imported
-`import java.util.LinkedList`
-
+```
+scala import java.util.LinkedList
+```
 
 ### 3. Implicits
 

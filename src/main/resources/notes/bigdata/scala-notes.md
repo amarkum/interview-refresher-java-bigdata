@@ -21,23 +21,23 @@ import scala.collection.immutable.List
 ```
 
 2. Import all "sub packages"
-```
-scala import scala.collection.immutable._
+```scala
+ import scala.collection.immutable._
 ```
 
 3. Rename an import using '=>'<br/>
-```
-scala import scala.collection.immutable.{List => ImmutableList}
+```scala
+ import scala.collection.immutable.{List => ImmutableList}
 ```
 
 4. Import multiple classes in one statement<br/>
-```
-scala import scala.collection.immutable.{List, Map}
+```scala
+ import scala.collection.immutable.{List, Map}
 ```
 
 5. Java Class can also be Imported
-```
-scala import java.util.LinkedList
+```scala 
+import java.util.LinkedList
 ```
 
 ### 3. Implicits

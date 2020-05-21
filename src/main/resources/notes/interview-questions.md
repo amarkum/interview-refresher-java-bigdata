@@ -72,7 +72,7 @@
 25.) Performance comparison of Interface and abstract class - Sianr Mas Group
 26.) Diamond Principle and SOLID principle - Sianr Mas Group
 27.) String pool in Java - Sianr Mas Group
-28.) Block synchronization, difference between block level synchronizationa and method synchronization. - Sianr Mas Group
+28.) Block synchronization, difference between block level synchronization and method level synchronization. - Sianr Mas Group
 29.) Difference between ArrayList and LinkedList - Sianr Mas Group
 30.) Comparable and Comparator - Sianr Mas Group
 31.) What is Runnable and Callable - Syncheron
@@ -89,6 +89,8 @@
 42.) What are Executor Services in Java, how do we Initialize them? - Virtusa
 43.) How to create a Singleton class in java for multi-threading environment? - Virtusa
 44.) What is try-with-resource - Virtusa
+45.) What is fail fast & fail safe - DansakeIT
+46.) How do you Implement a Concurrent HashMap - DansakeIT
 ```
 
 # SQL Interview Questions

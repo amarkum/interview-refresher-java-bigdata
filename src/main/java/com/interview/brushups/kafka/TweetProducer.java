@@ -31,7 +31,7 @@ public class TweetProducer {
     String token = "";
     String secret = "";
 
-    List<String> terms = Lists.newArrayList("covid19");
+    List<String> terms = Lists.newArrayList("carryminati");
 
     public TweetProducer(){}
 

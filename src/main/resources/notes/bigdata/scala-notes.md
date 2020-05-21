@@ -80,7 +80,7 @@ addWithDefault(1)    // => 6
 ```
 
 
-### 4. Loops
+### 5. Loops
 
 ```scala
 1 to 5
@@ -97,7 +97,7 @@ var i = 0
 while (i < 10) { println("i " + i); i += 1 }
 ```
 
-### 4. Classes
+### 6. Classes
 
 ```scala
 class Dog(br: String) {
@@ -127,7 +127,7 @@ println(mydog.bark)  // => "Woof, woof!"
 ```
 
 
-### 5. Case Classes
+### 7. Case Classes
 
 ```scala
 // Case classes are classes that have extra functionality built in. A common
@@ -154,7 +154,7 @@ Person("George", "1234") == Person("Kate", "1236")  // => false
 val otherGeorge = george.copy(phoneNumber = "9876")
 ```
 
-### 6. Object
+### 8. Object
 
 ```scala
 // The "object" keyword creates a type AND a singleton instance of it. It is
@@ -169,7 +169,7 @@ object Dog {
 }
 ```
 
-### 7. Functional Programming
+### 9. Functional Programming
 
 ```scala
 // Scala allows methods and functions to return, or take as parameters, other

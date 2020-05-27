@@ -1,14 +1,57 @@
 # Maven Commands
 
 ### Change Version
-
-`mvn versions:set -DnewVersion=01234-SNAPSHOT`
+```shell script
+mvn versions:set -DnewVersion=01234-SNAPSHOT
+```
 
 ### Clean Install - Skipping Test
-`mvn clean install -DskipTests -Dmaven.javadoc.skip=true -Dfindbugs.skip=true -Dmaven.clover.skip=true -DskipITs`
+```shell script
+mvn clean install -DskipTests -Dmaven.javadoc.skip=true -Dfindbugs.skip=true -Dmaven.clover.skip=true -DskipITs
+```
 
 ### Deploy Docker Image
-`mvn clean package -Dfindbugs.skip=true  docker:stop docker:build docker:start  docker:logs -Ddocker.follow -Ddocker.logDate=DEFAULT -Dmaven.test.skip=true`
+```shell script
+mvn clean package -Dfindbugs.skip=true  docker:stop docker:build docker:start  docker:logs -Ddocker.follow -Ddocker.logDate=DEFAULT -Dmaven.test.skip=true
+```
+
+### Assembly Plugin
+
+```xml
+ <plugin>
+        <artifactId>maven-assembly-plugin</artifactId>
+        <configuration>
+          <archive>
+            <manifest>
+              <!-- <mainClass></mainClass> -->
+            </manifest>
+          </archive>
+          <descriptorRefs>
+            <descriptorRef>jar-with-dependencies</descriptorRef>
+          </descriptorRefs>
+        </configuration>
+        <executions>
+          <execution>
+            <id>make-assembly</id> <!-- this is used for inheritance merges -->
+            <phase>package</phase> <!-- bind to the packaging phase -->
+            <goals>
+              <goal>single</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+```
+
+```xml
+<plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-compiler-plugin</artifactId>
+    <configuration>
+        <source>8</source>
+        <target>8</target>
+    </configuration>
+</plugin>
+```
 
 # Git Commands
 

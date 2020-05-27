@@ -53,17 +53,14 @@ public class ProducerClient {
             record = new ProducerRecord(topicName, Integer.toString(count), "Hello " + count);
 
             // Handle sent records
-            producer.send(record, new Callback() {
-                @Override
-                public void onCompletion(RecordMetadata recordMetadata, Exception e) {
-                    if (e != null) {
-                        System.out.println("Record Sent Failed");
-                    } else {
-                        System.out.println("Topic :" + recordMetadata.topic());
-                        System.out.println("Partition :" + recordMetadata.partition());
-                        System.out.println("Offset :" + recordMetadata.offset());
-                        System.out.println("TimeStamp :" + recordMetadata.timestamp());
-                    }
+            producer.send(record, (recordMetadata, e) -> {
+                if (e != null) {
+                    System.out.println("Record Sent Failed");
+                } else {
+                    System.out.println("Topic :" + recordMetadata.topic());
+                    System.out.println("Partition :" + recordMetadata.partition());
+                    System.out.println("Offset :" + recordMetadata.offset());
+                    System.out.println("TimeStamp :" + recordMetadata.timestamp());
                 }
             });
         }

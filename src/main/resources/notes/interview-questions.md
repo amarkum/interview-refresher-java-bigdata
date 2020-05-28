@@ -35,6 +35,8 @@
 5. Joining an RDD - Virtusa
 6. Broadcast Variables &  Accumulators - Virtusa
 7. repartition & vs coalesce - Virtusa
+8. Joining two columns in dataframe - Lowe's
+9. Calculate the difference by last row - Virtusa
 ```
 
 ## Hive 

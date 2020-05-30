@@ -37,12 +37,14 @@
 7. repartition & vs coalesce - Virtusa
 8. Joining two columns in dataframe - Lowe's
 9. Calculate the difference by last row - Virtusa
+10. At which phase Spark loads the data into the memory - Synechron
 ```
 
 ## Hive 
 ```text
 1.) What is Static Partitioning and Dynamic Partitioning in HIVE? - Yodlee
 2.) What are datatypes in Hive? - UST Global
+3.) How to load a CSV with 4 columns combined to 1 column - Synechron
 ```
 
 # Java Interview Questions

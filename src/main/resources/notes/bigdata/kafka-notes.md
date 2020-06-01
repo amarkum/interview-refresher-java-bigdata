@@ -40,7 +40,7 @@ Example <br/>
 - Therefore, each partition has 1 leader and multi In-Sync Replicas
 
 ## Producers
-- Produce write data to topic (which is made of partitions)
+- Producer write data to topic (which is made of partitions)
 - Producer automatically know to which broker and partitions to write to
 - If data is sent without keys, producer sends data to partitions in round-robin fashion to load-balance
 - Producer can choose to receive acknowledgement of data writes to partitions: <br/>

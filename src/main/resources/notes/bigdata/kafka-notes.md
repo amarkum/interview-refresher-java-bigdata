@@ -144,7 +144,7 @@ It will clear off the backlog message by reading it, and read the ew upcoming me
 ## Kafka Consumer Group CLI Commands
  
 #### 1. List all the Consumer Groups<br/>
-`./kakfa-consumer-groups --list --bootstrap-server localhost:9092`
+`./kafka-consumer-groups --list --bootstrap-server localhost:9092`
 
 Note : When we read a message from a topic, it's always read as a part of consumer group. <br/>
 We may not enter a consumer group while reading a topic, but consumer group is always created. <br/>

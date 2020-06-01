@@ -16,14 +16,17 @@
  12.) What are UDF in HIVE? - Deloitte
  13.) hdfs -getmerge command - Sear Holding
  14.) HBase Shell to retrieve data from Column Family. - Sear Holding
+ 15.) How to we bulk load data from HDFS to HBase - Rapido
+ 16.) Describe Architecture of HBase
  ```
- 
+
  ## Kafka 
  ```text
  1.) Offsets in Kafka. - Sianr Mas Group
  2.) ISR - In Sync Replicas - Sianr Mas Group
  3.) Commands to list topics, delete topic, Producer and consumer. - Sianr Mas Group
  4.) Consumer and Consumer group. - Sianr Mas Group
+ 5.) Describe Architecture of Kafka - Rapido
 ```
 
 # Spark
@@ -95,6 +98,7 @@
 44.) What is try-with-resource - Virtusa
 45.) What is fail fast & fail safe - DansakeIT
 46.) How do you Implement a Concurrent HashMap - DansakeIT
+47.) With two threads printing odd and even, how to print sequence of number - Rapido
 ```
 
 # SQL Interview Questions

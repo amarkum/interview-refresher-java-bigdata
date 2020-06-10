@@ -17,7 +17,8 @@
  13.) hdfs -getmerge command - Sear Holding
  14.) HBase Shell to retrieve data from Column Family. - Sear Holding
  15.) How to we bulk load data from HDFS to HBase - Rapido
- 16.) Describe Architecture of HBase
+ 16.) Describe Architecture of HBase - Rapido, Tavant
+ 17.) What is TombStoning in HBase - Rapido
  ```
 
  ## Kafka 
@@ -27,6 +28,7 @@
  3.) Commands to list topics, delete topic, Producer and consumer. - Sianr Mas Group
  4.) Consumer and Consumer group. - Sianr Mas Group
  5.) Describe Architecture of Kafka - Rapido
+ 6.) If producer is producing at a greater speed tha consumer, how will be fix this? - HappiestMinds
 ```
 
 # Spark
@@ -41,6 +43,8 @@
 8. Joining two columns in dataframe - Lowe's
 9. Calculate the difference by last row - Virtusa
 10. At which phase Spark loads the data into the memory - Synechron
+11. What is difference between  map vs mapPartitions? - HappiestMinds
+12. How does spark process files which are greater than main memory - Tavany
 ```
 
 ## Hive 
@@ -99,6 +103,9 @@
 45.) What is fail fast & fail safe - DansakeIT
 46.) How do you Implement a Concurrent HashMap - DansakeIT
 47.) With two threads printing odd and even, how to print sequence of number - Rapido
+48.) What is composition, isA, hasA relationship - Accolite
+49.) Difference between HashMap and LinkedHashMap - Accolite
+50.) Why wait() method is part of Object class and not Thread - Accolite
 ```
 
 # SQL Interview Questions
@@ -108,4 +115,5 @@
 3.) what is PRIMARY Key and UNIQUE key - Virtusa
 4.) Can PRIMARY key have a NULL value - Virtusa
 5.) Difference between INNER JOIN and OUTER JOIN - Virtusa
+6.) Find the maximum salary in each department and name of the employee - HappiestMinds, Lowe's
 ```

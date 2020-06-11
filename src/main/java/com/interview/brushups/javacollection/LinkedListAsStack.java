@@ -27,6 +27,11 @@ public class LinkedListAsStack {
 
         System.out.println(stack); // 0, 1, 2, 3, 4
 
+        // pop removes the element from the front of the LinkedList
+        System.out.println(stack.pop());
+
+        System.out.println(stack); // 0, 1, 2, 3, 4
+
         // peek OR peekFirst - Returns the first element of the LinkedList, doesn't delete the element in LinkedList
         System.out.println(stack.peek()); // Returns 0
 

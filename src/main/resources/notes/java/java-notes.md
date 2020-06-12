@@ -65,11 +65,11 @@ E.g ```ListIterator listIterator = l.listIterator();```
 <br/>
 
 ## Difference between HashMap and HashTable
-`HashMap` is non synchronized.
-It is not-thread safe and can’t be shared between many threads without proper synchronization code whereas `Hashtable` is synchronized.
-It is thread-safe and can be shared with many threads.
-`HashMap` allows one null key and multiple null values whereas `Hashtable` doesn’t allow any null key or value.
-`HashMap` is generally preferred over HashTable if thread synchronization is not needed
+`HashMap` is non synchronized.<br/>
+It is not-thread safe and can’t be shared between many threads without proper synchronization code whereas `Hashtable` is synchronized.<br/>
+It is thread-safe and can be shared with many threads.<br/>
+`HashMap` allows one null key and multiple null values whereas `Hashtable` doesn’t allow any null key or value.<br/>
+`HashMap` is generally preferred over HashTable if thread synchronization is not needed<br/>
 
 ## Difference between Iterator and forEach()
 

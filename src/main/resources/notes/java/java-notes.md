@@ -64,6 +64,13 @@ The `ListIterator` can traverse the elements in a collection in both the `forwar
 E.g ```ListIterator listIterator = l.listIterator();```
 <br/>
 
+## Difference between HashMap and HashTable
+`HashMap` is non synchronized.
+It is not-thread safe and can’t be shared between many threads without proper synchronization code whereas `Hashtable` is synchronized.
+It is thread-safe and can be shared with many threads.
+`HashMap` allows one null key and multiple null values whereas `Hashtable` doesn’t allow any null key or value.
+`HashMap` is generally preferred over HashTable if thread synchronization is not needed
+
 ## Difference between Iterator and forEach()
 
 In `forEach()` loop, we can’t modify collection, it will throw a `ConcurrentModificationException` on the other hand with `iterator` we can modify collection. <br/>

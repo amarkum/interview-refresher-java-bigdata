@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * Twilio - Split the message by 160 character, and also add the pagination
  */
-public class StrignSplit {
+public class MessageSplit {
 
     public static void main(String[] args) {
 

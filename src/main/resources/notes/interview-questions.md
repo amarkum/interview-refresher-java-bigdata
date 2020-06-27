@@ -33,21 +33,21 @@
 
 # Spark
 ```text
-1. Cache and Persist - Virtusa
-2. Levels of Cache - Virtusa
-3. Sliding Window - Virtusa
-4. Submit SparK Job - Virtusa
-5. Joining an RDD - Virtusa
-6. Broadcast Variables &  Accumulators - Virtusa
-7. repartition & vs coalesce - Virtusa
-8. Joining two columns in dataframe - Lowe's
-9. Calculate the difference by last row - Virtusa
-10. At which phase Spark loads the data into the memory - Synechron
-11. What is difference between  map vs mapPartitions? - HappiestMinds
-12. How does spark process files which are greater than main memory - Tavant
-13. What is Lineage in Spark - L&T
-14. What is Lazy Evaluation - L&T
-15. What is narrow Transformation - L&T
+1.) Cache and Persist - Virtusa
+2.) Levels of Cache - Virtusa
+3.) Sliding Window - Virtusa
+4.) Submit SparK Job - Virtusa
+5.) Joining an RDD - Virtusa
+6.) Broadcast Variables &  Accumulators - Virtusa
+7.) repartition & vs coalesce - Virtusa
+8.) Joining two columns in dataframe - Lowe's
+9.) Calculate the difference by last row - Virtusa
+10.) At which phase Spark loads the data into the memory - Synechron
+11.) What is difference between  map vs mapPartitions? - HappiestMinds
+12.) How does spark process files which are greater than main memory - Tavant
+13.) What is Lineage in Spark - L&T
+14.) What is Lazy Evaluation - L&T
+15.) What is narrow Transformation - L&T
 ```
 
 ## Hive 

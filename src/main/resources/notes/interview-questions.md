@@ -44,7 +44,10 @@
 9. Calculate the difference by last row - Virtusa
 10. At which phase Spark loads the data into the memory - Synechron
 11. What is difference between  map vs mapPartitions? - HappiestMinds
-12. How does spark process files which are greater than main memory - Tavany
+12. How does spark process files which are greater than main memory - Tavant
+13. What is Lineage in Spark - L&T
+14. What is Lazy Evaluation - L&T
+15. What is narrow Transformation - L&T
 ```
 
 ## Hive 

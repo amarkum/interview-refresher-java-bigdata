@@ -109,6 +109,7 @@
 48.) What is composition, isA, hasA relationship - Accolite
 49.) Difference between HashMap and LinkedHashMap - Accolite
 50.) Why wait() method is part of Object class and not Thread - Accolite
+51.) What is Auto-Boxing and Unboxing in Java? - ProKarma
 ```
 
 # SQL Interview Questions

@@ -3,7 +3,7 @@ one-stop repo to lookup for code snippets of core java concepts, sql, data struc
 
 ## Content
 
-1. Algorithm - Searchin, Sorting etc.
+1. Algorithm - Searching, Sorting etc.
 2. Asked Programs
 3. Apache Crunch - A Framework to execute MapReduce Jobs
 4. Data Structures - Arrays, LinkedList, Stack, Queue, Tree

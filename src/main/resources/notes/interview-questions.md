@@ -31,7 +31,14 @@
  6.) If producer is producing at a greater speed tha consumer, how will be fix this? - HappiestMinds
 ```
 
-# Spark
+## Hive 
+```text
+1.) What is Static Partitioning and Dynamic Partitioning in HIVE? - Yodlee
+2.) What are datatypes in Hive? - UST Global
+3.) How to load a CSV with 4 columns combined to 1 column - Synechron
+```
+
+# Spark Iterview Questions
 ```text
 1.) Cache and Persist - Virtusa
 2.) Levels of Cache - Virtusa
@@ -48,13 +55,6 @@
 13.) What is Lineage in Spark - L&T
 14.) What is Lazy Evaluation - L&T
 15.) What is narrow Transformation - L&T
-```
-
-## Hive 
-```text
-1.) What is Static Partitioning and Dynamic Partitioning in HIVE? - Yodlee
-2.) What are datatypes in Hive? - UST Global
-3.) How to load a CSV with 4 columns combined to 1 column - Synechron
 ```
 
 # Java Interview Questions

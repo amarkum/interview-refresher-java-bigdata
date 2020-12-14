@@ -58,6 +58,8 @@ mvn clean package -Dfindbugs.skip=true  docker:stop docker:build docker:start  d
 ## Show All the Git Configuration
 `git config --list --show-origin`
 
+## Un-stage commit 
+`git restore --staged`
 
 ## The local config file is in the project directory: 
 `.git/config`

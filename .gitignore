@@ -3,6 +3,7 @@ target/
 *.txt
 *.iml
 *.iml/
+.DS_Store
 interview-brushups.iml
 
 src/main/resources/output/*

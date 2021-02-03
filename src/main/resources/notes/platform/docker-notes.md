@@ -25,6 +25,10 @@ Custom Tag
 Latest Tag
 `docker push amarxcode/flask_webservice`
 
+### Pull the Dokcer Image & Run
+docker pull registry.gitlab.com/amarxcode/flask_webservice
+docker run registry.gitlab.com/amarxcode/flask_webservice
+
 #### Docker Common Commands 
 `docker image ls -a`
 

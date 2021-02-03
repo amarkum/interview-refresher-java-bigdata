@@ -64,7 +64,7 @@ mvn clean package -Dfindbugs.skip=true  docker:stop docker:build docker:start  d
 ## The local config file is in the project directory: 
 `.git/config`
 
-## The global config file in in your home directory: 
+## The global config file in your home directory: 
 `~/.gitconfig`
 
 ## Change User Name
@@ -120,3 +120,28 @@ build
 #general
 *.class
 ```
+
+
+# GitLab
+A Gitlab CI has multiple stages, we can specify stages by <br/>
+
+```yaml
+stages: 
+- run
+- build
+- test
+```
+A Job is tied with the stage, by specifying the stage name.
+A Stage can have one more job.
+
+```yaml
+job-one:
+  image: docker:latest
+  stage: run
+
+job-two:
+  image: docker:latest
+  stage: run
+```
+  
+

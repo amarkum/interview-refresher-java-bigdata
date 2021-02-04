@@ -48,3 +48,14 @@ Latest Tag
 
 
 
+# Deploy App to Compute Engine
+```yaml
+gcp-deploy:
+  stage: deploy
+  image: google/cloud-sdk
+  script:
+    - gcloud config set project ecstatic-spirit-301116
+    - gcloud auth activate-service-account --key-file $GCP_SERVICE_CREDS
+    - gcloud config set compute/zone us-central1-a
+    - gcloud compute instances update-container instance-3 --container-image registry.gitlab.com/amarkum/flask-api:latest
+```

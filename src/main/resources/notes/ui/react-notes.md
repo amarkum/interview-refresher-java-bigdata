@@ -9,6 +9,13 @@ It can download different modules from existing library.
 
 Run `npm install -g npm` to update!   
 
+## Create ReactJS App
+```shell
+npx create-react-app my-app
+cd my-app
+npm start
+```
+
 ## How to download Modules?
 While installing module, we must pas `--save` argument, so that it gets dependency is added to `package.json` <br/>
 So, when we run an `npm run build`, the dependency required gets installed.

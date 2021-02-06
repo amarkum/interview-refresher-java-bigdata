@@ -10,3 +10,6 @@ Number after back-slash is called CIDR, which specifies how many bits from the l
 ## Find Public IP Address of the System
 curl ipecho.net/plain ; echo
 
+## Enable firewall Rules in GCP to specific IP
+`gcloud compute firewall-rules update vpc-gcp-one-fw-allow-flask --source-ranges $(curl ipecho.net/plain; echo)/32`
+`gcloud compute firewall-rules update vpc-gcp-one-fw-allow-react --source-ranges $(curl ipecho.net/plain; echo)/32`

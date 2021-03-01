@@ -84,4 +84,14 @@ cloudera ALL =(ALL) NOPASSWD: ALL
 ### 2. Disable `root` account
 `sudo passwd -dl root`
 
+## SSH
+Generate the SSH Private and Public Keys
+`ssh-keygen -t rsa -f ~/.ssh/amarkum -C amarkum`
+
+Put the public Key (amarkum.pub) to the instance where we want to login, and use the private key to connect.
+
+Login into Machine
+`ssh -o StrictHostKeyChecking=no -i /Users/amarkumar/.ssh/amarkum amarkum@ip.or.hostname.com`
+
+
 

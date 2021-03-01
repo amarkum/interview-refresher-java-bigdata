@@ -88,10 +88,11 @@ cloudera ALL =(ALL) NOPASSWD: ALL
 Generate the SSH Private and Public Keys
 `ssh-keygen -t rsa -f ~/.ssh/amarkum -C amarkum`
 
-Put the public Key (amarkum.pub) to the instance where we want to login, and use the private key to connect.
+## Put the public Key (amarkum.pub) to the instance where we want to login, and use the private key to connect.
 
-Login into Machine
+## Login into Machine
 `ssh -o StrictHostKeyChecking=no -i /Users/amarkumar/.ssh/amarkum amarkum@ip.or.hostname.com`
 
-
+## Add a User in UNIX
+useradd [Username]
 

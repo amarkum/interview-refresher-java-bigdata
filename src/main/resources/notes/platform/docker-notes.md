@@ -47,7 +47,6 @@ Latest Tag
 `docker system prune -a`
 
 
-
 # Deploy App to Compute Engine
 ```yaml
 gcp-deploy:

@@ -5,7 +5,7 @@
 
 ## GitLab Login to GCP Compute Engine
 ### SSH to the Compute Engine Instance
-`gcloud compute ssh --zone "us-east1-b" "flask-webservice" --project "ecstatic-spirit-301116`
+`gcloud compute ssh --zone "us-east1-b" "flask-webservice" --project "ecstatic-spirit-301116"`
 
 ### Login to GitLab
 `docker login registry.gitlab.com`

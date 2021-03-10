@@ -200,7 +200,7 @@ public class LinkedList<T> {
         Node previous = null;
         //currentNode be the headNode
         Node current = headNode;
-        //to save the state of the next node, as we assign the value of current.nextNode to precious node.
+        //to save the state of the next node, as we assign the value of current.nextNode to previous node.
         Node next = null;
 
         while (current != null) {

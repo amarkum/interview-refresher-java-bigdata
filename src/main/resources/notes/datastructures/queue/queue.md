@@ -23,3 +23,8 @@ currentSize = 0;
 
 ## Check if Queue is Full?
 If `currentSize` of the queue is equal to the `maxSize`
+
+## How Queue is implemented?
+We just maintain two pointer, one for the front and one for the back of the Queue. </br>
+If the elements are to be inserted, we calculate the mode value and insert it to the front index. <br/>
+If the elements are full, we do not insert, if the Queue is empty we do not pop the elements.

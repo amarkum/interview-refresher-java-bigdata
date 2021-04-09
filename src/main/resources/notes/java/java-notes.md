@@ -1,5 +1,14 @@
 # OOPS
 
+# Set Java Home
+
+```shell
+/usr/libexec/java_home -V
+sudo vi ~/.profile  
+export JAVA_HOME=$(/usr/libexec/java_home -v 11.0.10)
+source ~/.profile  
+```
+
 ## Inheritance
 Inheritance means one class can extend to another class. So that the codes can be reused from one class to another class.
 Existing class is known as Super class whereas the derived class is known as a sub class.<br/>

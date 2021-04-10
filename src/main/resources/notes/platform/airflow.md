@@ -23,3 +23,12 @@ auth_backend = airflow.contrib.auth.backends.password_auth
 # Use FAB-based webserver with RBAC feature
 rbac = True
 ```
+#### Add a User and Password
+
+`$ docker container ls`
+
+Get the SHA for the airflow docker container and get in to the bash shell
+`$ docker exec -it <SHA> bash`
+
+create a User with `admin` as user and password as `admin`
+`$ airflow create_user  --role Admin --username admin --email admin --firstname admin --lastname admin --password admin`

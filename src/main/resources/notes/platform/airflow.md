@@ -32,7 +32,18 @@ Get the SHA for the airflow docker container and get in to the bash shell
 `$ docker exec -it <SHA> bash`
 
 ### Make sure we have the required table
-`$ airflow init db`
+
+`$ python`
+
+```python
+from cryptography.fernet import Fernet
+fernet_key= Fernet.generate_key()
+print(fernet_key.decode())	
+```
+>> python_print_key
+
+`$ export FERNET_KEY='python_print_key';`
+`$ airflow initdb;`
 
 create a User with `admin` as user and password as `admin` <br/>
 `$ airflow create_user  --role Admin --username admin --email admin --firstname admin --lastname admin --password admin`

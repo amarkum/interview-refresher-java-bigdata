@@ -30,5 +30,5 @@ rbac = True
 Get the SHA for the airflow docker container and get in to the bash shell
 `$ docker exec -it <SHA> bash`
 
-create a User with `admin` as user and password as `admin`
+create a User with `admin` as user and password as `admin` <br/>
 `$ airflow create_user  --role Admin --username admin --email admin --firstname admin --lastname admin --password admin`

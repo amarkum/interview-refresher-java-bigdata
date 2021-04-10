@@ -42,7 +42,7 @@ print(fernet_key.decode())
 ```
 >> python_print_key
 
-`$ export FERNET_KEY='python_print_key';`
+`$ export FERNET_KEY='python_print_key';` <br/>
 `$ airflow initdb;`
 
 create a User with `admin` as user and password as `admin` <br/>

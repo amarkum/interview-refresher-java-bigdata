@@ -96,3 +96,6 @@ Generate the SSH Private and Public Keys
 ## Add a User in UNIX
 useradd [Username]
 
+## Delete a process usin a PORT
+`$ sudo kill -9 $(sudo lsof -t -i:80)`
+

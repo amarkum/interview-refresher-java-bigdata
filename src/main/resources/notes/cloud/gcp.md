@@ -7,11 +7,14 @@
 ### SSH to the Compute Engine Instance
 `gcloud compute ssh --zone "us-east1-b" "flask-webservice" --project "ecstatic-spirit-301116"`
 
-### Login to GitLab
-`docker login registry.gitlab.com`
-
-```text
-WARNING! Your password will be stored unencrypted in /home/amarkumar/.docker/config.json.
-Configure a credential helper to remove this warning. See
-https://docs.docker.com/engine/reference/commandline/login/#credentials-store
+# Deploy App to Compute Engine
+```yaml
+gcp-deploy:
+  stage: deploy
+  image: google/cloud-sdk
+  script:
+    - gcloud config set project ecstatic-spirit-301116
+    - gcloud auth activate-service-account --key-file $GCP_SERVICE_CREDS
+    - gcloud config set compute/zone us-central1-a
+    - gcloud compute instances update-container instance-3 --container-image registry.gitlab.com/amarkum/flask-api:latest
 ```

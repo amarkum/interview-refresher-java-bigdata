@@ -1,5 +1,5 @@
 
-## Enable firewall Rules inGCP to specific IP
+## Enable firewall Rules in GCP to specific IP
 `gcloud compute firewall-rules update vpc-gcp-one-fw-allow-flask --source-ranges $(curl ipecho.net/plain; echo)/32`
 `gcloud compute firewall-rules update vpc-gcp-one-fw-allow-react --source-ranges $(curl ipecho.net/plain; echo)/32`
 

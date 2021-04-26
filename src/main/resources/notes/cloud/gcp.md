@@ -1,7 +1,6 @@
 
 ## Enable firewall Rules in GCP to specific IP.
 `gcloud compute firewall-rules update vpc-gcp-one-fw-allow-flask --source-ranges $(curl ipecho.net/plain; echo)/32` <br/>
-`gcloud compute firewall-rules update vpc-gcp-one-fw-allow-react --source-ranges $(curl ipecho.net/plain; echo)/32`
 
 ## GitLab Login to GCP Compute Engine
 ### SSH to the Compute Engine Instance

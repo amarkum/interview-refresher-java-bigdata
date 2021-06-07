@@ -1,6 +1,20 @@
 
 # SQL NOTES
 
+# SQL Basics
+
+## Show Column from a table
+
+```
+SHOW COLUMN from table_name;
+```
+## Get the Schema definition of the table 
+
+```
+DESC table_name;
+```
+
+
 ## TRIANGLE PROBLEM
 ```sql
 SELECT CASE WHEN a+b>c AND b+c>a AND a+c>b THEN

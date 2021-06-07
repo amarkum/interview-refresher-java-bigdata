@@ -19,6 +19,12 @@ DESC table_name;
 SELECT * FROM table_name ORDER BY first_column DESC, second_column ASC;
 ```
 
+## Case-sensitive Order
+
+```sql
+SELECT * FROM table_name ORDER BY BINARY first_column;
+```
+
 
 ## TRIANGLE PROBLEM
 ```sql

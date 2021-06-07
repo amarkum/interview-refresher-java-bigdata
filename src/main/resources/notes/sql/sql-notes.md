@@ -20,9 +20,13 @@ SELECT * FROM table_name ORDER BY first_column DESC, second_column ASC;
 ```
 
 ## Case-sensitive Order
-
 ```sql
-SELECT * FROM table_name ORDER BY BINARY first_column;
+SELECT * FROM FROM ORDER BY BINARY first_column;
+```
+
+## Sort by Casting
+```sql
+SELECT * FROM FROM ORDER BY CAST(first_column AS CHAR) ;
 ```
 
 

@@ -14,6 +14,11 @@ SHOW COLUMN from table_name;
 DESC table_name;
 ```
 
+## Sorting the result from the table
+```sql
+SELECT * FROM table_name ORDER BY first_column DESC, second_column ASC;
+```
+
 
 ## TRIANGLE PROBLEM
 ```sql

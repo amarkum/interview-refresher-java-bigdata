@@ -103,7 +103,7 @@ ANSI SQL standard defines 5 types of JOINS
 - Full Outer Join
 - Self Join
 
-1. INNER JOIN
+### 1. INNER JOIN
 
 #### Table with two different column name 
 

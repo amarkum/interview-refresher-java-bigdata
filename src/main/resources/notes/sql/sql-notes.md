@@ -75,9 +75,8 @@ SELECT MAX(first_column), MIN(first_column) from table_name;
 
 # 2. GROUP BY
 
-```text
-GROUP BY clause must appear after the FROM and WHERE clauses and is also evaluated after them. However, GROUP BY is evaluated before the ORDER BY, LIMIT, and HAVING clauses.
-```
+GROUP BY clause must appear after the FROM and WHERE clauses and is also evaluated after them. 
+<br/> However, GROUP BY is evaluated before the ORDER BY, LIMIT, and HAVING clauses.
 
 ## TRIANGLE PROBLEM
 ```sql

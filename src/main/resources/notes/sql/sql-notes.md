@@ -1,7 +1,7 @@
 
 # SQL NOTES
 
-# SQL Basics
+# 1. SQL Basics
 
 ## Show Column from a table
 
@@ -34,7 +34,12 @@ SELECT * FROM FROM ORDER BY CAST(first_column AS CHAR) ;
 ```sql
 ALTER TABLE table_name CHANGE first_column fcolumn varchar(120);
 ```
+## INDEX Table
 
+```sql
+ALTER TABLE table_name ADD INDEX colOneIndex (first_column);
+ALTER TABLE table_name ADD INDEX colOneIndexWith10Chars (first_column(10));
+```
 
 ## TRIANGLE PROBLEM
 ```sql

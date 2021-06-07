@@ -78,6 +78,14 @@ SELECT MAX(first_column), MIN(first_column) from table_name;
 GROUP BY clause must appear after the FROM and WHERE clauses and is also evaluated after them. 
 <br/> However, GROUP BY is evaluated before the ORDER BY, LIMIT, and HAVING clauses.
 
+```sql
+SELECT first_column, COUNT(*) FROM table_name GROUP BY first_column;
+```
+
+```sql
+SELECT first_column, AVG(quantity_column) FROM Actors GROUP BY first_column;
+```
+
 ## TRIANGLE PROBLEM
 ```sql
 SELECT CASE WHEN a+b>c AND b+c>a AND a+c>b THEN

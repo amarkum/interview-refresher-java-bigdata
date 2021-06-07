@@ -83,7 +83,7 @@ SELECT first_column, COUNT(*) FROM table_name GROUP BY first_column;
 ```
 
 ```sql
-SELECT first_column, AVG(quantity_column) FROM Actors GROUP BY first_column;
+SELECT first_column, AVG(quantity_column) FROM table_name GROUP BY first_column;
 ```
 
 ## TRIANGLE PROBLEM

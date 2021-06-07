@@ -86,6 +86,15 @@ SELECT first_column, COUNT(*) FROM table_name GROUP BY first_column;
 SELECT first_column, AVG(quantity_column) FROM table_name GROUP BY first_column;
 ```
 
+# 3. HAVING
+HAVING clause can be used to filter rows to display but that is not the intended use and can make the query slower. <br/>
+The HAVING clause should be used to decide what rows form each group.
+
+```sql
+SELECT first_column, AVG(quantity_column) as avgQuantity FROM table_name GROUP BY first_column HAVING avgQuantity > 100;
+```
+
+
 ## TRIANGLE PROBLEM
 ```sql
 SELECT CASE WHEN a+b>c AND b+c>a AND a+c>b THEN

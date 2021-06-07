@@ -97,6 +97,12 @@ SELECT first_column, AVG(quantity_column) as avgQuantity FROM table_name GROUP B
 # 4. JOINS
 ANSI SQL standard defines 5 types of JOINS
 
+- Inner Join
+- Left Outer Join 
+- Right Outer Join
+- Full Outer Join
+- Self Join
+
 
 # 5. FUNCTIONS
 

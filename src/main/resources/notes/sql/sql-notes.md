@@ -32,7 +32,7 @@ SELECT * FROM FROM ORDER BY CAST(first_column AS CHAR) ;
 ## Alter Table Column
 
 ```sql
-ALTER TABLE Actors CHANGE first_column fcolumn varchar(120);
+ALTER TABLE table_name CHANGE first_column fcolumn varchar(120);
 ```
 
 

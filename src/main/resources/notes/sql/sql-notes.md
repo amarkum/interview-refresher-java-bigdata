@@ -64,6 +64,15 @@ SELECT DISTINCT first_column from table_name;
 SELECT DISTINCT first_column,second_column from table_name;
 ```
 
+## AGGREGATED FUNCTION
+
+```sql
+SELECT COUNT(*)from table_name;
+SELECT SUM(first_column)from table_name;
+SELECT AVG(first_column)from table_name;
+SELECT MAX(first_column), MIN(first_column) from table_name;
+```
+
 ## TRIANGLE PROBLEM
 ```sql
 SELECT CASE WHEN a+b>c AND b+c>a AND a+c>b THEN

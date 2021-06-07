@@ -29,6 +29,12 @@ SELECT * FROM FROM ORDER BY BINARY first_column;
 SELECT * FROM FROM ORDER BY CAST(first_column AS CHAR) ;
 ```
 
+## Alter Table Column
+
+```sql
+ALTER TABLE Actors CHANGE first_column fcolumn varchar(120);
+```
+
 
 ## TRIANGLE PROBLEM
 ```sql

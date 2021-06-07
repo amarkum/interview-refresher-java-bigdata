@@ -103,6 +103,32 @@ ANSI SQL standard defines 5 types of JOINS
 - Full Outer Join
 - Self Join
 
+1. INNER JOIN
+
+#### Table with two different column name 
+
+```sql
+SELECT tab1Col1, tab1Col2, tab2Col1
+FROM table_one 
+INNER JOIN table_two  
+ON table_one.Id = table_two.relatedId;
+```
+
+#### Table with two same column name 
+```sql
+SELECT tab1Col1, tab1Col2, tab2Col1
+FROM table_one 
+INNER JOIN table_two  
+USING (Id);
+```
+
+#### Alternative
+
+```sql
+SELECT tab1Col1, tab1Col2, tab2Col1
+FROM table_one,table_two 
+WHERE Id = relatedId;
+```
 
 # 5. FUNCTIONS
 

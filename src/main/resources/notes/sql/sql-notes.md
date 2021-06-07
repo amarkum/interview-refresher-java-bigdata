@@ -48,6 +48,22 @@ SHOW INDEX FROM table_name;
 ANALYZE TABLE table_name;
 ```
 
+## TABLE ALIAS
+
+```sql
+SELECT CONCAT(first_column,' ', seond_column) AS complete_column FROM table_name ORDER BY complete_column;
+```
+
+## DISTINCT ROWS
+
+```sql
+SELECT DISTINCT first_column from table_name;
+```
+
+```sql
+SELECT DISTINCT first_column,second_column from table_name;
+```
+
 ## TRIANGLE PROBLEM
 ```sql
 SELECT CASE WHEN a+b>c AND b+c>a AND a+c>b THEN

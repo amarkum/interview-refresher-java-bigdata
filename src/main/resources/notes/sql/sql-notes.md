@@ -41,6 +41,13 @@ ALTER TABLE table_name ADD INDEX colOneIndex (first_column);
 ALTER TABLE table_name ADD INDEX colOneIndexWith10Chars (first_column(10));
 ```
 
+## Show INDEX
+
+```sql
+SHOW INDEX FROM table_name;
+ANALYZE TABLE table_name;
+```
+
 ## TRIANGLE PROBLEM
 ```sql
 SELECT CASE WHEN a+b>c AND b+c>a AND a+c>b THEN

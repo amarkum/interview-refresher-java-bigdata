@@ -5,12 +5,12 @@
 
 ## Show Column from a table
 
-```
+```sql
 SHOW COLUMN from table_name;
 ```
 ## Get the Schema definition of the table 
 
-```
+```sql
 DESC table_name;
 ```
 

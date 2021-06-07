@@ -94,33 +94,12 @@ The HAVING clause should be used to decide what rows form each group.
 SELECT first_column, AVG(quantity_column) as avgQuantity FROM table_name GROUP BY first_column HAVING avgQuantity > 100;
 ```
 
+# 4. JOINS
+ANSI SQL standard defines 5 types of JOINS
 
-## TRIANGLE PROBLEM
-```sql
-SELECT CASE WHEN a+b>c AND b+c>a AND a+c>b THEN
-            CASE
-                WHEN a=b AND b=c AND c=a THEN 'Equilateral'
-            ELSE
-                CASE WHEN a=b or b=c or c=a THEN 'Isosceles'
-                ELSE 'Scalene'
-                END
-            END
-        ELSE 'Not A Triangle'
-        END
-FROM triangles;
-```
 
-## Example of CASE Statement in Oracle
+# 5. FUNCTIONS
 
-```sql
-CASE STATEMENT
-SELECT
-CASE
-           WHEN 1=1 THEN 'YES'
-           ELSE 'NO'
-END
-FROM ‘TABLE_NAME’
-```
 ### `DISTINCT` & `MOD`
 ```sql
 select distinct city from STATION where MOD(ID,2)=0;
@@ -257,4 +236,31 @@ WHERE ROWNUM<=5;
 ### `FETCH NEXT {N} ROWS ONLY` - FROM Oracle 12c
 ```sql
 SELECT * FROM EMPLOYEE FETCH NEXT 5 ROWS ONLY;
+```
+
+## TRIANGLE PROBLEM
+```sql
+SELECT CASE WHEN a+b>c AND b+c>a AND a+c>b THEN
+            CASE
+                WHEN a=b AND b=c AND c=a THEN 'Equilateral'
+            ELSE
+                CASE WHEN a=b or b=c or c=a THEN 'Isosceles'
+                ELSE 'Scalene'
+                END
+            END
+        ELSE 'Not A Triangle'
+        END
+FROM triangles;
+```
+
+## Example of CASE Statement in Oracle
+
+```sql
+CASE STATEMENT
+SELECT
+CASE
+           WHEN 1=1 THEN 'YES'
+           ELSE 'NO'
+END
+FROM ‘TABLE_NAME’
 ```

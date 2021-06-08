@@ -130,7 +130,20 @@ FROM table_one,table_two
 WHERE Id = relatedId;
 ```
 
-# 5. FUNCTIONS
+# 5. UNION
+
+The UNION clause allows us to combine the results from several queries together. <br/>
+The clause doesn't join the table but merely clubs the two results together.
+
+```sql
+SELECT tab1Col1 FROM table_one 
+UNION 
+SELECT tab1Col2 FROM table_one;
+```
+
+Union doesn't includes the duplicate values. In order to include duplicate values in the result we use `UNION ALL` instead.
+
+# 6. FUNCTIONS
 
 ### `DISTINCT` & `MOD`
 ```sql

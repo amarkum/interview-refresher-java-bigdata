@@ -7,7 +7,7 @@ import java.util.Map;
 /**
  * Accolite, Tavant - Find first non-repeating character in a String
  */
-public class NorRepeatingCharacter {
+public class NonRepeatingCharacter {
 
     public static void main(String[] args) {
         String s = "abcadc";

@@ -110,6 +110,10 @@
 49.) Difference between HashMap and LinkedHashMap - Accolite
 50.) Why wait() method is part of Object class and not Thread - Accolite
 51.) What is Auto-Boxing and Unboxing in Java? - ProKarma
+52.) What is Deadlock & Race Condition in Java? - Walmart
+53.) Detect if a Tree is a Binary Search Tree - JP Morgan & Chase Co.
+53.) Different Ways of Traversal of the Tree - JP Morgan & Chase Co.
+54.) Traverse a Tree and link siblings of a tree - OLA Cabs
 ```
 
 # SQL Interview Questions

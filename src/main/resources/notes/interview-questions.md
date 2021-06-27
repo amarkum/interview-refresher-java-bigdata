@@ -125,3 +125,10 @@
 5.) Difference between INNER JOIN and OUTER JOIN - Virtusa
 6.) Find the maximum salary in each department and name of the employee - HappiestMinds, Lowe's
 ```
+
+
+# Miscellaneous Interview Questions
+```text
+1.) What is Micro-service Architecture? - Walmart
+2.) Difference between Authentication and Authorization - Walmart
+```

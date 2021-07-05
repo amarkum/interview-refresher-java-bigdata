@@ -9,10 +9,10 @@ import java.util.*;
 public class FindMinPossibleNumberForSum {
 
     public static void main(String[] args) {
-        Integer nums[] = {1, 3, 4, 2};
+        Integer input[] = {1, 3, 4, 2};
         int sum = 5;
 
-        List<Integer> numbers = Arrays.asList(nums);
+        List<Integer> numbers = Arrays.asList(input);
         Collections.sort(numbers);
 
         int numberCount = 0;

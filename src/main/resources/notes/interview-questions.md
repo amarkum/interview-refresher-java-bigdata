@@ -38,7 +38,7 @@
 3.) How to load a CSV with 4 columns combined to 1 column - Synechron
 ```
 
-# Spark Iterview Questions
+# Spark Interview Questions
 ```text
 1.) Cache and Persist - Virtusa
 2.) Levels of Cache - Virtusa
@@ -55,6 +55,7 @@
 13.) What is Lineage in Spark - L&T
 14.) What is Lazy Evaluation - L&T
 15.) What is narrow Transformation - L&T
+16.) What is Speculative Execution in Spark - Quantiphi
 ```
 
 # Java Interview Questions

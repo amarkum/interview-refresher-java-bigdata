@@ -132,7 +132,7 @@
 6.) Find the maximum salary in each department and name of the employee - HappiestMinds, Lowe's
 ```
 
-# Network & OS
+# Network & OS Interview Questions
 ```text
 1.) What happens if the directory file size is 20KB, but it occupies 90GB of data, what are iNodes in UNIX - OLA Cabs
 2.) What is Context-Switching - OLA Cabs

@@ -3,7 +3,7 @@
 ## Topics
 A Particular Stream of data
 - Same as table in database
-- It is identified by it's name
+- It is identified by its name
 
 Topics are Split in `Partitions`
 - A partition has a message written to it, sequentially often termed as `offset`
@@ -11,18 +11,18 @@ Topics are Split in `Partitions`
 
 ### Topic Writes
 - The message to a partition is determined by the key. <br>
-- The message are written to the partition based on the hash key<br/>
+- The message is written to the partition based on the hash key<br/>
 If we have determined the key, then message will be written to specific partition, based on the hash value.
 
 E.g There are 3 partitions, the has could be from 0 to 3
-ID with 246,254 has hash value 0 , ID 296,256 has has value 1 and  ID 344,844 has has value 2<br/>
+ID with 246,254 has hash value 0 , ID 296,256 has value 1 and  ID 344,844 has has value 2<br/>
 Hence, the data from this ID,wll always land up in the same partition.
 
 ## Brokers
 - A Kafka Cluster is composed of many brokers
-- Each Broker is identified by it's ID
+- Each Broker is identified by its ID
 - Each Broker contains certain topic partitions
-- After connecting to bootstrap broker, we will connected to entire cluster
+- After connecting to bootstrap broker, we will connect to entire cluster
 
 Example <br/>
 
@@ -43,7 +43,7 @@ Example <br/>
 - Producer write data to topic (which is made of partitions)
 - Producer automatically know to which broker and partitions to write to
 - If data is sent without keys, producer sends data to partitions in round-robin fashion to load-balance
-- Producer can choose to receive acknowledgement of data writes to partitions: <br/>
+- Producer can choose to receive acknowledgement of data writes to partition: <br/>
 
     1. `acks=0` - Producer won't wait for acknowledgement (possible data loss) <br/>
     2. `acks=1` - Producer will wait for leader to acknowledge , (default) <br/>
@@ -177,12 +177,12 @@ This make sure consumer does not commit the message twice, and maintains key lev
 
 ### linger.ms & batch.size
 -  by default, kafka tries to send record as soon as possible.
-    - it will have upto 5 requests in flight, meaning upto 5 messages individually sent at the same time
+    - it will have unto 5 requests in flight, meaning unto 5 messages individually sent at the same time
     - after this, if more message has to be sent, kafka starts batching these message.
 - batching allow throughput and maintains low latency.
 
 ### Hashing formula
-By default key is hashed based on "murmur2" algorithm
+By default, key is hashed based on "murmur2" algorithm
 
 ## Produce & Consume Record - Programmatically
 

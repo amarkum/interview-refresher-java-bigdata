@@ -10,13 +10,13 @@ source ~/.profile
 ```
 
 ## Inheritance
-Inheritance means one class can extend to another class. So that the codes can be reused from one class to another class.
-Existing class is known as Super class whereas the derived class is known as a sub class.<br/>
+Inheritance means one class can extend to another class. So the codes can be reused from one class to another class.
+Existing class is known as Super class whereas the derived class is known as a subclass.<br/>
 Inheritance is applicable for public and protected members only. Private members can’t be inherited.<br/>
 
 ## Is Java Pass by Value or Pass by Reference
 For primitive data type, java sends the actual copy of the data in a method, and maintains two memory location<br/>
-If we change the value inside method, the actual value remains same. For primitive it's `pass by value`.<br/>
+If we change the value inside method, the actual value remains same. For primitive, it's `pass by value`.<br/>
 For non-primitive(Object Type) - is `pass by reference` , If we allocate any value to the method, actual value changes.
 # Strings
 
@@ -54,7 +54,7 @@ Transient variables are not part of the serialization process.
 ## Difference between Checked and Unchecked Exception. 
 Checked exception is checked by the compiler at compile time. <br/>
 It's mandatory for a method to either handle the checked exception or declare them in their throws clause. <br/>
-These are the ones which are a sub class of Exception but doesn't descend from RuntimeException. <br/>
+These are the ones which are a subclass of Exception but doesn't descend from RuntimeException. <br/>
 The unchecked exception is the descendant of RuntimeException and not checked by the compiler at compile time. <br/>
 
 On the other hand, throws is used as part of method declaration and signals which kind of exceptions are thrown by this method so that its caller can handle them. <br/>
@@ -84,7 +84,7 @@ It is thread-safe and can be shared with many threads.<br/>
 
 In `forEach()` loop, we can’t modify collection, it will throw a `ConcurrentModificationException` on the other hand with `iterator` we can modify collection. <br/>
 Modifying a collection simply means removing an element or changing content of an item stored in the collection. <br/>
-This occurs because for-each loop implicitly creates an iterator but it is not exposed to the user thus we can’t modify the items in the collections.
+This occurs because for-each loop implicitly creates an iterator, but it is not exposed to the user thus we can’t modify the items in the collections.
 
 # Java 1.7
 

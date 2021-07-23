@@ -1,13 +1,13 @@
 # Concurrency & Multi-threading 
 
-## Defintition
+## Definition
 
 1. Concurrency - Machine or software application executing multiple tasks. <br/>
 2. Parallelism - Running task exactly at the same time.
 
 ## Process Vs. Thread
 Process 
-- Represents an application or a program
+- Represents an application, or a program
 - Self contained execution environment
 - Adding new process is a costly business.
 - Switch between process (IPC)
@@ -70,5 +70,5 @@ Note: Staring a thread twice, will lead to `java.lang.IllegalThreadStateExceptio
 - Thread by default is a non-daemon thread
 - Daemon thread don't stop the JVM from ending
 
-E.g Java Garbage collection runs on a daemon thread.<br/>
+E.g. Java Garbage collection runs on a daemon thread.<br/>
 A daemon thread is created by calling `setDaemon(true)`<br/>

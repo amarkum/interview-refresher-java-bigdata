@@ -1,5 +1,5 @@
 # Queue Notes
-Queues are slightly trickier to implement compared to stacks, as we have to keep track of both ends of the array. <br/>
+Queues are slightly trickier to implement compared to stack, as we have to keep track of both ends of the array. <br/>
 The elements are inserted from the back and removed from the front. <br/>
 
 ## Attributes of Stack

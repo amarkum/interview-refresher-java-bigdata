@@ -30,7 +30,7 @@ Hadoop 3.X
 For developers who build apps that submit to YARN, run a MR job, or access files from HDFS use Hadoop-client libraries.
 
 ## Difference between Hadoop 0.20 & Hadoop 1.X & Hadoop 2.X
-Hadoop 1.X & Hadoop 2.X uses the `org.apache.hadoop.mapreduce` package, and use use `context` object to communicate with MapReduce system and Job control is done through the JOB class.<br/>
+Hadoop 1.X & Hadoop 2.X uses the `org.apache.hadoop.mapreduce` package, and use `context` object to communicate with MapReduce system and Job control is done through the JOB class.<br/>
 While older uses `org.apache.hadoop.mapred` package, and use JobConf, the OutputCollector, and the Reporter object use for communicate with MapReduce System also Job Control was done through JobClient.
 
 

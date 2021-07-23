@@ -3,8 +3,8 @@
 ## Steps to follow to answer a system design Question
 
 ### 1. Clarify the Requirements as far as possible
-- We must clarify all the possible requirement before hand directly jumping out to answer.<br/>
-Clarify and ask as many question possible to get detail in-sight of the service we have been told to implement<br/>
+- We must clarify all the possible requirement beforehand directly jumping out to answer.<br/>
+Clarify and ask as many questions possible to get detail in-sight of the service we have been told to implement<br/>
 E.g. Will it will require UI ? <br/>
 what are the service that it should provide? who will be user of service? etc.
 
@@ -17,17 +17,17 @@ What volume of disk space storage is required. What is the network bandwidth whi
 This also ensures that we have all the requirement met, and all the component of service is covered.
 
 ### 4. Data Modelling
-- This invoves how the components will interact with each other in the database<br/>
+- This involves how the components will interact with each other in the database<br/>
 This ensures that we have all the components are covered, and we have derived the relationship
 
 ### 5. High Level Diagram
 - We must with some graphics design a high level design of the system and its component<br/>
-We can represent distinguished component of the system which will require to achive a different task
+We can represent distinguished component of the system which will require to achieve a different task
 
 ### 6. Detailed Design
 - We must elaborate few components in detail which are the major components<br/>
-Also, we should talk about the pros and cons choosing the system or the framework that we have considered.
+Also, we should talk about the pros and cons choosing the system, or the framework that we have considered.
 
 ### 7. Identify Bottleneck
 - We must discuss on how can we make the system robust, so it's uptime is high and doest not fail<br/>
-Also, we should consider majors that can help us to make the system fail-proof, e.g craeting copies of the data etc.
+Also, we should consider majors that can help us to make the system fail-proof, e.g creating copies of the data etc.

@@ -3,7 +3,7 @@
 `gcloud compute firewall-rules update vpc-gcp-one-fw-name --source-ranges $(curl ipecho.net/plain; echo)/32` <br/>
 
 ## GitLab Login to GCP Compute Engine
-### SSH to the Compute Engine Instance
+### SSH to Compute Engine Instance
 `gcloud compute ssh --zone "us-east1-b" "app-webservice" --project "project-id"`
 
 # Deploy App to Compute Engine

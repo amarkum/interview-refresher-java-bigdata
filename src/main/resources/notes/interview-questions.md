@@ -117,7 +117,7 @@
 54.) Traverse a Tree and link siblings of a tree - OLA Cabs
 ```
 
-## Python
+# Python Interview Questions
  ```text
  1.) Reverse the words & Reverse String - Knoema
 ```

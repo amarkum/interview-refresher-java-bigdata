@@ -1,5 +1,5 @@
 # Java, SQL, Data Structure & Algorithm & Big Data Brushup
-one-stop repo to lookup for code snippets of core java concepts, sql, data structures as well as big data. It also consists of informative notes on multi-tech stack 
+one-stop repo to lookup for code snippets of core java concepts, sql, data structures as well as big data. 
 
 ## Content
 

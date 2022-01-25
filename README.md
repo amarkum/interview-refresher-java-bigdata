@@ -13,9 +13,9 @@ one-stop repo to lookup for code snippets of core java concepts, sql, data struc
 8. Java Collection - Usage of Java Collection Framework	
 9. Java Refresher - Some useful Java Concepts	
 10. JDK - New feature of Java with Code Snippet	
-11. Kafka	- Kafka Producer and Consumer Program
+11. Kafka - Kafka Producer and Consumer Program
 12. Kafka & Spark - Program to Process streaming data from Kafka Queue
-13. MapReduce	 - Few Simple programs of MapReduce
+13. MapReduce - Few Simple programs of MapReduce
 14. Marker Interface - Code Snippet of Marker Interface in Java 
 15. Multithreading - Snippet of Multithreading
 16. Recursion - Few Programs related to recursion
@@ -23,7 +23,7 @@ one-stop repo to lookup for code snippets of core java concepts, sql, data struc
 18. Strings Concept - Concept related to Strings
 
 ## Resources
-1. Images - Contains Images for various usage - for Image in for README.md, etc. 
-2. Notes - Contains an overall notes of Java, Big Data, SQL, Interview Questions etc.	
+1. Images - Contains Images for various usage 
+2. Interview Question - Contains asked interview Question of Java, Big Data, SQL, etc.	
 
 #### Please feel free to send a Pull Request to the repository.

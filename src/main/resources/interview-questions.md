@@ -117,11 +117,6 @@
 54.) Traverse a Tree and link siblings of a tree - OLA Cabs
 ```
 
-# Python Interview Questions
- ```text
- 1.) Reverse the words & Reverse String - Knoema
-```
-
 # SQL Interview Questions
 ```text
 1.) Find nth Salary from salary table - Impetus

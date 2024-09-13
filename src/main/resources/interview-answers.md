@@ -350,3 +350,156 @@ public class MyCustomException extends Exception {
 }
 ```
 
+
+### 16. Difference between final, finally, and finalize - Sear Holdings
+- **final**: Used to define constants or to prevent inheritance and method overriding.
+- **finally**: Block in exception handling that always executes regardless of whether an exception occurs.
+- **finalize**: Method called by the garbage collector before an object is reclaimed.
+
+### 17. Iterator and ListIterator - Sear Holdings
+- **Iterator**: Traverses collections in a forward direction, does not allow modifying the collection during iteration.
+- **ListIterator**: Traverses lists in both directions, allows modifying elements, can get indexes of elements.
+
+### 18. Fibonacci Series Using Recursion - Subex
+To implement Fibonacci series using recursion:
+
+```java
+public class FibonacciRecursion {
+
+    public static int fibonacci(int n) {
+        if (n <= 1)
+            return n;
+        else
+            return fibonacci(n-1) + fibonacci(n-2);
+    }
+
+    public static void main(String[] args) {
+        int n = 10;
+        for (int i = 0; i < n; i++) {
+            System.out.print(fibonacci(i) + " ");
+        }
+    }
+}
+```
+
+### 19. What is Composition and Aggregation? - Genpact
+- **Composition**: A strong relationship where the part cannot exist without the whole.
+- **Aggregation**: A weak relationship where the part can exist independently of the whole.
+
+### 20. Traverse and Print from Middle to Last of the LinkedList - KPMG
+To traverse and print the elements from the middle to the end of the linked list:
+
+```java
+public class LinkedListMiddleToEnd {
+    static class Node {
+        int data;
+        Node next;
+    }
+
+    public static void printFromMiddle(Node head) {
+        Node slow = head, fast = head;
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+
+        Node current = slow;
+        while (current != null) {
+            System.out.print(current.data + " ");
+            current = current.next;
+        }
+    }
+}
+```
+
+### 21. Find Maximum and Minimum Value in a HashMap - KPMG
+To find the maximum and minimum values in a HashMap:
+
+```java
+import java.util.Collections;
+import java.util.HashMap;
+
+public class HashMapMinMax {
+    public static void findMinMax(HashMap<String, Integer> map) {
+        int maxValue = Collections.max(map.values());
+        int minValue = Collections.min(map.values());
+
+        System.out.println("Maximum Value: " + maxValue);
+        System.out.println("Minimum Value: " + minValue);
+    }
+}
+```
+
+### 22. Reverse a String Using Recursion - KPMG
+To reverse a string using recursion:
+
+```java
+public class StringReverseRecursion {
+
+    public static String reverse(String str) {
+        if (str.isEmpty())
+            return str;
+        return reverse(str.substring(1)) + str.charAt(0);
+    }
+}
+```
+
+### 23. Difference Between List, Set, and HashMap - KPMG
+- **List**: Ordered collection, allows duplicates, accessed by index.
+- **Set**: Unordered collection, no duplicates allowed.
+- **HashMap**: Key-value pairs, unique keys, allows duplicate values.
+
+### 24. Does Integer Allow a Null Value? - Sianr Mas Group
+Yes, the Integer wrapper class allows null values because it's an object reference, unlike the primitive int.
+
+### 25. Performance Comparison of Interface and Abstract Class - Sianr Mas Group
+There is no significant performance difference between an interface and an abstract class. The choice depends on the design; interfaces are for defining behavior, while abstract classes are for shared code and behavior.
+
+### 26. Diamond Principle and SOLID Principles - Sianr Mas Group
+- **Diamond Problem**: Issue in multiple inheritance when a class inherits from two classes with the same method. Java resolves this by not supporting multiple inheritance of classes.
+- **SOLID Principles**: Guidelines for object-oriented design:
+  1. **Single Responsibility Principle**: A class should have one reason to change.
+  2. **Open/Closed Principle**: Classes should be open for extension, but closed for modification.
+  3. **Liskov Substitution Principle**: Objects should be replaceable by instances of their subclasses.
+  4. **Interface Segregation Principle**: Clients should not be forced to depend on interfaces they do not use.
+  5. **Dependency Inversion Principle**: Depend on abstractions, not on concretions.
+
+### 27. String Pool in Java - Sianr Mas Group
+The string pool is a special memory region where Java stores string literals to save memory and improve performance. Strings in the pool are shared, meaning identical literals point to the same memory location.
+
+### 28. Block Synchronization vs. Method-Level Synchronization - Sianr Mas Group
+- **Method-Level Synchronization**: The entire method is synchronized, meaning only one thread can access it at a time.
+- **Block-Level Synchronization**: Only a specific block of code is synchronized, allowing better concurrency control than method-level synchronization.
+
+### 29. Difference Between ArrayList and LinkedList - Sianr Mas Group
+- **ArrayList**: Uses a dynamic array, faster random access, but slower insertions/deletions as elements need to be shifted.
+- **LinkedList**: Uses a doubly-linked list, slower access but faster insertions/deletions since no shifting is required.
+
+### 30. Comparable and Comparator - Sianr Mas Group
+- **Comparable**: Interface that allows natural ordering by implementing the `compareTo()` method.
+- **Comparator**: Interface that allows custom ordering by implementing the `compare()` method.
+
+### 31. What is Runnable and Callable - Syncheron
+- **Runnable**: Represents a task to be executed by a thread but does not return a result.
+- **Callable**: Represents a task that returns a result and can throw exceptions.
+
+### 32. What are Executor Services - Syncheron
+`ExecutorService` manages a pool of threads and allows asynchronous execution of tasks. Example:
+
+```java
+ExecutorService executor = Executors.newFixedThreadPool(5);
+executor.execute(new RunnableTask());
+executor.shutdown();
+```
+
+### 33. Ways to Implement a Thread - Syncheron
+- Extending the `Thread` class and overriding the `run()` method.
+- Implementing the `Runnable` interface and passing it to a `Thread` object.
+- Implementing the `Callable` interface and using `FutureTask` to handle results.
+
+### 34. What is TreeMap Used For? - Syncheron
+`TreeMap` stores key-value pairs in sorted order based on the keys. It implements the `NavigableMap` interface and maintains a binary search tree.
+
+### 35. Difference Between Abstract Class and Interface - GlobalLogic
+- **Abstract Class**: Can have method implementations and instance variables, supports single inheritance.
+- **Interface**: Cannot have instance variables (except constants), supports multiple inheritance (from Java 8, interfaces can have default and static methods).

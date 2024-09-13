@@ -1,29 +1,72 @@
-# Java, SQL, Data Structure & Algorithm & Big Data Brushup
-one-stop repo to lookup for code snippets of core java concepts, sql, data structures as well as big data. 
+
+# Java, SQL, Data Structures & Algorithms, and Big Data Brushup
+
+This is a one-stop repository to look up code snippets related to core Java concepts, SQL queries, data structures, algorithms, and Big Data frameworks. Ideal for quick reference and brushing up on important concepts.
 
 ## Content
 
-1. Algorithm - Searching, Sorting etc.
-2. Asked Programs
-3. Apache Crunch - A Framework to execute MapReduce Jobs
-4. Data Structures - Arrays, LinkedList, Stack, Queue, Tree
-5. Design Patterns - Singleton, Factory, Builder Design Pattern code Snippets
-6. Exceptions	- Creation of Custom Exception
-7. Garbage Collection - Usage of Garbage Collection
-8. Java Collection - Usage of Java Collection Framework	
-9. Java Refresher - Some useful Java Concepts	
-10. JDK - New feature of Java with Code Snippet	
-11. Kafka - Kafka Producer and Consumer Program
-12. Kafka & Spark - Program to Process streaming data from Kafka Queue
-13. MapReduce - Few Simple programs of MapReduce
-14. Marker Interface - Code Snippet of Marker Interface in Java 
-15. Multithreading - Snippet of Multithreading
-16. Recursion - Few Programs related to recursion
-17. Spark - Spark Program - e.g WordCount Problem
-18. Strings Concept - Concept related to Strings
+### Algorithms
+- Searching and Sorting algorithms.
+- Frequently asked programs.
+
+### Apache Crunch
+- A framework to execute MapReduce jobs with sample programs.
+
+### Data Structures
+- Arrays, LinkedLists, Stacks, Queues, Trees with code examples.
+
+### Design Patterns
+- Implementation of popular design patterns:
+  - Singleton
+  - Factory
+  - Builder
+
+### Exceptions
+- Code snippets for creating custom exceptions in Java.
+
+### Garbage Collection
+- Practical usage of Java Garbage Collection mechanisms.
+
+### Java Collections
+- Examples showcasing the use of the Java Collection Framework.
+
+### Java Refresher
+- Useful Java concepts for quick revision.
+
+### JDK Features
+- Code snippets demonstrating new features introduced in various JDK versions.
+
+### Kafka
+- Kafka Producer and Consumer programs with real-world examples.
+
+### Kafka & Spark
+- Programs that process streaming data from Kafka using Spark.
+
+### MapReduce
+- Simple programs demonstrating MapReduce concepts and implementations.
+
+### Marker Interface
+- Examples of Marker Interfaces in Java.
+
+### Multithreading
+- Snippets demonstrating multithreading in Java.
+
+### Recursion
+- A collection of recursive programs.
+
+### Spark
+- Spark programs such as the WordCount problem.
+
+### String Concepts
+- Common string-related operations and concepts in Java.
 
 ## Resources
-1. Images - Contains Images for various usage 
-2. Interview Question - Contains asked interview Question of Java, Big Data, SQL, etc.	
 
-#### Please feel free to send a Pull Request to the repository.
+### Images
+- Contains useful images for various purposes.
+
+### Interview Questions
+- A collection of interview questions from Java, Big Data, SQL, and more.
+
+## Contribution
+Feel free to contribute by sending a Pull Request to this repository.

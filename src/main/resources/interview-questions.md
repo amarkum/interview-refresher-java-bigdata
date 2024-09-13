@@ -1,106 +1,268 @@
-# Big Data Interview Question
+"""
+# Big Data, Java, SQL, and OS Interview Questions
 
-## Hadoop
-```text
- 1.) What is Combiner? - Legato, Impetus
- 2.) What is the difference between hadoop fs, hadoop dfs, hdfs dfs command? - Legato
- 3.) What is difference between put and copyFromLocal and get and copyToLocal? - Legato
- 4.) Difference between AVRO, ORC and Parquet file format. - Fidelity, Paypal
- 5.) What is scheduler used, what is version of oozie? - ThoughtWorks
- 6.) How ZooKeeper assign a follower, if leader goes down? - ThoughtWorks
- 7.) How to create HIVE table on HBase?  - Deloitte
- 8.) Will HIVE continue to execute query, if cluster is back? - Subex
- 9.) Write a program for Kafka Producer and Consumer. - OpenText
- 10.) Hive Bucketing and Partitioning? - Impetus
- 11.) When to use Bucketing and Partitioning? - Impetus
- 12.) What are UDF in HIVE? - Deloitte
- 13.) hdfs -getmerge command - Sear Holding
- 14.) HBase Shell to retrieve data from Column Family. - Sear Holding
- 15.) How to we bulk load data from HDFS to HBase - Rapido
- 16.) Describe Architecture of HBase - Rapido, Tavant
- 17.) What is TombStoning in HBase - Rapido
- ```
+## Hadoop Interview Questions
+1. **What is a Combiner?**  
+   _Companies: Legato, Impetus_
 
- ## Kafka 
- ```text
- 1.) Offsets in Kafka. - Sianr Mas Group
- 2.) ISR - In Sync Replicas - Sianr Mas Group
- 3.) Commands to list topics, delete topic, Producer and consumer. - Sianr Mas Group
- 4.) Consumer and Consumer group. - Sianr Mas Group
- 5.) Describe Architecture of Kafka - Rapido
- 6.) If producer is producing at a greater speed tha consumer, how will be fix this? - HappiestMinds
-```
+2. **What is the difference between `hadoop fs`, `hadoop dfs`, and `hdfs dfs` commands?**  
+   _Company: Legato_
 
-## Hive 
-```text
-1.) What is Static Partitioning and Dynamic Partitioning in HIVE? - Yodlee
-2.) What are datatypes in Hive? - UST Global
-3.) How to load a CSV with 4 columns combined to 1 column - Synechron
-```
+3. **What is the difference between `put`, `copyFromLocal`, `get`, and `copyToLocal` commands?**  
+   _Company: Legato_
 
-# Spark Interview Questions
-```text
-1.) Cache and Persist - Virtusa
-2.) Levels of Cache - Virtusa
-3.) Sliding Window - Virtusa
-4.) Submit SparK Job - Virtusa
-5.) Joining an RDD - Virtusa
-6.) Broadcast Variables &  Accumulators - Virtusa
-7.) repartition & vs coalesce - Virtusa
-8.) Joining two columns in dataframe - Lowe's
-9.) Calculate the difference by last row - Virtusa
-10.) At which phase Spark loads the data into the memory - Synechron
-11.) What is difference between  map vs mapPartitions? - HappiestMinds
-12.) How does spark process files which are greater than main memory - Tavant
-13.) What is Lineage in Spark - L&T
-14.) What is Lazy Evaluation - L&T
-15.) What is narrow Transformation - L&T
-16.) What is Speculative Execution in Spark - Quantiphi
-```
+4. **Explain the difference between AVRO, ORC, and Parquet file formats.**  
+   _Companies: Fidelity, Paypal_
 
-# Java Interview Questions
-```text
-1.) Finding loop in LinkedList - Opentext
-2.) Print the diagonal of a square matrix - Opentext
-3.) Reverse a LinkedList - Impetus 
-4.) Add a node after in LinkedList - Ordr
-5.) Producer & Consumer Problem - Opentext
-6.) Singleton Class, with double locking - Opentext
-7.) Find Anagram of a word - Subex
-8.) Find Palindrome in an array - Epsilon
-9.) what is try with resource? Java 1.7 - Genpact
-10.) what is deep cloning? - Genpact
-11.) Executors - Sear Holding
-12.) Java Semaphore - Genpact
-13.) Cycle Barrier - Genpact
-14.) Difference Between Java 6 & 7 - Genpact
-15.) How to Create a Custom Exception - Sear Holdings
-16.) Difference between final, finally and finalize - Sear Holdings
-17.) Iterator and ListIterator - Sear Holdings
-18.) fibonacci series using recursion. - Subex
-19.) What is composition and Aggregation?  - Genpact
-20.) Traverse and print the data from middle to the last of the LinkedList - KPMG
-21.) Find the maximum and minimum value in a HashMap - KPMG
-22.) Reverse a String using recursion - KPMG
-23.) Difference between List, Set and HashMap - KPMG
-24.) Does integer allow a null value? - Sianr Mas Group
-25.) Performance comparison of Interface and abstract class - Sianr Mas Group
-26.) Diamond Principle and SOLID principle - Sianr Mas Group
-27.) String pool in Java - Sianr Mas Group
-28.) Block synchronization, difference between block level synchronization and method level synchronization. - Sianr Mas Group
-29.) Difference between ArrayList and LinkedList - Sianr Mas Group
-30.) Comparable and Comparator - Sianr Mas Group
-31.) What is Runnable and Callable - Syncheron
-32.) What are Executor Services - Syncheron
-33.) What are the Ways to Implement a Thread - Syncheron
-34.) What is TreeMap used for? - Syncheron
-35.) What is the difference between Abstract class and Interface - GlobalLogic
-36.) How can we implement Immutable class - GlobalLogic
-37.) What is Concurrent HashMap - Virtusa
-38.) What is the difference between HashSet and TreeSet - Virtusa
-39.) Why do we use lambda expression in Java? - Virtusa
-40.) Why do we use Stream API? - Virtusa
-41.) What will happen if we make 'public static void main()' as private? - Virtusa
+5. **Which scheduler is used, and what is the version of Oozie?**  
+   _Company: ThoughtWorks_
+
+6. **How does ZooKeeper assign a follower when the leader goes down?**  
+   _Company: ThoughtWorks_
+
+7. **How can we create a Hive table on HBase?**  
+   _Company: Deloitte_
+
+8. **Will Hive continue executing a query if the cluster is back after failure?**  
+   _Company: Subex_
+
+9. **Write a Kafka Producer and Consumer program.**  
+   _Company: OpenText_
+
+10. **Explain Hive bucketing and partitioning.**  
+   _Company: Impetus_
+
+11. **When should we use bucketing vs partitioning in Hive?**  
+   _Company: Impetus_
+
+12. **What are UDFs (User Defined Functions) in Hive?**  
+   _Company: Deloitte_
+
+13. **Explain the `hdfs -getmerge` command.**  
+   _Company: Sear Holding_
+
+14. **Using HBase shell, how can we retrieve data from a column family?**  
+   _Company: Sear Holding_
+
+15. **How do we bulk load data from HDFS to HBase?**  
+   _Company: Rapido_
+
+16. **Describe the architecture of HBase.**  
+   _Companies: Rapido, Tavant_
+
+17. **What is Tombstoning in HBase?**  
+   _Company: Rapido_
+
+---
+
+## Kafka Interview Questions
+1. **What are offsets in Kafka?**  
+   _Company: Sianr Mas Group_
+
+2. **What are ISR (In-Sync Replicas)?**  
+   _Company: Sianr Mas Group_
+
+3. **List commands to list topics, delete a topic, and run a producer and consumer.**  
+   _Company: Sianr Mas Group_
+
+4. **Explain the concept of consumer and consumer group in Kafka.**  
+   _Company: Sianr Mas Group_
+
+5. **Describe the architecture of Kafka.**  
+   _Company: Rapido_
+
+6. **If a producer is producing faster than the consumer can handle, how can we fix this?**  
+   _Company: HappiestMinds_
+
+---
+
+## Hive Interview Questions
+1. **What is static partitioning and dynamic partitioning in Hive?**  
+   _Company: Yodlee_
+
+2. **What are the datatypes in Hive?**  
+   _Company: UST Global_
+
+3. **How do you load a CSV with 4 columns combined into 1 column in Hive?**  
+   _Company: Synechron_
+
+---
+
+## Spark Interview Questions
+1. **Explain cache and persist in Spark.**  
+   _Company: Virtusa_
+
+2. **What are the levels of cache in Spark?**  
+   _Company: Virtusa_
+
+3. **What is a sliding window in Spark?**  
+   _Company: Virtusa_
+
+4. **How to submit a Spark job?**  
+   _Company: Virtusa_
+
+5. **Explain joining an RDD in Spark.**  
+   _Company: Virtusa_
+
+6. **What are broadcast variables and accumulators in Spark?**  
+   _Company: Virtusa_
+
+7. **Explain the difference between repartition and coalesce.**  
+   _Company: Virtusa_
+
+8. **How do you join two columns in a DataFrame?**  
+   _Company: Lowe's_
+
+9. **How can you calculate the difference by the last row in Spark?**  
+   _Company: Virtusa_
+
+10. **At which phase does Spark load data into memory?**  
+   _Company: Synechron_
+
+11. **What is the difference between map and mapPartitions?**  
+   _Company: HappiestMinds_
+
+12. **How does Spark handle files larger than main memory?**  
+   _Company: Tavant_
+
+13. **What is lineage in Spark?**  
+   _Company: L&T_
+
+14. **What is lazy evaluation in Spark?**  
+   _Company: L&T_
+
+15. **What is narrow transformation in Spark?**  
+   _Company: L&T_
+
+16. **What is speculative execution in Spark?**  
+   _Company: Quantiphi_
+
+---
+
+## Java Interview Questions
+1. **How do you detect a loop in a LinkedList?**  
+   _Company: OpenText_
+
+2. **How to print the diagonal of a square matrix in Java?**  
+   _Company: OpenText_
+
+3. **How do you reverse a LinkedList?**  
+   _Company: Impetus_
+
+4. **How do you add a node after a given node in a LinkedList?**  
+   _Company: Ordr_
+
+5. **Explain the producer-consumer problem.**  
+   _Company: OpenText_
+
+6. **What is a singleton class with double locking?**  
+   _Company: OpenText_
+
+7. **How do you find an anagram of a word?**  
+   _Company: Subex_
+
+8. **How to find palindrome numbers in an array?**  
+   _Company: Epsilon_
+
+9. **What is try-with-resources in Java (introduced in Java 1.7)?**  
+   _Company: Genpact_
+
+10. **Explain deep cloning in Java.**  
+   _Company: Genpact_
+
+11. **What are executors in Java?**  
+   _Company: Sear Holding_
+
+12. **What is a Java semaphore?**  
+   _Company: Genpact_
+
+13. **Explain the concept of a cyclic barrier in Java.**  
+   _Company: Genpact_
+
+14. **What are the key differences between Java 6 and Java 7?**  
+   _Company: Genpact_
+
+15. **How do you create a custom exception in Java?**  
+   _Company: Sear Holdings_
+
+16. **What is the difference between final, finally, and finalize in Java?**  
+   _Company: Sear Holdings_
+
+17. **What are iterators and list iterators in Java?**  
+   _Company: Sear Holdings_
+
+18. **How do you implement the Fibonacci series using recursion?**  
+   _Company: Subex_
+
+19. **Explain composition and aggregation in Java.**  
+   _Company: Genpact_
+
+20. **How do you traverse and print data from the middle to the last of a LinkedList?**  
+   _Company: KPMG_
+
+21. **How do you find the maximum and minimum values in a HashMap?**  
+   _Company: KPMG_
+
+22. **How do you reverse a string using recursion in Java?**  
+   _Company: KPMG_
+
+23. **What is the difference between List, Set, and HashMap in Java?**  
+   _Company: KPMG_
+
+24. **Can an Integer hold a null value in Java?**  
+   _Company: Sianr Mas Group_
+
+25. **What is the performance comparison between an interface and an abstract class?**  
+   _Company: Sianr Mas Group_
+
+26. **What are the Diamond Problem and SOLID principles?**  
+   _Company: Sianr Mas Group_
+
+27. **What is a String pool in Java?**  
+   _Company: Sianr Mas Group_
+
+28. **Explain block-level and method-level synchronization in Java.**  
+   _Company: Sianr Mas Group_
+
+29. **What is the difference between ArrayList and LinkedList in Java?**  
+   _Company: Sianr Mas Group_
+
+30. **Explain Comparable and Comparator in Java.**  
+   _Company: Sianr Mas Group_
+
+31. **What is the difference between Runnable and Callable in Java?**  
+   _Company: Syncheron_
+
+32. **What are executor services in Java?**  
+   _Company: Syncheron_
+
+33. **What are the different ways to implement a thread in Java?**  
+   _Company: Syncheron_
+
+34. **What is TreeMap used for in Java?**  
+   _Company: Syncheron_
+
+35. **What is the difference between an abstract class and an interface in Java?**  
+   _Company: GlobalLogic_
+
+36. **How do you implement an immutable class in Java?**  
+   _Company: GlobalLogic_
+
+37. **What is a ConcurrentHashMap in Java?**  
+   _Company: Virtusa_
+
+38. **What is the difference between HashSet and TreeSet in Java?**  
+   _Company: Virtusa_
+
+39. **Why do we use lambda expressions in Java?**  
+   _Company: Virtusa_
+
+40. **Why do we use the Stream API in Java?**  
+   _Company: Virtusa_
+
+41. **What happens if we make `public static void main()` private in Java?**  
+   _Company: Virtusa_
+
 42.) What are Executor Services in Java, how do we Initialize them? - Virtusa
 43.) How to create a Singleton class in java for multi-threading environment? - Virtusa
 44.) What is try-with-resource - Virtusa

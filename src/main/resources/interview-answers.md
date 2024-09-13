@@ -153,5 +153,200 @@ public class ProducerConsumerExample {
 }
 ```
 
-... (continue for the other questions)
+### 6. Singleton Class with Double Locking - Opentext
+Implementing a thread-safe singleton using double-checked locking:
+
+```java
+public class Singleton {
+    private volatile static Singleton instance;
+
+    private Singleton() {}
+
+    public static Singleton getInstance() {
+        if (instance == null) {
+            synchronized (Singleton.class) {
+                if (instance == null) {
+                    instance = new Singleton();
+                }
+            }
+        }
+        return instance;
+    }
+}
+```
+
+### 7. Find Anagram of a Word - Subex
+To check if two strings are anagrams:
+
+```java
+import java.util.Arrays;
+
+public class AnagramChecker {
+    public static boolean areAnagrams(String str1, String str2) {
+        char[] arr1 = str1.replaceAll("\s", "").toLowerCase().toCharArray();
+        char[] arr2 = str2.replaceAll("\s", "").toLowerCase().toCharArray();
+        Arrays.sort(arr1);
+        Arrays.sort(arr2);
+        return Arrays.equals(arr1, arr2);
+    }
+}
+```
+
+### 8. Find Palindrome in an Array - Epsilon
+To find palindrome numbers in an array:
+
+```java
+public class PalindromeFinder {
+    public static boolean isPalindrome(int number) {
+        int original = number;
+        int reverse = 0;
+        while (number != 0) {
+            int digit = number % 10;
+            reverse = reverse * 10 + digit;
+            number /= 10;
+        }
+        return original == reverse;
+    }
+
+    public static void findPalindromes(int[] array) {
+        for (int num : array) {
+            if (isPalindrome(num)) {
+                System.out.println(num + " is a palindrome");
+            }
+        }
+    }
+}
+```
+
+### 9. What is Try-With-Resources in Java 1.7 - Genpact
+Try-with-resources is a statement that declares one or more resources that are automatically closed at the end of the statement:
+
+```java
+try (BufferedReader br = new BufferedReader(new FileReader("file.txt"))) {
+    String line;
+    while ((line = br.readLine()) != null) {
+        System.out.println(line);
+    }
+} catch (IOException e) {
+    e.printStackTrace();
+}
+```
+
+### 10. What is Deep Cloning? - Genpact
+Deep cloning creates a new object and recursively clones its fields:
+
+```java
+public class DeepCloneExample implements Cloneable {
+    private int id;
+    private String name;
+    private Address address; // Assume Address implements Cloneable
+
+    @Override
+    protected Object clone() throws CloneNotSupportedException {
+        DeepCloneExample cloned = (DeepCloneExample) super.clone();
+        cloned.address = (Address) address.clone();
+        return cloned;
+    }
+}
+```
+
+### 11. Executors - Sear Holding
+An ExecutorService manages a pool of threads and executes tasks asynchronously:
+
+```java
+ExecutorService executor = Executors.newFixedThreadPool(5);
+
+for (int i = 0; i < 10; i++) {
+    Runnable worker = new MyRunnable("" + i);
+    executor.execute(worker);
+}
+executor.shutdown();
+```
+
+### 12. Java Semaphore - Genpact
+Using Semaphore to control access to a resource:
+
+```java
+import java.util.concurrent.Semaphore;
+
+public class SemaphoreExample {
+
+    private static Semaphore semaphore = new Semaphore(3); // 3 permits
+
+    public static void main(String[] args) {
+        Runnable r = () -> {
+            try {
+                semaphore.acquire();
+                System.out.println(Thread.currentThread().getName() + " acquired permit.");
+                Thread.sleep(2000); // Simulate work
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            } finally {
+                System.out.println(Thread.currentThread().getName() + " releasing permit.");
+                semaphore.release();
+            }
+        };
+
+        for (int i = 0; i < 6; i++) {
+            new Thread(r).start();
+        }
+    }
+}
+```
+
+### 13. CyclicBarrier - Genpact
+Using CyclicBarrier to synchronize threads:
+
+```java
+import java.util.concurrent.BrokenBarrierException;
+import java.util.concurrent.CyclicBarrier;
+
+public class CyclicBarrierExample {
+
+    private static CyclicBarrier barrier = new CyclicBarrier(3, () -> {
+        System.out.println("All parties have arrived, proceeding...");
+    });
+
+    public static void main(String[] args) {
+        Runnable r = () -> {
+            try {
+                System.out.println(Thread.currentThread().getName() + " is waiting");
+                barrier.await();
+                System.out.println(Thread.currentThread().getName() + " has crossed the barrier");
+            } catch (InterruptedException | BrokenBarrierException e) {
+                e.printStackTrace();
+            }
+        };
+
+        for (int i = 0; i < 3; i++) {
+            new Thread(r).start();
+        }
+    }
+}
+```
+
+### 14. Difference Between Java 6 & 7 - Genpact
+Key differences between Java 6 and 7:
+
+- **Try-with-resources**: Automatic resource management.
+- **Diamond Operator**: Type inference for generics.
+- **Strings in Switch**: Using String in switch statements.
+- **Fork/Join Framework**: For parallel processing.
+- **NIO.2**: Enhanced file I/O capabilities.
+
+### 15. How to Create a Custom Exception - Sear Holdings
+Creating a custom exception by extending the `Exception` class:
+
+```java
+public class MyCustomException extends Exception {
+
+    public MyCustomException() {
+        super();
+    }
+
+    public MyCustomException(String message) {
+        super(message);
+    }
+}
+```
 

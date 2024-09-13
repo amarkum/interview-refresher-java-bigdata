@@ -65,8 +65,8 @@ This is a one-stop repository to look up code snippets related to core Java conc
 ### Images
 - Contains useful images for various purposes.
 
-### Interview Questions
-- A collection of interview questions from Java, Big Data, SQL, and more.
+### Interview Questions & Answers
+- A collection of interview questions & Answers from Java, Big Data, SQL, and more.
 
 ## Contribution
 Feel free to contribute by sending a Pull Request to this repository.

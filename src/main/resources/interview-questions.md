@@ -262,22 +262,84 @@
 
 41. **What happens if we make `public static void main()` private in Java?**  
    _Company: Virtusa_
+42. **What are Executor Services in Java, and how do we initialize them?**  
+   _Company: Virtusa_
 
-42.) What are Executor Services in Java, how do we Initialize them? - Virtusa
-43.) How to create a Singleton class in java for multi-threading environment? - Virtusa
-44.) What is try-with-resource - Virtusa
-45.) What is fail fast & fail safe - DansakeIT
-46.) How do you Implement a Concurrent HashMap - DansakeIT
-47.) With two threads printing odd and even, how to print sequence of number - Rapido
-48.) What is composition, isA, hasA relationship - Accolite
-49.) Difference between HashMap and LinkedHashMap - Accolite
-50.) Why wait() method is part of Object class and not Thread - Accolite
-51.) What is Auto-Boxing and Unboxing in Java? - ProKarma
-52.) What is Deadlock & Race Condition in Java? - Walmart
-53.) Detect if a Tree is a Binary Search Tree - JP Morgan & Chase Co.
-53.) Different Ways of Traversal of the Tree - JP Morgan & Chase Co.
-54.) Traverse a Tree and link siblings of a tree - OLA Cabs
-```
+   ExecutorService manages thread pools and allows asynchronous execution. It can be initialized using `Executors.newFixedThreadPool()` or similar methods.
+
+43. **How to create a Singleton class in Java for a multi-threading environment?**  
+   _Company: Virtusa_
+
+   To ensure thread safety, you can implement the Singleton pattern using double-checked locking or using `enum` to create a Singleton class.
+
+44. **What is try-with-resources in Java?**  
+   _Company: Virtusa_
+
+   Introduced in Java 7, try-with-resources automatically closes resources like streams or connections once they are no longer needed. It works with objects that implement `AutoCloseable`.
+
+45. **What is fail-fast & fail-safe?**  
+   _Company: DansakeIT_
+
+   - **Fail-Fast**: Throws `ConcurrentModificationException` if a collection is modified while iterating (e.g., `ArrayList`).
+   - **Fail-Safe**: Works on a clone of the collection, so it does not throw exceptions during iteration (e.g., `CopyOnWriteArrayList`).
+
+46. **How do you implement a Concurrent HashMap?**  
+   _Company: DansakeIT_
+
+   ConcurrentHashMap allows concurrent read and write operations by dividing the map into segments. This ensures better performance in multi-threaded environments.
+
+47. **With two threads printing odd and even numbers, how do you print the sequence of numbers?**  
+   _Company: Rapido_
+
+   You can use synchronization with `wait()` and `notify()` methods to alternate between threads, ensuring that one thread prints odd numbers while the other prints even.
+
+48. **What is composition, isA, and hasA relationship in Java?**  
+   _Company: Accolite_
+
+   - **Composition**: Represents a strong "has-a" relationship where one object contains another object (e.g., `Car has an Engine`).
+   - **isA**: Represents inheritance (e.g., `Dog is an Animal`).
+   - **hasA**: Represents aggregation (e.g., `Library has Books`).
+
+49. **What is the difference between HashMap and LinkedHashMap?**  
+   _Company: Accolite_
+
+   - **HashMap**: Does not maintain any order of entries.
+   - **LinkedHashMap**: Maintains insertion order of elements.
+
+50. **Why is the `wait()` method part of the Object class and not the Thread class?**  
+   _Company: Accolite_
+
+   `wait()` operates on the monitor of an object and is thus part of the `Object` class. It allows any thread holding the object's lock to wait for some condition to be met.
+
+51. **What is Auto-Boxing and Unboxing in Java?**  
+   _Company: ProKarma_
+
+   - **Auto-Boxing**: Automatic conversion of primitive types to their corresponding wrapper objects (e.g., `int` to `Integer`).
+   - **Unboxing**: Automatic conversion of wrapper class objects to primitive types (e.g., `Integer` to `int`).
+
+52. **What is Deadlock & Race Condition in Java?**  
+   _Company: Walmart_
+
+   - **Deadlock**: Occurs when two or more threads are blocked, each waiting for the other to release a lock.
+   - **Race Condition**: Happens when two or more threads access shared data concurrently, leading to unpredictable outcomes.
+
+53. **Detect if a Tree is a Binary Search Tree (BST).**  
+   _Company: JP Morgan & Chase Co._
+
+   To check if a tree is a BST, ensure that for every node, the values in the left subtree are smaller, and the values in the right subtree are larger.
+
+54. **What are the different ways to traverse a tree?**  
+   _Company: JP Morgan & Chase Co._
+
+   - **In-order Traversal**: Left, Root, Right
+   - **Pre-order Traversal**: Root, Left, Right
+   - **Post-order Traversal**: Left, Right, Root
+   - **Level-order Traversal**: Traverses the tree level by level.
+
+55. **Traverse a tree and link siblings of nodes at the same level.**  
+   _Company: OLA Cabs_
+
+   Use a level-order traversal to link siblings at the same level in a binary tree.
 
 # SQL Interview Questions
 ```text

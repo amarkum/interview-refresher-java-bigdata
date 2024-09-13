@@ -503,3 +503,169 @@ executor.shutdown();
 ### 35. Difference Between Abstract Class and Interface - GlobalLogic
 - **Abstract Class**: Can have method implementations and instance variables, supports single inheritance.
 - **Interface**: Cannot have instance variables (except constants), supports multiple inheritance (from Java 8, interfaces can have default and static methods).
+
+
+### 36. How Can We Implement Immutable Class - GlobalLogic
+To create an immutable class in Java:
+1. Declare the class as `final` so it can't be extended.
+2. Make all fields `private` and `final`.
+3. Provide only getter methods for mutable fields.
+4. Do not provide setter methods.
+5. If a field is a mutable object, return a deep copy in the getter method.
+
+```java
+public final class ImmutableClass {
+    private final int id;
+    private final String name;
+    
+    public ImmutableClass(int id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+}
+```
+
+### 37. What is ConcurrentHashMap - Virtusa
+`ConcurrentHashMap` is a thread-safe implementation of `HashMap` that allows concurrent read and write operations without locking the entire map. It achieves this by locking only specific segments of the map.
+
+### 38. Difference Between HashSet and TreeSet - Virtusa
+- **HashSet**: Unordered, allows `null`, provides faster performance (O(1) for basic operations).
+- **TreeSet**: Sorted (natural order or by a comparator), does not allow `null`, has slower performance (O(log n) for basic operations).
+
+### 39. Why Do We Use Lambda Expressions in Java? - Virtusa
+Lambda expressions provide a concise way to represent anonymous functions, making the code more readable and allowing functional programming in Java. They are especially useful when working with functional interfaces, collections, and the Stream API.
+
+```java
+List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5);
+numbers.forEach(n -> System.out.println(n));
+```
+
+### 40. Why Do We Use Stream API? - Virtusa
+The Stream API allows functional-style operations on collections of objects, supporting operations like filtering, mapping, and reducing. It makes it easier to process data in parallel, and its declarative nature leads to more readable code.
+
+```java
+List<String> names = Arrays.asList("Alice", "Bob", "Charlie");
+names.stream().filter(name -> name.startsWith("A")).forEach(System.out::println);
+```
+
+### 41. What Will Happen If We Make 'public static void main()' as Private? - Virtusa
+If you make `public static void main()` method private, the program will compile but not run, and it will throw a `NoSuchMethodError` at runtime because the Java Virtual Machine (JVM) won't be able to access the `main` method.
+
+### 42. What are Executor Services in Java, How Do We Initialize Them? - Virtusa
+`ExecutorService` is an interface that manages thread pools and facilitates asynchronous execution. It can be initialized using different types of executors, such as `newFixedThreadPool`, `newSingleThreadExecutor`, etc.
+
+```java
+ExecutorService executor = Executors.newFixedThreadPool(5);
+executor.execute(new RunnableTask());
+executor.shutdown();
+```
+
+### 43. How to Create a Singleton Class in Java for Multi-threading Environment? - Virtusa
+To create a thread-safe singleton class, we can use several approaches, such as double-checked locking or using an `enum`.
+
+```java
+public class Singleton {
+    private static volatile Singleton instance;
+
+    private Singleton() {}
+
+    public static Singleton getInstance() {
+        if (instance == null) {
+            synchronized (Singleton.class) {
+                if (instance == null) {
+                    instance = new Singleton();
+                }
+            }
+        }
+        return instance;
+    }
+}
+```
+
+### 44. What is Try-With-Resource? - Virtusa
+`Try-with-resources` is a feature in Java 7 that allows you to automatically close resources like files and database connections. The resources must implement `AutoCloseable`.
+
+```java
+try (BufferedReader br = new BufferedReader(new FileReader("file.txt"))) {
+    String line;
+    while ((line = br.readLine()) != null) {
+        System.out.println(line);
+    }
+} catch (IOException e) {
+    e.printStackTrace();
+}
+```
+
+### 45. What is Fail-Fast & Fail-Safe? - DansakeIT
+- **Fail-Fast**: Iterators that throw `ConcurrentModificationException` if the collection is modified during iteration. Example: `ArrayList`, `HashMap`.
+- **Fail-Safe**: Iterators that operate on a clone of the collection, so they do not throw exceptions during iteration. Example: `CopyOnWriteArrayList`, `ConcurrentHashMap`.
+
+### 46. How Do You Implement a Concurrent HashMap? - DansakeIT
+Java's `ConcurrentHashMap` is an implementation of `HashMap` that supports full concurrency for read operations and configurable concurrency for write operations. It achieves thread-safety without locking the entire map.
+
+```java
+ConcurrentHashMap<String, Integer> map = new ConcurrentHashMap<>();
+map.put("Key1", 1);
+map.put("Key2", 2);
+```
+
+### 47. With Two Threads Printing Odd and Even, How to Print Sequence of Numbers? - Rapido
+To print odd and even numbers using two threads, you can use `wait()` and `notify()` methods for synchronization between the threads.
+
+```java
+public class EvenOddPrinter {
+    private int number = 1;
+    private final int max = 10;
+    private final Object lock = new Object();
+
+    public void printOdd() {
+        synchronized (lock) {
+            while (number <= max) {
+                if (number % 2 == 0) {
+                    try { lock.wait(); } catch (InterruptedException e) {}
+                } else {
+                    System.out.println("Odd: " + number);
+                    number++;
+                    lock.notify();
+                }
+            }
+        }
+    }
+
+    public void printEven() {
+        synchronized (lock) {
+            while (number <= max) {
+                if (number % 2 != 1) {
+                    try { lock.wait(); } catch (InterruptedException e) {}
+                } else {
+                    System.out.println("Even: " + number);
+                    number++;
+                    lock.notify();
+                }
+            }
+        }
+    }
+}
+```
+
+### 48. What is Composition, isA, hasA Relationship? - Accolite
+- **Composition**: A strong "has-a" relationship where the part cannot exist independently from the whole.
+- **isA**: Represents inheritance (e.g., `Dog is an Animal`).
+- **hasA**: Represents composition or aggregation (e.g., `Car has an Engine`).
+
+### 49. Difference Between HashMap and LinkedHashMap - Accolite
+- **HashMap**: Does not maintain any order of entries.
+- **LinkedHashMap**: Maintains insertion order, meaning elements are returned in the order they were inserted.
+
+### 50. Why is wait() Method Part of Object Class and Not Thread? - Accolite
+The `wait()` method is part of the `Object` class because it operates on the object's monitor lock. Any thread that holds the lock of the object can call `wait()`, so it's associated with the monitor of the object, not the thread itself.
+  
+  

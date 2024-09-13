@@ -668,4 +668,116 @@ public class EvenOddPrinter {
 ### 50. Why is wait() Method Part of Object Class and Not Thread? - Accolite
 The `wait()` method is part of the `Object` class because it operates on the object's monitor lock. Any thread that holds the lock of the object can call `wait()`, so it's associated with the monitor of the object, not the thread itself.
   
+
+### 51. What is Auto-Boxing and Unboxing in Java? - ProKarma
+- **Auto-boxing**: The automatic conversion of primitive types to their corresponding wrapper class objects (e.g., `int` to `Integer`).
+- **Unboxing**: The automatic conversion of wrapper class objects to their corresponding primitive types (e.g., `Integer` to `int`).
+
+```java
+Integer obj = 10;  // Auto-boxing
+int num = obj;     // Unboxing
+```
+
+### 52. What is Deadlock & Race Condition in Java? - Walmart
+- **Deadlock**: Occurs when two or more threads are blocked forever, each waiting for the other to release a lock.
+- **Race Condition**: Happens when two or more threads access shared data concurrently, leading to unpredictable outcomes as the threads "race" to modify the data.
+
+### 53. Detect if a Tree is a Binary Search Tree - JP Morgan & Chase Co.
+To check if a tree is a binary search tree (BST), you need to ensure that for every node, the values of all nodes in its left subtree are less, and the values in its right subtree are greater.
+
+```java
+public class BSTChecker {
+    public static boolean isBST(Node node, Integer min, Integer max) {
+        if (node == null)
+            return true;
+        if ((min != null && node.data <= min) || (max != null && node.data >= max))
+            return false;
+        return isBST(node.left, min, node.data) && isBST(node.right, node.data, max);
+    }
+
+    public static boolean isBST(Node root) {
+        return isBST(root, null, null);
+    }
+}
+```
+
+### 54. Different Ways of Traversal of the Tree - JP Morgan & Chase Co.
+1. **In-order Traversal**: Left, Root, Right.
+```java
+void inOrder(Node node) {
+    if (node != null) {
+        inOrder(node.left);
+        System.out.print(node.data + " ");
+        inOrder(node.right);
+    }
+}
+```
+2. **Pre-order Traversal**: Root, Left, Right.
+```java
+void preOrder(Node node) {
+    if (node != null) {
+        System.out.print(node.data + " ");
+        preOrder(node.left);
+        preOrder(node.right);
+    }
+}
+```
+3. **Post-order Traversal**: Left, Right, Root.
+```java
+void postOrder(Node node) {
+    if (node != null) {
+        postOrder(node.left);
+        postOrder(node.right);
+        System.out.print(node.data + " ");
+    }
+}
+```
+4. **Level-order Traversal**: Level by level from top to bottom.
+```java
+void levelOrder(Node root) {
+    Queue<Node> queue = new LinkedList<>();
+    queue.add(root);
+    while (!queue.isEmpty()) {
+        Node node = queue.poll();
+        System.out.print(node.data + " ");
+        if (node.left != null)
+            queue.add(node.left);
+        if (node.right != null)
+            queue.add(node.right);
+    }
+}
+```
+
+### 55. Traverse a Tree and Link Siblings of a Tree - OLA Cabs
+To link siblings of nodes at the same level, use a level-order traversal and link the nodes in each level.
+
+```java
+public class SiblingLinker {
+    static class Node {
+        int data;
+        Node left, right, nextSibling;
+    }
+
+    public static void linkSiblings(Node root) {
+        if (root == null) return;
+        
+        Queue<Node> queue = new LinkedList<>();
+        queue.add(root);
+        
+        while (!queue.isEmpty()) {
+            int size = queue.size();
+            Node prev = null;
+            
+            for (int i = 0; i < size; i++) {
+                Node node = queue.poll();
+                if (prev != null) prev.nextSibling = node;
+                prev = node;
+                
+                if (node.left != null) queue.add(node.left);
+                if (node.right != null) queue.add(node.right);
+            }
+        }
+    }
+}
+```
   

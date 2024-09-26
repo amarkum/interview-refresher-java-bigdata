@@ -17,7 +17,7 @@ public class Caller {
         movies.add(movie3);
         movies.add(movie4);
         System.out.println(movies);
-        Collections.sort(movies, new RatingComparator());
+        Collections.sort(movies, (m1,m2)-> m2.rating - m1.rating);
         //Collections.sort(movies);
         System.out.println(movies);
     }
